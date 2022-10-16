@@ -7,7 +7,7 @@ scn Test
 ---
 
 (source_file
-  (script_declaration (script_name)))
+  (script_declaration (script_name) (eol)))
 
 =======================
 Script Declaration Long
@@ -18,13 +18,13 @@ scriptname Test
 ---
 
 (source_file
-  (script_declaration (script_name)))
+  (script_declaration (script_name) (eol)))
 
 ====================
 Variable Declaration
 ====================
 
-scn variableDeclaration
+scn variableDeclaration      
 int int
 short short
 long long
@@ -35,19 +35,19 @@ string_var neo
 ---
 
 (source_file
-  (script_declaration (script_name))
-  (variable_declaration (variable_type) (variable))
-  (variable_declaration (variable_type) (variable))
-  (variable_declaration (variable_type) (variable))
-  (variable_declaration (variable_type) (variable))
-  (variable_declaration (variable_type) (variable))
-  (variable_declaration (variable_type) (variable)))
+  (script_declaration (script_name) (eol))
+  (variable_declaration (variable_type) (variable) (eol))
+  (variable_declaration (variable_type) (variable) (eol))
+  (variable_declaration (variable_type) (variable) (eol))
+  (variable_declaration (variable_type) (variable) (eol))
+  (variable_declaration (variable_type) (variable) (eol))
+  (variable_declaration (variable_type) (variable) (eol)))
 
 ============
 Block w/ EOL
 ============
 
-scn block
+scn block  	
 begin gamemode
 word
 end
@@ -55,10 +55,11 @@ end
 ---
 
 (source_file
-  (script_declaration (script_name))
+  (script_declaration (script_name) (eol))
   (block
-    (game_feature)
-    (statement)))
+    (game_feature) (eol)
+    (statement) (eol)
+    (eol)))
 
 =============
 Block w/o EOL
@@ -67,12 +68,12 @@ Block w/o EOL
 scn block
 begin gamemode
 word
-end begin gamemode
 end
 ---
 
 (source_file
-  (script_declaration (script_name))
+  (script_declaration (script_name) (eol))
   (block
-    (game_feature)
-    (statement)))
+    (game_feature) (eol)
+    (statement) (eol)
+    (eol)))
