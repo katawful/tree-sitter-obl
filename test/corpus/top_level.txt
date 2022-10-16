@@ -1,0 +1,78 @@
+========================
+Script Declaration Short
+========================
+
+scn Test
+
+---
+
+(source_file
+  (script_declaration (script_name)))
+
+=======================
+Script Declaration Long
+=======================
+
+scriptname Test
+
+---
+
+(source_file
+  (script_declaration (script_name)))
+
+====================
+Variable Declaration
+====================
+
+scn variableDeclaration
+int int
+short short
+long long
+float float
+array_var neio
+string_var neo
+
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (variable_type) (variable))
+  (variable_declaration (variable_type) (variable))
+  (variable_declaration (variable_type) (variable))
+  (variable_declaration (variable_type) (variable))
+  (variable_declaration (variable_type) (variable))
+  (variable_declaration (variable_type) (variable)))
+
+============
+Block w/ EOL
+============
+
+scn block
+begin gamemode
+word
+end
+
+---
+
+(source_file
+  (script_declaration (script_name))
+  (block
+    (game_feature)
+    (statement)))
+
+=============
+Block w/o EOL
+=============
+
+scn block
+begin gamemode
+word
+end begin gamemode
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (block
+    (game_feature)
+    (statement)))
