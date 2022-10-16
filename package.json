@@ -4,7 +4,9 @@
   "description": "Tree-sitter grammar for the video game Oblivion's scripting language (obl)",
   "main": "bindings/node",
   "scripts": {
-    "test": "tree-sitter test"
+    "test": "tree-sitter test",
+    "build": "tree-sitter generate",
+    "default": "tree-sitter generate && tree-sitter test"
   },
   "repository": {
     "type": "git",
