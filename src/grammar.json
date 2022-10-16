@@ -9,10 +9,6 @@
           "name": "script_declaration"
         },
         {
-          "type": "SYMBOL",
-          "name": "_eol"
-        },
-        {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
@@ -50,6 +46,10 @@
         {
           "type": "SYMBOL",
           "name": "script_name"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "eol"
         }
       ]
     },
@@ -88,7 +88,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_eol"
+          "name": "eol"
         }
       ]
     },
@@ -172,10 +172,6 @@
           "name": "_start_block"
         },
         {
-          "type": "SYMBOL",
-          "name": "_eol"
-        },
-        {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
@@ -183,20 +179,8 @@
           }
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[eE][nN][dD]"
-          },
-          "named": false,
-          "value": "end"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_eol"
-          }
+          "type": "SYMBOL",
+          "name": "_end_block"
         }
       ]
     },
@@ -224,6 +208,10 @@
               "name": "function"
             }
           ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "eol"
         }
       ]
     },
@@ -263,35 +251,31 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_eol"
+          "name": "eol"
         }
       ]
     },
     "_end_block": {
-      "type": "ALIAS",
-      "content": {
-        "type": "PATTERN",
-        "value": "[eE][nN][dD]"
-      },
-      "named": false,
-      "value": "end"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[eE][nN][dD]"
+          },
+          "named": false,
+          "value": "end"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "eol"
+        }
+      ]
     },
     "statement": {
       "type": "SYMBOL",
       "name": "_identifier"
-    },
-    "_eol": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\n"
-        },
-        {
-          "type": "STRING",
-          "value": "\r"
-        }
-      ]
     },
     "_identifier": {
       "type": "PATTERN",
@@ -306,7 +290,12 @@
   ],
   "conflicts": [],
   "precedences": [],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "eol"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }

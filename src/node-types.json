@@ -8,6 +8,10 @@
       "required": true,
       "types": [
         {
+          "type": "eol",
+          "named": true
+        },
+        {
           "type": "function",
           "named": true
         },
@@ -32,9 +36,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "eol",
+          "named": true
+        },
         {
           "type": "script_name",
           "named": true
@@ -89,6 +97,10 @@
       "required": true,
       "types": [
         {
+          "type": "eol",
+          "named": true
+        },
+        {
           "type": "variable",
           "named": true
         },
@@ -105,14 +117,6 @@
     "fields": {}
   },
   {
-    "type": "\n",
-    "named": false
-  },
-  {
-    "type": "\r",
-    "named": false
-  },
-  {
     "type": "array_var",
     "named": false
   },
@@ -123,6 +127,10 @@
   {
     "type": "end",
     "named": false
+  },
+  {
+    "type": "eol",
+    "named": true
   },
   {
     "type": "float",

@@ -1,16 +1,20 @@
 module.exports = grammar({
   name: 'obl',
 
+  externals: $ => [
+    $.eol,
+  ],
+
   rules: {
     source_file: $ => seq(
       $.script_declaration,
-      $._eol, // eol should be here so that the source file node itself knows about it
       repeat($._top_level),
     ),
 
     script_declaration: $ => seq(
       choice(keyword("scn"), keyword("scriptname")),
       $.script_name,
+      $.eol,
     ),
 
     script_name: $ => $._identifier,
@@ -24,7 +28,7 @@ module.exports = grammar({
     variable_declaration: $ => seq(
       $.variable_type,
       $.variable,
-      $._eol,
+      $.eol,
     ),
 
     variable_type: $ => choice(
@@ -41,15 +45,16 @@ module.exports = grammar({
 
     block: $ => seq(
       $._start_block,
-      $._eol,
+      // $.eol,
       repeat($._inner_block),
-      keyword("end"),
-      repeat($._eol),
+      $._end_block,
+      // repeat($.eol),
     ),
 
     _start_block: $ => seq(
       keyword("begin"),
       choice($.game_feature, $.function),
+      $.eol,
     ),
 
     game_feature: $ => choice(
@@ -59,13 +64,13 @@ module.exports = grammar({
 
     function: $ => "unimplemented",
 
-    _inner_block: $ => seq($.statement, $._eol),
+    _inner_block: $ => seq($.statement, $.eol),
 
-    _end_block: $ => keyword("end"),
+    _end_block: $ => seq(keyword("end"), $.eol),
 
     statement: $ => $._identifier,
 
-    _eol: $ => choice("\n", "\r"),
+    // _eol: $ => choice("\n", "\r"),
 
     // i chose to keep identifiers anoymous as it is used in many areas
     // TODO: address invalid characters
