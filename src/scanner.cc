@@ -43,29 +43,34 @@ struct Scanner {
   }
 
   bool scan(TSLexer *lexer, const bool *valid_symbols) {
-    // we only want to look for a eol
     int breakChar;
     if (valid_symbols[EOL]) {
-      /* std::cout << "BLANK: " << iswblank(lexer->lookahead) << std::endl; */
-      /* std::cout << "SPACE: " << iswspace(lexer->lookahead) << std::endl; */
-      /* std::cout << "ALPHANUM: " << iswalnum(lexer->lookahead) << std::endl; */
-      /* std::cout << "TYPE: " << typeid(lexer->lookahead).name() << std::endl; */
-      /* std::cout << "VALUE: " << lexer->lookahead << std::endl; */
       while (lexer->lookahead) {
         int currChar;
         currChar = lexer->lookahead;
         breakChar = 0;
+        /* Set breakChar to 0 before iterating. This prevents a situation like
+         * being at the end of file with no line breaks. breakChar will never
+         * initialize, and we will never know the result of the lookahead
+         */
         if (currChar == ' ' || currChar == '\t') {
-          /* std::cout << "Advance lexer" << std::endl; */
+          /* Space and tabs are truly agnostic in obl, so we can simply advance
+           * the lexer if we see them.
+           */
           advance(lexer);
           continue;
         } else if (iswalnum(currChar)) {
-          /* std::cout << "Break lexer on unexpected" << std::endl; */
+          /* Alphanumerical characters are the end of the marking here. They
+           * will end up returning an error.
+           * TODO: have this check for all valid ASCII keys
+           */
           lexer->mark_end(lexer);
           breakChar = currChar;
           break;
         } else if (currChar == '\n') {
-          /* std::cout << "Break lexer on nl" << std::endl; */
+          /* Newlines are what we are looking for to have a valid node.
+           * TODO: make OS fileformat agnostic
+           */
           lexer->mark_end(lexer);
           breakChar = currChar;
           break;
@@ -73,14 +78,12 @@ struct Scanner {
       }
     }
 
-    /* std::cout << "Break char: " << breakChar << std::endl; */
-
+    // we only care about newlines or EOF
     if (breakChar == '\n' || breakChar == 0) {
       lexer->result_symbol = EOL;
-      /* std::cout << "true" << std::endl; */
       return true;
+      // anything else is treated as an error
     } else {
-      /* std::cout << "false" << std::endl; */
       return false;
     }
   }
