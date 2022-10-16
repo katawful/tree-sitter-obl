@@ -1,0 +1,30 @@
+{
+  "name": "tree-sitter-obl",
+  "version": "0.0.1",
+  "description": "Tree-sitter grammar for the video game Oblivion's scripting language (obl)",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "tree-sitter test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katawful/tree-sitter-obl.git"
+  },
+  "keywords": [
+    "parser",
+    "lexer",
+    "tree-sitter"
+  ],
+  "author": "Kat Flood",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/katawful/tree-sitter-obl/issues"
+  },
+  "homepage": "https://github.com/katawful/tree-sitter-obl#readme",
+  "dependencies": {
+    "nan": "^2.17.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.7"
+  }
+}
