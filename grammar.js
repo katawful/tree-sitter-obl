@@ -8,7 +8,9 @@ module.exports = grammar({
   word: $ => $._identifier,
 
   extras: $ => [
-    /\s|\\\r?\n/,
+    /\\\r?\n/,
+    /\s/,
+    /\t/,
     $.comment,
   ],
 

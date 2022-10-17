@@ -1,0 +1,41 @@
+=====
+Space
+=====
+scn        test           
+          int         i       
+ begin       gamemode     
+end     
+---
+(source_file
+ (script_declaration
+  (script_name)
+  (eol))
+ (variable_declaration
+  (variable_type)
+  (variable)
+  (eol))
+ (block
+  (game_feature)
+  (eol)
+  (eol)))
+
+====
+Tabs
+====
+	scn	test	
+	int	i	
+	begin	gamemode	
+	end	
+---
+(source_file
+  (script_declaration
+    (script_name)
+    (eol))
+  (variable_declaration
+    (variable_type)
+    (variable)
+    (eol))
+  (block
+    (game_feature)
+    (eol)
+    (eol)))
