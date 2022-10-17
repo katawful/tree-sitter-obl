@@ -1,0 +1,47 @@
+===================
+Top level full line
+===================
+
+scn test
+; this is a comment
+int i
+; this is another comment
+begin gamemode
+end
+; this is a third comment
+
+---
+(source_file
+  (script_declaration
+    (script_name) (eol))
+  (comment)
+  (variable_declaration
+    (variable_type) (variable) (eol))
+  (comment)
+  (block
+    (game_feature) (eol)
+    (eol))
+  (comment))
+
+=================
+Top level in-line
+=================
+
+scn test ; this is a comment
+int i ; this is another comment
+begin gamemode ; this is a third comment
+end ;this is a comment without leading whitespace
+
+---
+(source_file
+  (script_declaration
+    (script_name) (eol))
+  (comment)
+  (variable_declaration
+    (variable_type) (variable) (eol))
+  (comment)
+  (block
+    (game_feature) (eol)
+    (comment)
+    (eol))
+  (comment))

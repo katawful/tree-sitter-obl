@@ -47,7 +47,7 @@ string_var neo
 Block w/ EOL
 ============
 
-scn block  	
+scn block
 begin gamemode
 word
 end
