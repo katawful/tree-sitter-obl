@@ -27,6 +27,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "game_feature",
     "named": true,
     "fields": {}
@@ -115,6 +120,10 @@
     "type": "variable_type",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": ";",
+    "named": false
   },
   {
     "type": "array_var",

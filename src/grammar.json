@@ -1,5 +1,6 @@
 {
   "name": "obl",
+  "word": "_identifier",
   "rules": {
     "source_file": {
       "type": "SEQ",
@@ -280,12 +281,29 @@
     "_identifier": {
       "type": "PATTERN",
       "value": "[a-zA-Z_]\\w*"
+    },
+    "comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "PATTERN",
+          "value": "(\\\\(.|\\r?\\n)|[^\\\\\\n])*"
+        }
+      ]
     }
   },
   "extras": [
     {
       "type": "PATTERN",
-      "value": "\\s"
+      "value": "\\s|\\\\\\r?\\n"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
     }
   ],
   "conflicts": [],

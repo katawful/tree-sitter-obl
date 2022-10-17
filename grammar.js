@@ -5,6 +5,13 @@ module.exports = grammar({
     $.eol,
   ],
 
+  word: $ => $._identifier,
+
+  extras: $ => [
+    /\s|\\\r?\n/,
+    $.comment,
+  ],
+
   rules: {
     source_file: $ => seq(
       $.script_declaration,
@@ -22,7 +29,6 @@ module.exports = grammar({
     _top_level: $ => seq(
       choice($.variable_declaration, $.block),
         // TODO: add header
-      // $._eol,
     ),
 
     variable_declaration: $ => seq(
@@ -70,11 +76,14 @@ module.exports = grammar({
 
     statement: $ => $._identifier,
 
-    // _eol: $ => choice("\n", "\r"),
-
     // i chose to keep identifiers anoymous as it is used in many areas
     // TODO: address invalid characters
     _identifier: $ => /[a-zA-Z_]\w*/,
+
+    comment: $ => seq(
+      ';',
+      /(\\(.|\r?\n)|[^\\\n])*/
+    ),
   }
 });
 

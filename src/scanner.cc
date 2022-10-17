@@ -43,43 +43,46 @@ struct Scanner {
   }
 
   bool scan(TSLexer *lexer, const bool *valid_symbols) {
-    int breakChar;
+    int breakChar = 0;
+    bool inlineComment = false;
     if (valid_symbols[EOL]) {
       while (lexer->lookahead) {
         int currChar;
         currChar = lexer->lookahead;
-        breakChar = 0;
-        /* Set breakChar to 0 before iterating. This prevents a situation like
-         * being at the end of file with no line breaks. breakChar will never
-         * initialize, and we will never know the result of the lookahead
-         */
         if (currChar == ' ' || currChar == '\t') {
-          /* Space and tabs are truly agnostic in obl, so we can simply advance
-           * the lexer if we see them.
-           */
+          /* any amount of space/tab, EOL can still happen */
           advance(lexer);
           continue;
-        } else if (iswalnum(currChar)) {
-          /* Alphanumerical characters are the end of the marking here. They
-           * will end up returning an error.
-           * TODO: have this check for all valid ASCII keys
-           */
+        } else if (currChar == 0) {
+          /* Null character, EOL achieved */
           lexer->mark_end(lexer);
           breakChar = currChar;
+          prevChar = breakChar;
           break;
         } else if (currChar == '\n') {
-          /* Newlines are what we are looking for to have a valid node.
-           * TODO: make OS fileformat agnostic
-           */
+          /* NL character, EOL achieved */
           lexer->mark_end(lexer);
           breakChar = currChar;
+          prevChar = breakChar;
+          break;
+        } else if (iswalnum(currChar)) {
+          /* non-EOL character, error out */
+          lexer->mark_end(lexer);
+          breakChar = currChar;
+          prevChar = breakChar;
+          break;
+        } else if (currChar == ';') {
+          /* semi-colon, previous character was EOL */
+          lexer->mark_end(lexer);
+          breakChar = prevChar;
+          lexer->result_symbol = EOL;
           break;
         }
       }
     }
 
-    // we only care about newlines or EOF
-    if (breakChar == '\n' || breakChar == 0) {
+    // NL, null, and break on ';' are causes for EOL
+    if (breakChar == '\n' || breakChar == 0 || breakChar == ';') {
       lexer->result_symbol = EOL;
       return true;
       // anything else is treated as an error
@@ -88,6 +91,7 @@ struct Scanner {
     }
   }
   string eol;
+  int prevChar = 0;
 
 };
 }
