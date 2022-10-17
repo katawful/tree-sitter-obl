@@ -11,7 +11,7 @@ using std::string;
 /* using std::set; */
 
 enum TokenType {
-  EOL,
+  TERMINATOR,
 };
 
 struct Scanner {
@@ -43,47 +43,32 @@ struct Scanner {
   }
 
   bool scan(TSLexer *lexer, const bool *valid_symbols) {
-    int breakChar = 0;
-    bool inlineComment = false;
-    if (valid_symbols[EOL]) {
-      while (lexer->lookahead) {
+    int breakChar = -1;
+    if (valid_symbols[TERMINATOR]) {
+      while (lexer->lookahead >= 0) {
         int currChar;
         currChar = lexer->lookahead;
-        if (currChar == ' ' || currChar == '\t') {
-          /* any amount of space/tab, EOL can still happen */
-          advance(lexer);
-          continue;
-        } else if (currChar == 0) {
-          /* Null character, EOL achieved */
+        if (currChar == ' '
+          || currChar == '\t'
+          || currChar == '\n'
+          || currChar == '\r'
+          || currChar == ';'
+          || currChar == 0)
+        {
           lexer->mark_end(lexer);
           breakChar = currChar;
-          prevChar = breakChar;
           break;
-        } else if (currChar == '\n') {
-          /* NL character, EOL achieved */
+        } else {
           lexer->mark_end(lexer);
-          breakChar = currChar;
-          prevChar = breakChar;
-          break;
-        } else if (iswalnum(currChar)) {
-          /* non-EOL character, error out */
-          lexer->mark_end(lexer);
-          breakChar = currChar;
-          prevChar = breakChar;
-          break;
-        } else if (currChar == ';') {
-          /* semi-colon, previous character was EOL */
-          lexer->mark_end(lexer);
-          breakChar = prevChar;
-          lexer->result_symbol = EOL;
+          breakChar = -1;
           break;
         }
       }
     }
 
-    // NL, null, and break on ';' are causes for EOL
-    if (breakChar == '\n' || breakChar == 0 || breakChar == ';') {
-      lexer->result_symbol = EOL;
+    // all whitespace, null, and ';', are valid terminators
+    if (breakChar >= 0) {
+      lexer->result_symbol = TERMINATOR;
       return true;
       // anything else is treated as an error
     } else {
@@ -91,7 +76,6 @@ struct Scanner {
     }
   }
   string eol;
-  int prevChar = 0;
 
 };
 }

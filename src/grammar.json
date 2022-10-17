@@ -50,7 +50,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "eol"
+          "name": "_terminator"
         }
       ]
     },
@@ -89,7 +89,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "eol"
+          "name": "_terminator"
         }
       ]
     },
@@ -212,7 +212,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "eol"
+          "name": "_terminator"
         }
       ]
     },
@@ -252,7 +252,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "eol"
+          "name": "_terminator"
         }
       ]
     },
@@ -270,7 +270,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "eol"
+          "name": "_terminator"
         }
       ]
     },
@@ -319,7 +319,7 @@
   "externals": [
     {
       "type": "SYMBOL",
-      "name": "eol"
+      "name": "_terminator"
     }
   ],
   "inline": [],

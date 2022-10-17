@@ -7,17 +7,11 @@ scn        test
 end     
 ---
 (source_file
- (script_declaration
-  (script_name)
-  (eol))
+ (script_declaration (script_name))
  (variable_declaration
-  (variable_type)
-  (variable)
-  (eol))
+  (variable_type) (variable))
  (block
-  (game_feature)
-  (eol)
-  (eol)))
+  (game_feature)))
 
 ====
 Tabs
@@ -28,14 +22,8 @@ Tabs
 	end	
 ---
 (source_file
-  (script_declaration
-    (script_name)
-    (eol))
+  (script_declaration (script_name))
   (variable_declaration
-    (variable_type)
-    (variable)
-    (eol))
+    (variable_type) (variable))
   (block
-    (game_feature)
-    (eol)
-    (eol)))
+    (game_feature)))

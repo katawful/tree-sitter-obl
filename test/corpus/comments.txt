@@ -12,15 +12,13 @@ end
 
 ---
 (source_file
-  (script_declaration
-    (script_name) (eol))
+  (script_declaration (script_name))
   (comment)
   (variable_declaration
-    (variable_type) (variable) (eol))
+    (variable_type) (variable))
   (comment)
   (block
-    (game_feature) (eol)
-    (eol))
+    (game_feature))
   (comment))
 
 =================
@@ -35,13 +33,12 @@ end ;this is a comment without leading whitespace
 ---
 (source_file
   (script_declaration
-    (script_name) (eol))
+    (script_name))
   (comment)
   (variable_declaration
-    (variable_type) (variable) (eol))
+    (variable_type) (variable))
   (comment)
   (block
-    (game_feature) (eol)
-    (comment)
-    (eol))
+    (game_feature)
+    (comment))
   (comment))

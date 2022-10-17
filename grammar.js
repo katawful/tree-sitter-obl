@@ -2,7 +2,7 @@ module.exports = grammar({
   name: 'obl',
 
   externals: $ => [
-    $.eol,
+    $._terminator,
   ],
 
   word: $ => $._identifier,
@@ -23,7 +23,7 @@ module.exports = grammar({
     script_declaration: $ => seq(
       choice(keyword("scn"), keyword("scriptname")),
       $.script_name,
-      $.eol,
+      $._terminator,
     ),
 
     script_name: $ => $._identifier,
@@ -36,7 +36,7 @@ module.exports = grammar({
     variable_declaration: $ => seq(
       $.variable_type,
       $.variable,
-      $.eol,
+      $._terminator,
     ),
 
     variable_type: $ => choice(
@@ -53,16 +53,16 @@ module.exports = grammar({
 
     block: $ => seq(
       $._start_block,
-      // $.eol,
+      // $._terminator,
       repeat($._inner_block),
       $._end_block,
-      // repeat($.eol),
+      // repeat($._terminator),
     ),
 
     _start_block: $ => seq(
       keyword("begin"),
       choice($.game_feature, $.function),
-      $.eol,
+      $._terminator,
     ),
 
     game_feature: $ => choice(
@@ -72,9 +72,9 @@ module.exports = grammar({
 
     function: $ => "unimplemented",
 
-    _inner_block: $ => seq($.statement, $.eol),
+    _inner_block: $ => seq($.statement, $._terminator),
 
-    _end_block: $ => seq(keyword("end"), $.eol),
+    _end_block: $ => seq(keyword("end"), $._terminator),
 
     statement: $ => $._identifier,
 
