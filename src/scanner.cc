@@ -25,20 +25,20 @@ struct Scanner {
   }
 
   unsigned serialize(char *buffer) {
-    // if the length of our eol is bigger than our buffer size, return 0
-    if (eol.length() >= TREE_SITTER_SERIALIZATION_BUFFER_SIZE) return 0;
+    // if the length of our terminator is bigger than our buffer size, return 0
+    if (terminator.length() >= TREE_SITTER_SERIALIZATION_BUFFER_SIZE) return 0;
     // copy the contents of the buffer character into our string
-    eol.copy(&buffer[0], eol.length());
-    return eol.length();
+    terminator.copy(&buffer[0], terminator.length());
+    return terminator.length();
   }
 
   void deserialize(const char *buffer, unsigned length) {
     // reset our string if empty
     if (length == 0) {
-      eol.clear();
+      terminator.clear();
       // else just assign it to the buffer to deserialize it
     } else {
-      eol.assign(&buffer[0], &buffer[length]);
+      terminator.assign(&buffer[0], &buffer[length]);
     }
   }
 
@@ -75,7 +75,7 @@ struct Scanner {
       return false;
     }
   }
-  string eol;
+  string terminator;
 
 };
 }
