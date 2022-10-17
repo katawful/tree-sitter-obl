@@ -1,0 +1,6 @@
+scn test ; comment
+;comment
+int i;comment
+begin gamemode ;    comment
+end            ;comment
+    ; comment
