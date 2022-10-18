@@ -15,7 +15,7 @@ end
   (script_declaration (script_name))
   (comment)
   (variable_declaration
-    (variable_type) (variable))
+    (type) (variable))
   (comment)
   (block
     (game_feature))
@@ -36,7 +36,7 @@ end ;this is a comment without leading whitespace
     (script_name))
   (comment)
   (variable_declaration
-    (variable_type) (variable))
+    (type) (variable))
   (comment)
   (block
     (game_feature)

@@ -81,7 +81,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "variable_type"
+          "name": "type"
         },
         {
           "type": "FIELD",
@@ -97,7 +97,7 @@
         }
       ]
     },
-    "variable_type": {
+    "type": {
       "type": "CHOICE",
       "members": [
         {

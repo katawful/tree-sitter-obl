@@ -101,6 +101,11 @@
     "fields": {}
   },
   {
+    "type": "type",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "user_defined_function",
     "named": true,
     "fields": {},
@@ -140,16 +145,11 @@
       "required": true,
       "types": [
         {
-          "type": "variable_type",
+          "type": "type",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "variable_type",
-    "named": true,
-    "fields": {}
   },
   {
     "type": ",",

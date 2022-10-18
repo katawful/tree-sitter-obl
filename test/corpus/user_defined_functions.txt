@@ -23,7 +23,7 @@ end
 (source_file
   (script_declaration
     (script_name))
-  (variable_declaration (variable_type) (variable))
+  (variable_declaration (type) (variable))
   (block
     (user_defined_function
       (parameter_list (parameter)))))
@@ -40,8 +40,8 @@ end
 (source_file
   (script_declaration
     (script_name))
-  (variable_declaration (variable_type) (variable))
-  (variable_declaration (variable_type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
   (block
     (user_defined_function
       (parameter_list (parameter) (parameter)))))

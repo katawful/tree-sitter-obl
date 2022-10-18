@@ -20,13 +20,13 @@ enum {
   sym__identifier = 1,
   aux_sym_script_declaration_token1 = 2,
   aux_sym_script_declaration_token2 = 3,
-  aux_sym_variable_type_token1 = 4,
-  aux_sym_variable_type_token2 = 5,
-  aux_sym_variable_type_token3 = 6,
-  aux_sym_variable_type_token4 = 7,
-  aux_sym_variable_type_token5 = 8,
-  aux_sym_variable_type_token6 = 9,
-  aux_sym_variable_type_token7 = 10,
+  aux_sym_type_token1 = 4,
+  aux_sym_type_token2 = 5,
+  aux_sym_type_token3 = 6,
+  aux_sym_type_token4 = 7,
+  aux_sym_type_token5 = 8,
+  aux_sym_type_token6 = 9,
+  aux_sym_type_token7 = 10,
   aux_sym__start_block_token1 = 11,
   aux_sym_game_feature_token1 = 12,
   aux_sym_game_feature_token2 = 13,
@@ -43,7 +43,7 @@ enum {
   sym_script_name = 24,
   sym__top_level = 25,
   sym_variable_declaration = 26,
-  sym_variable_type = 27,
+  sym_type = 27,
   sym_variable = 28,
   sym_block = 29,
   sym__start_block = 30,
@@ -66,13 +66,13 @@ static const char * const ts_symbol_names[] = {
   [sym__identifier] = "_identifier",
   [aux_sym_script_declaration_token1] = "scn",
   [aux_sym_script_declaration_token2] = "scriptname",
-  [aux_sym_variable_type_token1] = "int",
-  [aux_sym_variable_type_token2] = "short",
-  [aux_sym_variable_type_token3] = "long",
-  [aux_sym_variable_type_token4] = "float",
-  [aux_sym_variable_type_token5] = "ref",
-  [aux_sym_variable_type_token6] = "array_var",
-  [aux_sym_variable_type_token7] = "string_var",
+  [aux_sym_type_token1] = "int",
+  [aux_sym_type_token2] = "short",
+  [aux_sym_type_token3] = "long",
+  [aux_sym_type_token4] = "float",
+  [aux_sym_type_token5] = "ref",
+  [aux_sym_type_token6] = "array_var",
+  [aux_sym_type_token7] = "string_var",
   [aux_sym__start_block_token1] = "begin",
   [aux_sym_game_feature_token1] = "gamemode",
   [aux_sym_game_feature_token2] = "menumode",
@@ -89,7 +89,7 @@ static const char * const ts_symbol_names[] = {
   [sym_script_name] = "script_name",
   [sym__top_level] = "_top_level",
   [sym_variable_declaration] = "variable_declaration",
-  [sym_variable_type] = "variable_type",
+  [sym_type] = "type",
   [sym_variable] = "variable",
   [sym_block] = "block",
   [sym__start_block] = "_start_block",
@@ -112,13 +112,13 @@ static const TSSymbol ts_symbol_map[] = {
   [sym__identifier] = sym__identifier,
   [aux_sym_script_declaration_token1] = aux_sym_script_declaration_token1,
   [aux_sym_script_declaration_token2] = aux_sym_script_declaration_token2,
-  [aux_sym_variable_type_token1] = aux_sym_variable_type_token1,
-  [aux_sym_variable_type_token2] = aux_sym_variable_type_token2,
-  [aux_sym_variable_type_token3] = aux_sym_variable_type_token3,
-  [aux_sym_variable_type_token4] = aux_sym_variable_type_token4,
-  [aux_sym_variable_type_token5] = aux_sym_variable_type_token5,
-  [aux_sym_variable_type_token6] = aux_sym_variable_type_token6,
-  [aux_sym_variable_type_token7] = aux_sym_variable_type_token7,
+  [aux_sym_type_token1] = aux_sym_type_token1,
+  [aux_sym_type_token2] = aux_sym_type_token2,
+  [aux_sym_type_token3] = aux_sym_type_token3,
+  [aux_sym_type_token4] = aux_sym_type_token4,
+  [aux_sym_type_token5] = aux_sym_type_token5,
+  [aux_sym_type_token6] = aux_sym_type_token6,
+  [aux_sym_type_token7] = aux_sym_type_token7,
   [aux_sym__start_block_token1] = aux_sym__start_block_token1,
   [aux_sym_game_feature_token1] = aux_sym_game_feature_token1,
   [aux_sym_game_feature_token2] = aux_sym_game_feature_token2,
@@ -135,7 +135,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_script_name] = sym_script_name,
   [sym__top_level] = sym__top_level,
   [sym_variable_declaration] = sym_variable_declaration,
-  [sym_variable_type] = sym_variable_type,
+  [sym_type] = sym_type,
   [sym_variable] = sym_variable,
   [sym_block] = sym_block,
   [sym__start_block] = sym__start_block,
@@ -170,31 +170,31 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym_variable_type_token1] = {
+  [aux_sym_type_token1] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym_variable_type_token2] = {
+  [aux_sym_type_token2] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym_variable_type_token3] = {
+  [aux_sym_type_token3] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym_variable_type_token4] = {
+  [aux_sym_type_token4] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym_variable_type_token5] = {
+  [aux_sym_type_token5] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym_variable_type_token6] = {
+  [aux_sym_type_token6] = {
     .visible = true,
     .named = false,
   },
-  [aux_sym_variable_type_token7] = {
+  [aux_sym_type_token7] = {
     .visible = true,
     .named = false,
   },
@@ -262,7 +262,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_variable_type] = {
+  [sym_type] = {
     .visible = true,
     .named = true,
   },
@@ -671,7 +671,7 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
           lookahead == 'e') ADVANCE(44);
       END_STATE();
     case 32:
-      ACCEPT_TOKEN(aux_sym_variable_type_token1);
+      ACCEPT_TOKEN(aux_sym_type_token1);
       END_STATE();
     case 33:
       if (lookahead == 'G' ||
@@ -682,7 +682,7 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
           lookahead == 'u') ADVANCE(46);
       END_STATE();
     case 35:
-      ACCEPT_TOKEN(aux_sym_variable_type_token5);
+      ACCEPT_TOKEN(aux_sym_type_token5);
       END_STATE();
     case 36:
       ACCEPT_TOKEN(aux_sym_script_declaration_token1);
@@ -720,7 +720,7 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
           lookahead == 'm') ADVANCE(54);
       END_STATE();
     case 45:
-      ACCEPT_TOKEN(aux_sym_variable_type_token3);
+      ACCEPT_TOKEN(aux_sym_type_token3);
       END_STATE();
     case 46:
       if (lookahead == 'M' ||
@@ -745,7 +745,7 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(aux_sym__start_block_token1);
       END_STATE();
     case 52:
-      ACCEPT_TOKEN(aux_sym_variable_type_token4);
+      ACCEPT_TOKEN(aux_sym_type_token4);
       END_STATE();
     case 53:
       if (lookahead == 'I' ||
@@ -764,7 +764,7 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
           lookahead == 't') ADVANCE(63);
       END_STATE();
     case 57:
-      ACCEPT_TOKEN(aux_sym_variable_type_token2);
+      ACCEPT_TOKEN(aux_sym_type_token2);
       END_STATE();
     case 58:
       if (lookahead == 'G' ||
@@ -839,7 +839,7 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
           lookahead == 'a') ADVANCE(79);
       END_STATE();
     case 77:
-      ACCEPT_TOKEN(aux_sym_variable_type_token6);
+      ACCEPT_TOKEN(aux_sym_type_token6);
       END_STATE();
     case 78:
       if (lookahead == 'E' ||
@@ -853,7 +853,7 @@ static bool ts_lex_keywords(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(aux_sym_script_declaration_token2);
       END_STATE();
     case 81:
-      ACCEPT_TOKEN(aux_sym_variable_type_token7);
+      ACCEPT_TOKEN(aux_sym_type_token7);
       END_STATE();
     default:
       return false;
@@ -931,13 +931,13 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym__identifier] = ACTIONS(1),
     [aux_sym_script_declaration_token1] = ACTIONS(1),
     [aux_sym_script_declaration_token2] = ACTIONS(1),
-    [aux_sym_variable_type_token1] = ACTIONS(1),
-    [aux_sym_variable_type_token2] = ACTIONS(1),
-    [aux_sym_variable_type_token3] = ACTIONS(1),
-    [aux_sym_variable_type_token4] = ACTIONS(1),
-    [aux_sym_variable_type_token5] = ACTIONS(1),
-    [aux_sym_variable_type_token6] = ACTIONS(1),
-    [aux_sym_variable_type_token7] = ACTIONS(1),
+    [aux_sym_type_token1] = ACTIONS(1),
+    [aux_sym_type_token2] = ACTIONS(1),
+    [aux_sym_type_token3] = ACTIONS(1),
+    [aux_sym_type_token4] = ACTIONS(1),
+    [aux_sym_type_token5] = ACTIONS(1),
+    [aux_sym_type_token6] = ACTIONS(1),
+    [aux_sym_type_token7] = ACTIONS(1),
     [aux_sym__start_block_token1] = ACTIONS(1),
     [aux_sym_game_feature_token1] = ACTIONS(1),
     [aux_sym_game_feature_token2] = ACTIONS(1),
@@ -976,18 +976,18 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(13), 1,
       sym__start_block,
     STATE(28), 1,
-      sym_variable_type,
+      sym_type,
     STATE(11), 2,
       sym_variable_declaration,
       sym_block,
     ACTIONS(9), 7,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
   [38] = 9,
     ACTIONS(3), 1,
       anon_sym_SEMI,
@@ -1000,7 +1000,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(13), 1,
       sym__start_block,
     STATE(28), 1,
-      sym_variable_type,
+      sym_type,
     STATE(3), 2,
       sym_comment,
       aux_sym_source_file_repeat1,
@@ -1008,13 +1008,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_variable_declaration,
       sym_block,
     ACTIONS(15), 7,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
   [74] = 10,
     ACTIONS(3), 1,
       anon_sym_SEMI,
@@ -1031,18 +1031,18 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(13), 1,
       sym__start_block,
     STATE(28), 1,
-      sym_variable_type,
+      sym_type,
     STATE(11), 2,
       sym_variable_declaration,
       sym_block,
     ACTIONS(9), 7,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
   [112] = 3,
     ACTIONS(3), 1,
       anon_sym_SEMI,
@@ -1050,13 +1050,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_comment,
     ACTIONS(23), 9,
       ts_builtin_sym_end,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
       aux_sym__start_block_token1,
   [130] = 3,
     ACTIONS(3), 1,
@@ -1065,13 +1065,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_comment,
     ACTIONS(25), 9,
       ts_builtin_sym_end,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
       aux_sym__start_block_token1,
   [148] = 3,
     ACTIONS(3), 1,
@@ -1080,13 +1080,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_comment,
     ACTIONS(27), 9,
       ts_builtin_sym_end,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
       aux_sym__start_block_token1,
   [166] = 3,
     ACTIONS(3), 1,
@@ -1095,13 +1095,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_comment,
     ACTIONS(29), 9,
       ts_builtin_sym_end,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
       aux_sym__start_block_token1,
   [184] = 3,
     ACTIONS(3), 1,
@@ -1110,13 +1110,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_comment,
     ACTIONS(31), 9,
       ts_builtin_sym_end,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
       aux_sym__start_block_token1,
   [202] = 3,
     ACTIONS(3), 1,
@@ -1125,13 +1125,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_comment,
     ACTIONS(33), 9,
       ts_builtin_sym_end,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
       aux_sym__start_block_token1,
   [220] = 3,
     ACTIONS(3), 1,
@@ -1140,13 +1140,13 @@ static const uint16_t ts_small_parse_table[] = {
       sym_comment,
     ACTIONS(35), 9,
       ts_builtin_sym_end,
-      aux_sym_variable_type_token1,
-      aux_sym_variable_type_token2,
-      aux_sym_variable_type_token3,
-      aux_sym_variable_type_token4,
-      aux_sym_variable_type_token5,
-      aux_sym_variable_type_token6,
-      aux_sym_variable_type_token7,
+      aux_sym_type_token1,
+      aux_sym_type_token2,
+      aux_sym_type_token3,
+      aux_sym_type_token4,
+      aux_sym_type_token5,
+      aux_sym_type_token6,
+      aux_sym_type_token7,
       aux_sym__start_block_token1,
   [238] = 8,
     ACTIONS(3), 1,
@@ -1545,7 +1545,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [75] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_parameter, 1, .production_id = 2),
   [77] = {.entry = {.count = 1, .reusable = true}}, SHIFT(39),
   [79] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__inner_block, 2),
-  [81] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_variable_type, 1),
+  [81] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_type, 1),
   [83] = {.entry = {.count = 1, .reusable = true}}, SHIFT(8),
   [85] = {.entry = {.count = 1, .reusable = false}}, SHIFT(32),
   [87] = {.entry = {.count = 1, .reusable = false}}, SHIFT(46),

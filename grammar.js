@@ -34,12 +34,12 @@ module.exports = grammar({
     ),
 
     variable_declaration: $ => seq(
-      $.variable_type,
+      $.type,
       field('variable', $.variable),
       $._terminator,
     ),
 
-    variable_type: $ => choice(
+    type: $ => choice(
       keyword("int"),
       keyword("short"),
       keyword("long"),
