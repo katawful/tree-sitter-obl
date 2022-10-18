@@ -1,0 +1,26 @@
+===========
+Basic block
+===========
+scn test
+begin _gamemode
+end
+---
+(source_file
+  (script_declaration
+    (script_name))
+  (block
+    (game_feature)))
+
+=====================
+User-defined Function
+=====================
+scn test
+begin _function {}
+end
+---
+(source_file
+  (script_declaration
+    (script_name))
+  (block
+    (user_defined_function
+      (parameter_list))))

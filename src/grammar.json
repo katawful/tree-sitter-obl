@@ -221,25 +221,30 @@
       ]
     },
     "game_feature": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[gG][aA][mM][eE][mM][oO][dD][eE]"
-          },
-          "named": false,
-          "value": "gamemode"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[mM][eE][nN][uU][mM][oO][dD][eE]"
-          },
-          "named": false,
-          "value": "menumode"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "_?[gG][aA][mM][eE][mM][oO][dD][eE]"
+              },
+              "named": false,
+              "value": "gamemode"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "_?[mM][eE][nN][uU][mM][oO][dD][eE]"
+              },
+              "named": false,
+              "value": "menumode"
+            }
+          ]
         }
       ]
     },
@@ -247,13 +252,30 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[fF][uU][nN][cC][tT][iI][oO][nN]"
-          },
-          "named": false,
-          "value": "function"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "_"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "_?[fF][uU][nN][cC][tT][iI][oO][nN]"
+              },
+              "named": false,
+              "value": "function"
+            }
+          ]
         },
         {
           "type": "SYMBOL",
@@ -367,6 +389,10 @@
           "value": "(\\\\(.|\\r?\\n)|[^\\\\\\n])*"
         }
       ]
+    },
+    "_compile_with_oblivion_expr": {
+      "type": "STRING",
+      "value": "_"
     }
   },
   "extras": [

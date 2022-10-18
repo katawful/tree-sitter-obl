@@ -65,13 +65,22 @@ module.exports = grammar({
       $._terminator,
     ),
 
-    game_feature: $ => choice(
-      keyword("gamemode"),
-      keyword("menumode"),
-    ),
+    game_feature: $ => seq(
+      // optional(
+      //   /_/
+      // ),
+      choice(
+        keywordRegex("gamemode", true, "_?"),
+        keywordRegex("menumode", true, "_?"),
+      )),
 
     user_defined_function: $ => seq(
-      keyword("function"),
+      seq(
+        optional(
+          /_/,
+        ),
+        keywordRegex("function", true, "_?"),
+      ),
       $.parameter_list,
     ),
 
@@ -102,6 +111,8 @@ module.exports = grammar({
       ';',
       /(\\(.|\r?\n)|[^\\\n])*/
     ),
+
+    _compile_with_oblivion_expr: $ => '_',
   }
 });
 
@@ -111,6 +122,16 @@ function keyword(word, aliasAsWord = true) {
     pattern += `[${letter}${letter.toLocaleUpperCase()}]`
   }
   let result = new RegExp(pattern)
+  if (aliasAsWord) result = alias(result, word)
+  return result
+}
+function keywordRegex(word, aliasAsWord = true, regex) {
+  let pattern = ''
+  for (const letter of word) {
+    pattern += `[${letter}${letter.toLocaleUpperCase()}]`
+  }
+  let mid_result = regex + pattern
+  let result = new RegExp(mid_result)
   if (aliasAsWord) result = alias(result, word)
   return result
 }
