@@ -1,0 +1,47 @@
+====================
+Empty Parameter List
+====================
+scn test
+begin function {}
+end
+---
+(source_file
+  (script_declaration
+    (script_name))
+  (block
+    (user_defined_function
+      (parameter_list))))
+
+=====================
+Single Parameter List
+=====================
+scn test
+int var
+begin function {var}
+end
+---
+(source_file
+  (script_declaration
+    (script_name))
+  (variable_declaration (variable_type) (variable))
+  (block
+    (user_defined_function
+      (parameter_list (parameter)))))
+
+====================
+Multi Parameter List
+====================
+scn test
+int var1
+int var2
+begin function {var1, var2}
+end
+---
+(source_file
+  (script_declaration
+    (script_name))
+  (variable_declaration (variable_type) (variable))
+  (variable_declaration (variable_type) (variable))
+  (block
+    (user_defined_function
+      (parameter_list (parameter) (parameter)))))

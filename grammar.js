@@ -35,7 +35,7 @@ module.exports = grammar({
 
     variable_declaration: $ => seq(
       $.variable_type,
-      $.variable,
+      field('variable', $.variable),
       $._terminator,
     ),
 
@@ -61,7 +61,7 @@ module.exports = grammar({
 
     _start_block: $ => seq(
       keyword("begin"),
-      choice($.game_feature, $.function),
+      choice($.game_feature, $.user_defined_function),
       $._terminator,
     ),
 
@@ -70,7 +70,23 @@ module.exports = grammar({
       keyword("menumode"),
     ),
 
-    function: $ => "unimplemented",
+    user_defined_function: $ => seq(
+      keyword("function"),
+      $.parameter_list,
+    ),
+
+    parameter_list: $ => seq(
+      "{",
+      optional(seq(
+        $.parameter,
+        repeat(
+          seq(',', $.parameter),
+        ),
+      )),
+      "}",
+    ),
+
+    parameter: $ => alias($.variable, 'parameter'),
 
     _inner_block: $ => seq($.statement, $._terminator),
 
