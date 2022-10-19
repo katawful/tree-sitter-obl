@@ -1,0 +1,193 @@
+=======
+Literal
+=======
+scn test
+int x
+begin gamemode
+set x to reference
+end
+---
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left (variable))
+        (right (reference))))))
+
+====================
+One Binary Operation
+====================
+scn test
+int x
+begin gamemode
+set x to x + 1
+end
+---
+
+(source_file
+  (script_declaration
+    (script_name))
+  (variable_declaration
+    (type)
+    (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left (variable))
+        (right
+          (reference)
+          (binary_operator)
+          (integer))))))
+
+======================
+Multi Binary Operation
+======================
+scn test
+int x
+begin gamemode
+set x to x + 1 / 2
+end
+---
+
+(source_file
+  (script_declaration
+    (script_name))
+  (variable_declaration
+    (type)
+    (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (reference)
+          (binary_operator)
+          (integer)
+          (binary_operator)
+          (integer))))))
+
+=================================
+Parenthesized One Binary Operator
+=================================
+scn test
+int x
+begin gamemode
+set x to (x + 1)
+end
+---
+
+(source_file
+  (script_declaration
+    (script_name))
+  (variable_declaration
+    (type)
+    (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (parenthesized_expression
+            (reference)
+            (binary_operator)
+            (integer)))))))
+
+=================================
+Parenthesized Multi Binary Operator
+=================================
+scn test
+int x
+begin gamemode
+set x to (x + 1 / 2)
+end
+---
+
+(source_file
+  (script_declaration
+    (script_name))
+  (variable_declaration
+    (type)
+    (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (parenthesized_expression
+            (reference)
+            (binary_operator)
+            (integer)
+            (binary_operator)
+            (integer)))))))
+
+============================================
+Parenthesized Nested Multi Binary Operator 1
+============================================
+scn test
+int x
+begin gamemode
+set x to (x + (1 / 2))
+end
+---
+
+(source_file
+  (script_declaration
+    (script_name))
+  (variable_declaration
+    (type)
+    (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (parenthesized_expression
+            (reference)
+            (binary_operator)
+            (parenthesized_expression
+              (integer)
+              (binary_operator)
+              (integer))))))))
+
+============================================
+Parenthesized Nested Multi Binary Operator 2
+============================================
+scn test
+int x
+begin gamemode
+set x to ((x + 1) / 2)
+end
+---
+
+(source_file
+  (script_declaration
+    (script_name))
+  (variable_declaration
+    (type)
+    (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (parenthesized_expression
+            (parenthesized_expression
+              (reference)
+              (binary_operator)
+              (integer))
+            (binary_operator)
+            (integer)))))))

@@ -1,3 +1,35 @@
+const PREC = {
+  TOP: 20,
+  ASSIGNMENT: 15,
+  LOGICAL_AND: 14,
+  LOGICAL_OR: 13,
+  SLICE_PAIR: 12,
+  COMPOUND: 13,
+  EQUALITY: 11,
+  GREATER_LESS: 10,
+  BITWISE_OR: 9,
+  BITWISE_AND: 8,
+  BITWISE_SHIFT: 7,
+  ADD_SUB_CAT: 6,
+  MULT_DIV: 5,
+  EXPONENT: 4,
+  NEGATION: 3,
+  STRINGIZE: 3,
+  NUMERICIZE: 3,
+  DEREFERENCE: 3,
+  BOX: 3,
+  LOGICAL_NOT: 2,
+  PARENTHETICAL: 1,
+  SUBSCRIPT: 0,
+  MEMBER_ACCESS: 0,
+  ARRAY: 1,
+  PLAIN: -5, //stuff like GetFPS
+  DOT: -10, // stuff like quest.variable
+  ARGUMENTATIVE: -15, // stuff like GetName object
+  LITERAL: -20,
+  BOTTOM: -30,
+};
+
 module.exports = grammar({
   name: 'obl',
 
@@ -99,7 +131,70 @@ module.exports = grammar({
 
     _end_block: $ => seq(keyword("end"), $._terminator),
 
-    statement: $ => "word",
+    statement: $ => choice(
+      "word",
+      $.set_statement,
+    ),
+
+    set_statement: $ => seq(
+      keyword("set"),
+      $.left,
+      keyword("to"),
+      $.right,
+    ),
+
+    left: $ => field("left", $.variable),
+    right: $ => field("right", $._expression),
+
+    _expression: $ => choice(
+      $._literal, // note that this will have to cover variables and literals for now
+      $._binary_expression,
+      $.parenthesized_expression,
+    ),
+
+    parenthesized_expression: $ => seq(
+      "(",
+      $._expression,
+      ")",
+    ),
+
+    _binary_expression: $ => seq(
+      prec.left($._expression),
+      $.binary_operator,
+      prec.left($._expression),
+    ),
+
+    binary_operator: $ => choice(
+      // prec(PREC.ASSIGNMENT, ':='),
+      prec(PREC.LOGICAL_OR, '||'),
+      prec(PREC.LOGICAL_AND, '&&'),
+      prec(PREC.SLICE_PAIR, '::'),
+      prec(PREC.EQUALITY, '=='),
+      prec(PREC.EQUALITY, '!='),
+      prec(PREC.GREATER_LESS, '>'),
+      prec(PREC.GREATER_LESS, '>='),
+      prec(PREC.GREATER_LESS, '<'),
+      prec(PREC.GREATER_LESS, '<='),
+      prec(PREC.BITWISE_OR, '|'),
+      prec(PREC.BITWISE_AND, '&'),
+      prec(PREC.BITWISE_SHIFT, '<<'),
+      prec(PREC.BITWISE_SHIFT, '>>'),
+      prec(PREC.ADD_SUB_CAT, '+'),
+      prec(PREC.ADD_SUB_CAT, '-'),
+      prec(PREC.MULT_DIV, '*'),
+      prec(PREC.MULT_DIV, '/'),
+      prec(PREC.MULT_DIV, '%'),
+      prec(PREC.EXPONENT, '^'),
+    ),
+
+    unary_operator: $ => choice(
+      prec(PREC.NEGATION, '-'),
+      prec(PREC.STRINGIZE, '$'),
+      prec(PREC.NUMERICIZE, '#'),
+      prec(PREC.DEREFERENCE, '*'),
+      prec(PREC.BOX, '&'),
+      prec(PREC.LOGICAL_NOT, '!'),
+    ),
 
     // i chose to keep identifiers anoymous as it is used in many areas
     // TODO: address invalid characters

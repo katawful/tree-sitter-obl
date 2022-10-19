@@ -1,5 +1,10 @@
 [
   {
+    "type": "binary_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "block",
     "named": true,
     "fields": {},
@@ -53,6 +58,22 @@
     "fields": {}
   },
   {
+    "type": "left",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "variable",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "parameter",
     "named": true,
     "fields": {
@@ -99,9 +120,145 @@
     }
   },
   {
+    "type": "parenthesized_expression",
+    "named": true,
+    "fields": {
+      "float": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          }
+        ]
+      },
+      "integer": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "reference": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
+      "string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "reference",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "right",
+    "named": true,
+    "fields": {
+      "float": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          }
+        ]
+      },
+      "integer": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "reference": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_operator",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "reference",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "script_declaration",
@@ -124,6 +281,25 @@
     "fields": {}
   },
   {
+    "type": "set_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "left",
+          "named": true
+        },
+        {
+          "type": "right",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -141,6 +317,21 @@
         },
         {
           "type": "variable_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "set_statement",
           "named": true
         }
       ]
@@ -198,11 +389,99 @@
     }
   },
   {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "$",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "&&",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": ",",
     "named": false
   },
   {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "::",
+    "named": false
+  },
+  {
     "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": ">>",
+    "named": false
+  },
+  {
+    "type": "^",
     "named": false
   },
   {
@@ -246,12 +525,12 @@
     "named": false
   },
   {
-    "type": "short",
+    "type": "set",
     "named": false
   },
   {
-    "type": "statement",
-    "named": true
+    "type": "short",
+    "named": false
   },
   {
     "type": "string",
@@ -262,7 +541,23 @@
     "named": false
   },
   {
+    "type": "to",
+    "named": false
+  },
+  {
+    "type": "word",
+    "named": false
+  },
+  {
     "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "||",
     "named": false
   },
   {
