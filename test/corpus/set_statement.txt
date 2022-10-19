@@ -28,11 +28,8 @@ end
 ---
 
 (source_file
-  (script_declaration
-    (script_name))
-  (variable_declaration
-    (type)
-    (variable))
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
   (block
     (game_feature)
     (statement
@@ -54,11 +51,8 @@ end
 ---
 
 (source_file
-  (script_declaration
-    (script_name))
-  (variable_declaration
-    (type)
-    (variable))
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
   (block
     (game_feature)
     (statement
@@ -83,11 +77,8 @@ end
 ---
 
 (source_file
-  (script_declaration
-    (script_name))
-  (variable_declaration
-    (type)
-    (variable))
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
   (block
     (game_feature)
     (statement
@@ -111,11 +102,8 @@ end
 ---
 
 (source_file
-  (script_declaration
-    (script_name))
-  (variable_declaration
-    (type)
-    (variable))
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
   (block
     (game_feature)
     (statement
@@ -141,11 +129,8 @@ end
 ---
 
 (source_file
-  (script_declaration
-    (script_name))
-  (variable_declaration
-    (type)
-    (variable))
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
   (block
     (game_feature)
     (statement
@@ -172,11 +157,8 @@ end
 ---
 
 (source_file
-  (script_declaration
-    (script_name))
-  (variable_declaration
-    (type)
-    (variable))
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
   (block
     (game_feature)
     (statement
@@ -191,3 +173,179 @@ end
               (integer))
             (binary_operator)
             (integer)))))))
+
+====================
+One Unary Operation
+====================
+scn test
+int x
+begin gamemode
+set x to $x
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left (variable))
+        (right
+          (unary_operator)
+          (reference))))))
+
+======================
+Multi Unary Operation
+======================
+scn test
+int x
+int y
+string_var z
+begin gamemode
+set z to $x + $y
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (unary_operator)
+          (reference)
+          (binary_operator)
+          (unary_operator)
+          (reference))))))
+
+=================================
+Parenthesized One Unary Operator
+=================================
+scn test
+int x
+begin gamemode
+set x to ($x)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (parenthesized_expression
+            (unary_operator)
+            (reference)))))))
+
+=================================
+Parenthesized Multi Unary Operator
+=================================
+scn test
+int x
+int y
+string_var z
+begin gamemode
+set z to ($x + $y)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (parenthesized_expression
+            (unary_operator)
+            (reference)
+            (binary_operator)
+            (unary_operator)
+            (reference)))))))
+
+============================================
+Parenthesized Nested Multi Unary Operator 1
+============================================
+scn test
+int x
+int y
+string_var z
+begin gamemode
+set z to ($x + ($y + 1))
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (parenthesized_expression
+            (unary_operator)
+            (reference)
+            (binary_operator)
+            (parenthesized_expression
+              (unary_operator)
+              (reference)
+              (binary_operator)
+              (integer))))))))
+
+============================================
+Parenthesized Nested Multi Unary Operator 2
+============================================
+scn test
+int x
+int y
+string_var z
+begin gamemode
+set z to (($x + $y) + 1)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (variable))
+        (right
+          (parenthesized_expression
+            (parenthesized_expression
+              (unary_operator)
+              (reference)
+              (binary_operator)
+              (unary_operator)
+              (reference))
+            (binary_operator)
+            (integer)))))))
+

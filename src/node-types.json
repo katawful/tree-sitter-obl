@@ -175,6 +175,10 @@
         {
           "type": "parenthesized_expression",
           "named": true
+        },
+        {
+          "type": "unary_operator",
+          "named": true
         }
       ]
     }
@@ -244,6 +248,10 @@
           },
           {
             "type": "string",
+            "named": true
+          },
+          {
+            "type": "unary_operator",
             "named": true
           }
         ]
@@ -339,6 +347,11 @@
   },
   {
     "type": "type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "unary_operator",
     "named": true,
     "fields": {}
   },

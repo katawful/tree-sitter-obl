@@ -149,6 +149,7 @@ module.exports = grammar({
     _expression: $ => choice(
       $._literal, // note that this will have to cover variables and literals for now
       $._binary_expression,
+      $._unary_expression,
       $.parenthesized_expression,
     ),
 
@@ -161,6 +162,11 @@ module.exports = grammar({
     _binary_expression: $ => seq(
       prec.left($._expression),
       $.binary_operator,
+      prec.left($._expression),
+    ),
+
+    _unary_expression: $ => seq(
+      $.unary_operator,
       prec.left($._expression),
     ),
 
