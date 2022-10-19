@@ -65,7 +65,7 @@ module.exports = grammar({
 
     game_feature: $ => seq(
       $._identifier,
-      optional($._parameter_list),
+      optional($._parameter_list_opt_comma),
     ),
 
     user_defined_function: $ => seq(
@@ -80,13 +80,20 @@ module.exports = grammar({
       ),
     ),
 
+    _parameter_list_opt_comma: $ => seq(
+      $.parameter,
+      repeat(
+        seq(optional(','), $.parameter),
+      ),
+    ),
+
     _enclosed_parameter_list: $ => seq(
       "{",
       optional($._parameter_list),
       "}",
     ),
 
-    parameter: $ => alias(choice($.variable, $._literal), 'parameter'),
+    parameter: $ => alias($._literal, 'parameter'),
 
     _inner_block: $ => seq($.statement, $._terminator),
 
@@ -108,7 +115,9 @@ module.exports = grammar({
       field('integer', $.integer),
       field('float', $.float),
       field('string', $.string),
+      field('reference', $.reference),
     ),
+    reference: $ => $._identifier,
     string: $ => /".*"/,
     float: $ => choice(
       /\-?\d+\.\d*/,

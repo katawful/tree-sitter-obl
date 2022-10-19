@@ -54,7 +54,7 @@
   },
   {
     "type": "parameter",
-    "named": false,
+    "named": true,
     "fields": {
       "float": {
         "multiple": false,
@@ -76,6 +76,16 @@
           }
         ]
       },
+      "reference": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
       "string": {
         "multiple": false,
         "required": false,
@@ -87,6 +97,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "reference",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "script_declaration",

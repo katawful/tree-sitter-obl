@@ -24,7 +24,7 @@ end
     (script_name))
   (variable_declaration (type) (variable))
   (block
-    (user_defined_function (parameter))))
+    (user_defined_function (parameter (reference)))))
 
 ====================
 Multi Parameter List
@@ -41,4 +41,5 @@ end
   (variable_declaration (type) (variable))
   (variable_declaration (type) (variable))
   (block
-    (user_defined_function (parameter) (parameter))))
+    (user_defined_function (parameter (reference)) 
+                           (parameter (reference)))))

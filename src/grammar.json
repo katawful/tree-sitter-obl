@@ -232,7 +232,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_parameter_list"
+              "name": "_parameter_list_opt_comma"
             },
             {
               "type": "BLANK"
@@ -240,10 +240,6 @@
           ]
         }
       ]
-    },
-    "menu_type": {
-      "type": "SYMBOL",
-      "name": "integer"
     },
     "user_defined_function": {
       "type": "SEQ",
@@ -288,6 +284,39 @@
         }
       ]
     },
+    "_parameter_list_opt_comma": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "parameter"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": ","
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
+                "type": "SYMBOL",
+                "name": "parameter"
+              }
+            ]
+          }
+        }
+      ]
+    },
     "_enclosed_parameter_list": {
       "type": "SEQ",
       "members": [
@@ -316,17 +345,8 @@
     "parameter": {
       "type": "ALIAS",
       "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "variable"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_literal"
-          }
-        ]
+        "type": "SYMBOL",
+        "name": "_literal"
       },
       "named": false,
       "value": "parameter"
@@ -409,8 +429,20 @@
             "type": "SYMBOL",
             "name": "string"
           }
+        },
+        {
+          "type": "FIELD",
+          "name": "reference",
+          "content": {
+            "type": "SYMBOL",
+            "name": "reference"
+          }
         }
       ]
+    },
+    "reference": {
+      "type": "SYMBOL",
+      "name": "_identifier"
     },
     "string": {
       "type": "PATTERN",
