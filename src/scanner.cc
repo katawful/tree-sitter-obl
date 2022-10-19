@@ -42,15 +42,41 @@ struct Scanner {
     }
   }
 
+  int space_handler(TSLexer *lexer) {
+    int prevCol = 0;
+    while (lexer->lookahead == ' ' || lexer->lookahead == '\t') {
+      int col = lexer->get_column(lexer);
+      skip(lexer);
+      // if at end of line, and nothing but whitespace
+      // end the mark and return true
+      // we've found what we were looking for
+      if (lexer->lookahead == '\n'
+        || lexer->lookahead == '\r'
+        || lexer->lookahead == ';'
+        || lexer->lookahead == 0)
+      {
+        lexer->mark_end(lexer);
+        return true;
+        // Any other character is **NOT** the terminator for the whitespace
+      } else if (lexer->lookahead != ' ' && lexer->lookahead != '\t') {
+        lexer->mark_end(lexer);
+        return false;
+        // if we somehow got to the next line, we were at eol anyways
+      } else if (col == 0) {
+        lexer->mark_end(lexer);
+        return true;
+      }
+      prevCol = col;
+    }
+  }
+
   bool scan(TSLexer *lexer, const bool *valid_symbols) {
     int breakChar = -1;
     if (valid_symbols[TERMINATOR]) {
       while (lexer->lookahead >= 0) {
         int currChar;
         currChar = lexer->lookahead;
-        if (currChar == ' '
-          || currChar == '\t'
-          || currChar == '\n'
+        if (currChar == '\n'
           || currChar == '\r'
           || currChar == ';'
           || currChar == 0)
@@ -58,6 +84,15 @@ struct Scanner {
           lexer->mark_end(lexer);
           breakChar = currChar;
           break;
+          /* Spaces need to be handled specially */
+        } else if (currChar == ' ' || currChar == '\t') {
+          if (space_handler(lexer) == true) {
+            breakChar = currChar;
+            break;
+          } else {
+            breakChar = -1;
+            break;
+          }
         } else {
           lexer->mark_end(lexer);
           breakChar = -1;

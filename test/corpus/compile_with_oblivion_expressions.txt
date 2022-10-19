@@ -22,5 +22,4 @@ end
   (script_declaration
     (script_name))
   (block
-    (user_defined_function
-      (parameter_list))))
+    (user_defined_function)))

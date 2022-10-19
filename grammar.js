@@ -53,10 +53,8 @@ module.exports = grammar({
 
     block: $ => seq(
       $._start_block,
-      // $._terminator,
       repeat($._inner_block),
       $._end_block,
-      // repeat($._terminator),
     ),
 
     _start_block: $ => seq(
@@ -66,53 +64,59 @@ module.exports = grammar({
     ),
 
     game_feature: $ => seq(
-      // optional(
-      //   /_/
-      // ),
-      choice(
-        keywordRegex("gamemode", true, "_?"),
-        keywordRegex("menumode", true, "_?"),
-      )),
-
-    user_defined_function: $ => seq(
-      seq(
-        optional(
-          /_/,
-        ),
-        keywordRegex("function", true, "_?"),
-      ),
-      $.parameter_list,
+      $._identifier,
+      optional($._parameter_list),
     ),
 
-    parameter_list: $ => seq(
+    user_defined_function: $ => seq(
+      keywordRegex("function", true, "_?"),
+      $._enclosed_parameter_list,
+    ),
+
+    _parameter_list: $ => seq(
+      $.parameter,
+      repeat(
+        seq(',', $.parameter),
+      ),
+    ),
+
+    _enclosed_parameter_list: $ => seq(
       "{",
-      optional(seq(
-        $.parameter,
-        repeat(
-          seq(',', $.parameter),
-        ),
-      )),
+      optional($._parameter_list),
       "}",
     ),
 
-    parameter: $ => alias($.variable, 'parameter'),
+    parameter: $ => alias(choice($.variable, $._literal), 'parameter'),
 
     _inner_block: $ => seq($.statement, $._terminator),
 
     _end_block: $ => seq(keyword("end"), $._terminator),
 
-    statement: $ => $._identifier,
+    statement: $ => "word",
 
     // i chose to keep identifiers anoymous as it is used in many areas
     // TODO: address invalid characters
-    _identifier: $ => /[a-zA-Z_]\w*/,
+    _identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]?\w*/,
 
     comment: $ => seq(
       ';',
       /(\\(.|\r?\n)|[^\\\n])*/
     ),
 
-    _compile_with_oblivion_expr: $ => '_',
+    // TODO: add ref, sci notation, type literals
+    _literal: $ => choice(
+      field('integer', $.integer),
+      field('float', $.float),
+      field('string', $.string),
+    ),
+    string: $ => /".*"/,
+    float: $ => choice(
+      /\-?\d+\.\d*/,
+    ),
+    integer: $ => choice(
+      /\-?\d+/,
+    ),
+
   }
 });
 

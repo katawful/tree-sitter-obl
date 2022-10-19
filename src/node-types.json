@@ -28,17 +28,12 @@
     "fields": {}
   },
   {
-    "type": "game_feature",
+    "type": "float",
     "named": true,
     "fields": {}
   },
   {
-    "type": "parameter",
-    "named": false,
-    "fields": {}
-  },
-  {
-    "type": "parameter_list",
+    "type": "game_feature",
     "named": true,
     "fields": {},
     "children": {
@@ -50,6 +45,47 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "integer",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "parameter",
+    "named": false,
+    "fields": {
+      "float": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          }
+        ]
+      },
+      "integer": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "string": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -96,11 +132,6 @@
     }
   },
   {
-    "type": "statement",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "type",
     "named": true,
     "fields": {}
@@ -110,11 +141,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
-          "type": "parameter_list",
+          "type": "parameter",
           "named": true
         }
       ]
@@ -180,19 +211,11 @@
     "named": false
   },
   {
-    "type": "gamemode",
-    "named": false
-  },
-  {
     "type": "int",
     "named": false
   },
   {
     "type": "long",
-    "named": false
-  },
-  {
-    "type": "menumode",
     "named": false
   },
   {
@@ -210,6 +233,14 @@
   {
     "type": "short",
     "named": false
+  },
+  {
+    "type": "statement",
+    "named": true
+  },
+  {
+    "type": "string",
+    "named": true
   },
   {
     "type": "string_var",

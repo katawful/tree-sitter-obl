@@ -9,8 +9,7 @@ end
   (script_declaration
     (script_name))
   (block
-    (user_defined_function
-      (parameter_list))))
+    (user_defined_function)))
 
 =====================
 Single Parameter List
@@ -25,8 +24,7 @@ end
     (script_name))
   (variable_declaration (type) (variable))
   (block
-    (user_defined_function
-      (parameter_list (parameter)))))
+    (user_defined_function (parameter))))
 
 ====================
 Multi Parameter List
@@ -43,5 +41,4 @@ end
   (variable_declaration (type) (variable))
   (variable_declaration (type) (variable))
   (block
-    (user_defined_function
-      (parameter_list (parameter) (parameter)))))
+    (user_defined_function (parameter) (parameter))))

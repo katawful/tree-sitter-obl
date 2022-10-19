@@ -75,3 +75,29 @@ end
   (block
     (game_feature)
     (statement)))
+
+======================
+MenuMode Block w/ Menu
+======================
+scn block
+begin menumode 1011
+end
+---
+(source_file
+  (script_declaration
+    (script_name))
+  (block
+    (game_feature (parameter (integer)))))
+
+=======================
+MenuMode Block w/o Menu
+=======================
+scn block
+begin menumode
+end
+---
+(source_file
+  (script_declaration
+    (script_name))
+  (block
+    (game_feature)))
