@@ -1,3 +1,8 @@
 scn test
-begin _ function {}
+; comment
+;; comment
+int some_epicVar_name424
+ref other_var;comment
+begin _function {some_epicVar_name424, other_var} ;comment
+  word
 end

@@ -1,0 +1,13 @@
+scn blockTypes
+
+int var1
+begin gamemode
+end
+begin menumode 1011
+end
+begin onadd player
+end
+begin onalarm 0 player
+end
+begin onalarm 0, player
+end
