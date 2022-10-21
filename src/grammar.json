@@ -451,14 +451,6 @@
           "value": "let"
         },
         {
-          "type": "FIELD",
-          "name": "left",
-          "content": {
-            "type": "SYMBOL",
-            "name": "left"
-          }
-        },
-        {
           "type": "CHOICE",
           "members": [
             {
@@ -473,6 +465,14 @@
               "name": "_let_inside_compound"
             }
           ]
+        },
+        {
+          "type": "FIELD",
+          "name": "right",
+          "content": {
+            "type": "SYMBOL",
+            "name": "right"
+          }
         }
       ]
     },
@@ -480,16 +480,16 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "assignment"
-        },
-        {
           "type": "FIELD",
-          "name": "right",
+          "name": "left",
           "content": {
             "type": "SYMBOL",
-            "name": "right"
+            "name": "left"
           }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "assignment"
         }
       ]
     },
@@ -497,16 +497,16 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "compound"
-        },
-        {
           "type": "FIELD",
-          "name": "right",
+          "name": "left",
           "content": {
             "type": "SYMBOL",
-            "name": "right"
+            "name": "left"
           }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "compound"
         }
       ]
     },

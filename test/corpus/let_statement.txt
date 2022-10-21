@@ -40,9 +40,9 @@ end
       (let_statement
         (left (variable))
         (assignment)
-        (right (reference))
+        (left (variable))
         (assignment)
-        (right (reference))
+        (left (variable))
         (assignment)
         (right (integer))))))
 
@@ -68,9 +68,9 @@ end
       (let_statement
         (left (variable))
         (assignment)
-        (right (reference))
+        (left (variable))
         (assignment)
-        (right (reference))
+        (left (variable))
         (assignment)
         (right
           (integer)

@@ -146,21 +146,21 @@ module.exports = grammar({
 
     let_statement: $ => seq(
       keyword("let"),
-      field("left", $.left),
       choice(
         repeat1($._let_inside_assignment),
         $._let_inside_compound,
       ),
+      field("right", $.right),
     ),
 
     _let_inside_assignment: $ => seq(
+      field("left", $.left),
       $.assignment,
-      field("right", $.right),
     ),
 
     _let_inside_compound: $ => seq(
+      field("left", $.left),
       $.compound,
-      field("right", $.right),
     ),
 
     left: $ => $.variable,
