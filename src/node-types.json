@@ -38,6 +38,11 @@
     "fields": {}
   },
   {
+    "type": "compound",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "float",
     "named": true,
     "fields": {}
@@ -92,7 +97,7 @@
         ]
       },
       "right": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
@@ -103,11 +108,15 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "compound",
           "named": true
         }
       ]

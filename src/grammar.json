@@ -459,8 +459,46 @@
           }
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT1",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_let_inside_assignment"
+              }
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_let_inside_compound"
+            }
+          ]
+        }
+      ]
+    },
+    "_let_inside_assignment": {
+      "type": "SEQ",
+      "members": [
+        {
           "type": "SYMBOL",
           "name": "assignment"
+        },
+        {
+          "type": "FIELD",
+          "name": "right",
+          "content": {
+            "type": "SYMBOL",
+            "name": "right"
+          }
+        }
+      ]
+    },
+    "_let_inside_compound": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "compound"
         },
         {
           "type": "FIELD",
@@ -717,17 +755,9 @@
         }
       ]
     },
-    "assignment": {
+    "compound": {
       "type": "CHOICE",
       "members": [
-        {
-          "type": "PREC",
-          "value": 15,
-          "content": {
-            "type": "STRING",
-            "value": ":="
-          }
-        },
         {
           "type": "PREC",
           "value": 13,
@@ -769,6 +799,14 @@
           }
         }
       ]
+    },
+    "assignment": {
+      "type": "PREC",
+      "value": 15,
+      "content": {
+        "type": "STRING",
+        "value": ":="
+      }
     },
     "unary_operator": {
       "type": "CHOICE",

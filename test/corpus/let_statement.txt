@@ -15,8 +15,68 @@ end
     (statement
       (let_statement
         (left (variable))
-        (assignment)
+        (compound)
         (right (reference))))))
+
+================
+Multi-Assignment
+================
+scn test
+int x
+int y
+int z
+begin gamemode
+let x := y := z := 0
+end
+---
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right (reference))
+        (assignment)
+        (right (reference))
+        (assignment)
+        (right (integer))))))
+
+==============================
+Multi-Assignment w/ Expression
+==============================
+scn test
+int x
+int y
+int z
+begin gamemode
+let x := y := z := 1 / 2
+end
+---
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right (reference))
+        (assignment)
+        (right (reference))
+        (assignment)
+        (right
+          (integer)
+          (binary_operator)
+          (integer))))))
+
 
 ====================
 One Binary Operation

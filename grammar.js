@@ -147,7 +147,19 @@ module.exports = grammar({
     let_statement: $ => seq(
       keyword("let"),
       field("left", $.left),
+      choice(
+        repeat1($._let_inside_assignment),
+        $._let_inside_compound,
+      ),
+    ),
+
+    _let_inside_assignment: $ => seq(
       $.assignment,
+      field("right", $.right),
+    ),
+
+    _let_inside_compound: $ => seq(
+      $.compound,
       field("right", $.right),
     ),
 
@@ -200,14 +212,16 @@ module.exports = grammar({
       prec(PREC.EXPONENT, '^'),
     ),
 
-    assignment: $ => choice(
-      prec(PREC.ASSIGNMENT, ':='),
+    compound: $ => choice(
+      // prec(PREC.ASSIGNMENT, ':='),
       prec(PREC.COMPOUND, '+='),
       prec(PREC.COMPOUND, '-='),
       prec(PREC.COMPOUND, '*='),
       prec(PREC.COMPOUND, '/='),
       prec(PREC.COMPOUND, '^='),
     ),
+
+    assignment: $ => prec(PREC.ASSIGNMENT, ':='),
 
     unary_operator: $ => choice(
       prec(PREC.NEGATION, '-'),
