@@ -134,17 +134,25 @@ module.exports = grammar({
     statement: $ => choice(
       "word",
       $.set_statement,
+      $.let_statement,
     ),
 
     set_statement: $ => seq(
       keyword("set"),
-      $.left,
+      field("left", $.left),
       keyword("to"),
-      $.right,
+      field("right", $.right),
     ),
 
-    left: $ => field("left", $.variable),
-    right: $ => field("right", $._expression),
+    let_statement: $ => seq(
+      keyword("let"),
+      field("left", $.left),
+      $.assignment,
+      field("right", $.right),
+    ),
+
+    left: $ => $.variable,
+    right: $ => $._expression,
 
     _expression: $ => choice(
       $._literal, // note that this will have to cover variables and literals for now
@@ -171,7 +179,6 @@ module.exports = grammar({
     ),
 
     binary_operator: $ => choice(
-      // prec(PREC.ASSIGNMENT, ':='),
       prec(PREC.LOGICAL_OR, '||'),
       prec(PREC.LOGICAL_AND, '&&'),
       prec(PREC.SLICE_PAIR, '::'),
@@ -191,6 +198,15 @@ module.exports = grammar({
       prec(PREC.MULT_DIV, '/'),
       prec(PREC.MULT_DIV, '%'),
       prec(PREC.EXPONENT, '^'),
+    ),
+
+    assignment: $ => choice(
+      prec(PREC.ASSIGNMENT, ':='),
+      prec(PREC.COMPOUND, '+='),
+      prec(PREC.COMPOUND, '-='),
+      prec(PREC.COMPOUND, '*='),
+      prec(PREC.COMPOUND, '/='),
+      prec(PREC.COMPOUND, '^='),
     ),
 
     unary_operator: $ => choice(

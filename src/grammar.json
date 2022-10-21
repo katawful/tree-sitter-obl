@@ -392,6 +392,10 @@
         {
           "type": "SYMBOL",
           "name": "set_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "let_statement"
         }
       ]
     },
@@ -408,8 +412,12 @@
           "value": "set"
         },
         {
-          "type": "SYMBOL",
-          "name": "left"
+          "type": "FIELD",
+          "name": "left",
+          "content": {
+            "type": "SYMBOL",
+            "name": "left"
+          }
         },
         {
           "type": "ALIAS",
@@ -421,26 +429,56 @@
           "value": "to"
         },
         {
+          "type": "FIELD",
+          "name": "right",
+          "content": {
+            "type": "SYMBOL",
+            "name": "right"
+          }
+        }
+      ]
+    },
+    "let_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[lL][eE][tT]"
+          },
+          "named": false,
+          "value": "let"
+        },
+        {
+          "type": "FIELD",
+          "name": "left",
+          "content": {
+            "type": "SYMBOL",
+            "name": "left"
+          }
+        },
+        {
           "type": "SYMBOL",
-          "name": "right"
+          "name": "assignment"
+        },
+        {
+          "type": "FIELD",
+          "name": "right",
+          "content": {
+            "type": "SYMBOL",
+            "name": "right"
+          }
         }
       ]
     },
     "left": {
-      "type": "FIELD",
-      "name": "left",
-      "content": {
-        "type": "SYMBOL",
-        "name": "variable"
-      }
+      "type": "SYMBOL",
+      "name": "variable"
     },
     "right": {
-      "type": "FIELD",
-      "name": "right",
-      "content": {
-        "type": "SYMBOL",
-        "name": "_expression"
-      }
+      "type": "SYMBOL",
+      "name": "_expression"
     },
     "_expression": {
       "type": "CHOICE",
@@ -675,6 +713,59 @@
           "content": {
             "type": "STRING",
             "value": "^"
+          }
+        }
+      ]
+    },
+    "assignment": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PREC",
+          "value": 15,
+          "content": {
+            "type": "STRING",
+            "value": ":="
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 13,
+          "content": {
+            "type": "STRING",
+            "value": "+="
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 13,
+          "content": {
+            "type": "STRING",
+            "value": "-="
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 13,
+          "content": {
+            "type": "STRING",
+            "value": "*="
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 13,
+          "content": {
+            "type": "STRING",
+            "value": "/="
+          }
+        },
+        {
+          "type": "PREC",
+          "value": 13,
+          "content": {
+            "type": "STRING",
+            "value": "^="
           }
         }
       ]

@@ -1,0 +1,354 @@
+=======
+Literal
+=======
+scn test
+int x
+begin gamemode
+let x += reference
+end
+---
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right (reference))))))
+
+====================
+One Binary Operation
+====================
+scn test
+int x
+begin gamemode
+let x := x + 1
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (reference)
+          (binary_operator)
+          (integer))))))
+
+======================
+Multi Binary Operation
+======================
+scn test
+int x
+begin gamemode
+let x := x + 1 / 2
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (reference)
+          (binary_operator)
+          (integer)
+          (binary_operator)
+          (integer))))))
+
+=================================
+Parenthesized One Binary Operator
+=================================
+scn test
+int x
+begin gamemode
+let x := (x + 1)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (parenthesized_expression
+            (reference)
+            (binary_operator)
+            (integer)))))))
+
+=================================
+Parenthesized Multi Binary Operator
+=================================
+scn test
+int x
+begin gamemode
+let x := (x + 1 / 2)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (parenthesized_expression
+            (reference)
+            (binary_operator)
+            (integer)
+            (binary_operator)
+            (integer)))))))
+
+============================================
+Parenthesized Nested Multi Binary Operator 1
+============================================
+scn test
+int x
+begin gamemode
+let x := (x + (1 / 2))
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (parenthesized_expression
+            (reference)
+            (binary_operator)
+            (parenthesized_expression
+              (integer)
+              (binary_operator)
+              (integer))))))))
+
+============================================
+Parenthesized Nested Multi Binary Operator 2
+============================================
+scn test
+int x
+begin gamemode
+let x := ((x + 1) / 2)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (parenthesized_expression
+            (parenthesized_expression
+              (reference)
+              (binary_operator)
+              (integer))
+            (binary_operator)
+            (integer)))))))
+
+====================
+One Unary Operation
+====================
+scn test
+int x
+begin gamemode
+let x := $x
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (unary_operator)
+          (reference))))))
+
+======================
+Multi Unary Operation
+======================
+scn test
+int x
+int y
+string_var z
+begin gamemode
+let z := $x + $y
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (unary_operator)
+          (reference)
+          (binary_operator)
+          (unary_operator)
+          (reference))))))
+
+=================================
+Parenthesized One Unary Operator
+=================================
+scn test
+int x
+begin gamemode
+let x := ($x)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (parenthesized_expression
+            (unary_operator)
+            (reference)))))))
+
+=================================
+Parenthesized Multi Unary Operator
+=================================
+scn test
+int x
+int y
+string_var z
+begin gamemode
+let z := ($x + $y)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (parenthesized_expression
+            (unary_operator)
+            (reference)
+            (binary_operator)
+            (unary_operator)
+            (reference)))))))
+
+============================================
+Parenthesized Nested Multi Unary Operator 1
+============================================
+scn test
+int x
+int y
+string_var z
+begin gamemode
+let z := ($x + ($y + 1))
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (parenthesized_expression
+            (unary_operator)
+            (reference)
+            (binary_operator)
+            (parenthesized_expression
+              (unary_operator)
+              (reference)
+              (binary_operator)
+              (integer))))))))
+
+============================================
+Parenthesized Nested Multi Unary Operator 2
+============================================
+scn test
+int x
+int y
+string_var z
+begin gamemode
+let z := (($x + $y) + 1)
+end
+---
+
+(source_file
+  (script_declaration (script_name))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (variable_declaration (type) (variable))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right
+          (parenthesized_expression
+            (parenthesized_expression
+              (unary_operator)
+              (reference)
+              (binary_operator)
+              (unary_operator)
+              (reference))
+            (binary_operator)
+            (integer)))))))
+
