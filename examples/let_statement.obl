@@ -1,0 +1,11 @@
+scn test
+int x
+int y
+string_var z
+begin gamemobe
+  let x := x + 1
+  let x := (y + (x / 2))
+  let x := y := x + 1
+  let y := (y / 2) + x
+  let z := $(y + 1) + $x
+end

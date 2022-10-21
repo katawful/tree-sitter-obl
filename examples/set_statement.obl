@@ -1,0 +1,11 @@
+scn test
+int x
+int y
+string_var z
+begin gamemobe
+  set x to x + 1
+  set x to (y + (x / 2))
+  set z to $x
+  set y to (y / 2) + x
+  set z to $(y + 1) + $x
+end
