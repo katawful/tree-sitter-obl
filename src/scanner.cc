@@ -12,6 +12,8 @@ using std::string;
 
 enum TokenType {
   TERMINATOR,
+  NO_WHITESPACE,
+  CLOSE_SUBSCRIPT,
 };
 
 struct Scanner {
@@ -42,7 +44,7 @@ struct Scanner {
     }
   }
 
-  int space_handler(TSLexer *lexer) {
+  bool space_handler(TSLexer *lexer) {
     int prevCol = 0;
     while (lexer->lookahead == ' ' || lexer->lookahead == '\t') {
       int col = lexer->get_column(lexer);
@@ -72,6 +74,36 @@ struct Scanner {
 
   bool scan(TSLexer *lexer, const bool *valid_symbols) {
     int breakChar = -1;
+    if (valid_symbols[NO_WHITESPACE]) {
+      /* std::cout << lexer->lookahead << std::endl; */
+      if (lexer->lookahead == ' ') {
+        /* printf("false\n"); */
+        lexer->mark_end(lexer);
+        return false;
+      } else {
+        lexer->result_symbol = NO_WHITESPACE;
+        lexer->mark_end(lexer);
+        /* printf("true\n"); */
+        return true;
+      }
+    }
+    if (valid_symbols[CLOSE_SUBSCRIPT]) {
+      while(lexer->lookahead) {
+        if (iswspace(lexer->lookahead)) {
+          advance(lexer);
+          continue;
+        } else if (lexer->lookahead != ']') {
+          lexer->mark_end(lexer);
+          return false;
+          break;
+        } else if (lexer->lookahead == ']') {
+          lexer->mark_end(lexer);
+          lexer->result_symbol = CLOSE_SUBSCRIPT;
+          return true;
+          break;
+        }
+      }
+    }
     if (valid_symbols[TERMINATOR]) {
       while (lexer->lookahead >= 0) {
         int currChar;

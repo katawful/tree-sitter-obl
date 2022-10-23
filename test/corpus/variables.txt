@@ -1,0 +1,64 @@
+===============
+Quest Variables
+===============
+scn test
+begin gamemode
+let quest.var1 := 1
+let quest.var1 := quest.var2 := 2
+end
+---
+(source_file
+  (script_declaration (script_name))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (quest_variable (reference) (variable)))
+        (assignment)
+        (right (integer))))
+    (statement
+      (let_statement
+        (left (quest_variable (reference) (variable)))
+        (assignment)
+        (left (quest_variable (reference) (variable)))
+        (assignment)
+        (right (integer))))))
+
+===============
+Plain Variables
+===============
+scn test
+begin gamemode
+let var1 := 1
+let var1 := var2 := 2
+end
+---
+(source_file
+  (script_declaration (script_name))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (right (integer))))
+    (statement
+      (let_statement
+        (left (variable))
+        (assignment)
+        (left (variable))
+        (assignment)
+        (right (integer))))))
+
+===============
+Array Variables
+===============
+scn test
+begin gamemode
+set array[ x ] to 1
+
+set x to array 
+
+let array[x + 1] := 1
+end
+---

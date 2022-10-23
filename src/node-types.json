@@ -1,5 +1,28 @@
 [
   {
+    "type": "array_variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "quest_variable",
+          "named": true
+        },
+        {
+          "type": "subscript",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "assignment",
     "named": true,
     "fields": {}
@@ -75,6 +98,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "array_variable",
+          "named": true
+        },
         {
           "type": "variable",
           "named": true
@@ -218,6 +245,10 @@
       "required": false,
       "types": [
         {
+          "type": "array_variable",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -227,6 +258,36 @@
         },
         {
           "type": "unary_operator",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quest_variable",
+    "named": true,
+    "fields": {
+      "quest": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "variable",
           "named": true
         }
       ]
@@ -287,6 +348,10 @@
       "required": false,
       "types": [
         {
+          "type": "array_variable",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
@@ -296,6 +361,10 @@
         },
         {
           "type": "unary_operator",
+          "named": true
+        },
+        {
+          "type": "variable",
           "named": true
         }
       ]
@@ -384,6 +453,78 @@
         },
         {
           "type": "set_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "subscript",
+    "named": true,
+    "fields": {
+      "float": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          }
+        ]
+      },
+      "integer": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "reference": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
+      "string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array_variable",
+          "named": true
+        },
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "unary_operator",
+          "named": true
+        },
+        {
+          "type": "variable",
           "named": true
         }
       ]
@@ -510,6 +651,10 @@
     "named": false
   },
   {
+    "type": ".",
+    "named": false
+  },
+  {
     "type": "/",
     "named": false
   },
@@ -555,6 +700,14 @@
   },
   {
     "type": ">>",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
     "named": false
   },
   {

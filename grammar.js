@@ -35,9 +35,15 @@ module.exports = grammar({
 
   externals: $ => [
     $._terminator,
+    $._no_whitespace,
+    $._close_subscript,
   ],
 
   word: $ => $._identifier,
+
+  // conflicts: $ => [
+  //   [$._binary_expression, $.subscript],
+  // ],
 
   extras: $ => [
     /\\\r?\n/,
@@ -80,8 +86,6 @@ module.exports = grammar({
       keyword("array_var"),
       keyword("string_var"),
     ),
-
-    variable: $ => $._identifier,
 
     block: $ => seq(
       $._start_block,
@@ -163,11 +167,40 @@ module.exports = grammar({
       $.compound,
     ),
 
-    left: $ => $.variable,
+    left: $ => $._variable,
     right: $ => $._expression,
 
+    _variable: $ => choice(
+      // $.quest_variable, // namespace.var
+      $.array_variable, // array[x]
+      $.variable, // var
+    ),
+
+    variable: $ => prec(PREC.PLAIN, $._identifier),
+
+    quest_variable: $ => seq(
+      field('quest', $.reference),
+      $._no_whitespace,
+      '.',
+      $._no_whitespace,
+      $.variable,
+    ),
+
+    array_variable: $ => seq(
+      choice($.quest_variable, $.variable),
+      $._no_whitespace,
+      repeat1($.subscript),
+    ),
+
+    subscript: $ => seq(
+      '[',
+      $._expression,
+      ']',
+    ),
+
     _expression: $ => choice(
-      $._literal, // note that this will have to cover variables and literals for now
+      prec(PREC.LITERAL, $._literal), // note that this will have to cover variables and literals for now
+      prec(PREC.PLAIN, $._variable),
       $._binary_expression,
       $._unary_expression,
       $.parenthesized_expression,
@@ -248,7 +281,7 @@ module.exports = grammar({
       field('string', $.string),
       field('reference', $.reference),
     ),
-    reference: $ => $._identifier,
+    reference: $ => prec(PREC.LITERAL, $._identifier),
     string: $ => /".*"/,
     float: $ => choice(
       /\-?\d+\.\d*/,

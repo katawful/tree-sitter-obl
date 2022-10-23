@@ -4,7 +4,7 @@ Literal
 scn test
 int x
 begin gamemode
-set x to reference
+set x to reference 
 end
 ---
 (source_file
