@@ -1,0 +1,10 @@
+scn test
+begin gamemode
+  let x := y
+  let x["nei"] := "string"
+  let x[1] := x[a] := 1
+  set x.a to y
+  set x.a to x.a
+  set x.a to x[a]
+  set x[a] to x[a]
+end
