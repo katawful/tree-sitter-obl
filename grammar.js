@@ -203,9 +203,9 @@ module.exports = grammar({
     right: $ => $._expression,
 
     _variable: $ => choice(
-      $.quest_variable, // namespace.var
-      $.array_variable, // array[x]
-      $.reference, // var -- these are all references anyways
+      field('quest_variable', $.quest_variable), // namespace.var
+      field('array_variable', $.array_variable), // array[x]
+      field('variable', $.reference), // var -- these are all references anyways
     ),
 
     quest_variable: $ => seq(
