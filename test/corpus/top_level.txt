@@ -103,3 +103,28 @@ end
     (reference))
   (block
     (game_feature)))
+
+================
+Block Parameters
+================
+scn test
+begin onactivate 0 Player
+end
+begin onactivate 0
+end
+begin onactivate 0, Player
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature
+      (parameter (integer))
+      (parameter (reference))))
+  (block
+    (game_feature
+      (parameter (integer))))
+  (block
+    (game_feature
+      (parameter (integer))
+      (parameter (reference)))))
