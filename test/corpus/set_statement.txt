@@ -9,12 +9,12 @@ end
 ---
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
-        (left (variable))
+        (left (reference))
         (right (reference))))))
 
 ====================
@@ -29,12 +29,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
-        (left (variable))
+        (left (reference))
         (right
           (reference)
           (binary_operator)
@@ -52,13 +52,13 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (reference)
           (binary_operator)
@@ -78,13 +78,13 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (parenthesized_expression
             (reference)
@@ -103,13 +103,13 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (parenthesized_expression
             (reference)
@@ -130,13 +130,13 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (parenthesized_expression
             (reference)
@@ -158,13 +158,13 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (parenthesized_expression
             (parenthesized_expression
@@ -186,12 +186,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
-        (left (variable))
+        (left (reference))
         (right
           (unary_operator)
           (reference))))))
@@ -210,15 +210,15 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (unary_operator)
           (reference)
@@ -238,13 +238,13 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (parenthesized_expression
             (unary_operator)
@@ -264,15 +264,15 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (parenthesized_expression
             (unary_operator)
@@ -295,15 +295,15 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (parenthesized_expression
             (unary_operator)
@@ -329,15 +329,15 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (set_statement
         (left
-          (variable))
+          (reference))
         (right
           (parenthesized_expression
             (parenthesized_expression

@@ -22,7 +22,7 @@ end
 (source_file
   (script_declaration
     (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (user_defined_function (parameter (reference)))))
 
@@ -38,8 +38,8 @@ end
 (source_file
   (script_declaration
     (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (user_defined_function (parameter (reference)) 
                            (parameter (reference)))))

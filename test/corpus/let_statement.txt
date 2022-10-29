@@ -9,12 +9,12 @@ end
 ---
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (compound)
         (right (reference))))))
 
@@ -31,18 +31,18 @@ end
 ---
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
-        (left (variable))
+        (left (reference))
         (assignment)
-        (left (variable))
+        (left (reference))
         (assignment)
         (right (integer))))))
 
@@ -59,18 +59,18 @@ end
 ---
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
-        (left (variable))
+        (left (reference))
         (assignment)
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (integer)
@@ -90,12 +90,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (reference)
@@ -114,12 +114,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (reference)
@@ -140,12 +140,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (parenthesized_expression
@@ -165,12 +165,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (parenthesized_expression
@@ -192,12 +192,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (parenthesized_expression
@@ -220,12 +220,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (parenthesized_expression
@@ -248,12 +248,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (unary_operator)
@@ -273,14 +273,14 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (unary_operator)
@@ -301,12 +301,12 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (parenthesized_expression
@@ -327,14 +327,14 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (parenthesized_expression
@@ -358,14 +358,14 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (parenthesized_expression
@@ -392,14 +392,14 @@ end
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
   (block
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right
           (parenthesized_expression

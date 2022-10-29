@@ -36,12 +36,12 @@ string_var neo
 
 (source_file
   (script_declaration (script_name))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable))
-  (variable_declaration (type) (variable)))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference))
+  (variable_declaration (type) (reference)))
 
 ============
 Block w/ EOL

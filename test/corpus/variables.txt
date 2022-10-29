@@ -13,14 +13,14 @@ end
     (game_feature)
     (statement
       (let_statement
-        (left (quest_variable (reference) (variable)))
+        (left (quest_variable (reference) (reference)))
         (assignment)
         (right (integer))))
     (statement
       (let_statement
-        (left (quest_variable (reference) (variable)))
+        (left (quest_variable (reference) (reference)))
         (assignment)
-        (left (quest_variable (reference) (variable)))
+        (left (quest_variable (reference) (reference)))
         (assignment)
         (right (integer))))))
 
@@ -39,14 +39,14 @@ end
     (game_feature)
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
         (right (integer))))
     (statement
       (let_statement
-        (left (variable))
+        (left (reference))
         (assignment)
-        (left (variable))
+        (left (reference))
         (assignment)
         (right (integer))))))
 
@@ -55,10 +55,68 @@ Array Variables
 ===============
 scn test
 begin gamemode
-set array[ x ] to 1
-
-set x to array 
-
-let array[x + 1] := 1
+set x[a] to 1
+let x := y[x]
+let x[1][y] := x["n"] := x[3]
 end
 ---
+(source_file
+  (script_declaration (script_name))
+  (block
+    (game_feature)
+    (statement
+      (set_statement
+        (left
+          (array_variable
+            (reference)
+            (subscript (reference))))
+        (right (integer))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (array_variable
+            (reference)
+            (subscript (reference))))))
+    (statement
+      (let_statement
+        (left
+          (array_variable
+            (reference)
+            (subscript (integer))
+            (subscript (reference))))
+        (assignment)
+        (left
+          (array_variable
+            (reference)
+            (subscript (string))))
+        (assignment)
+        (right
+          (array_variable
+            (reference)
+            (subscript (integer))))))))
+
+=====================
+Quest Array Variables
+=====================
+scn test
+begin gamemode
+let x.a[a] := x.a[a]
+end
+---
+(source_file
+  (script_declaration (script_name))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left
+          (array_variable
+            (quest_variable (reference) (reference))
+            (subscript (reference))))
+        (assignment)
+        (right
+          (array_variable
+            (quest_variable (reference) (reference))
+            (subscript (reference))))))))
