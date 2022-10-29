@@ -13,6 +13,8 @@ using std::string;
 enum TokenType {
   TERMINATOR,
   NO_WHITESPACE,
+  DOT,
+  OPEN_SUBSCRIPT,
   CLOSE_SUBSCRIPT,
 };
 
@@ -73,72 +75,35 @@ struct Scanner {
   }
 
   bool scan(TSLexer *lexer, const bool *valid_symbols) {
-    int breakChar = -1;
-    if (valid_symbols[NO_WHITESPACE]) {
-      /* std::cout << lexer->lookahead << std::endl; */
-      if (lexer->lookahead == ' ') {
-        /* printf("false\n"); */
-        lexer->mark_end(lexer);
-        return false;
-      } else {
-        lexer->result_symbol = NO_WHITESPACE;
-        lexer->mark_end(lexer);
-        /* printf("true\n"); */
-        return true;
-      }
-    }
-    if (valid_symbols[CLOSE_SUBSCRIPT]) {
-      while(lexer->lookahead) {
-        if (iswspace(lexer->lookahead)) {
-          advance(lexer);
-          continue;
-        } else if (lexer->lookahead != ']') {
-          lexer->mark_end(lexer);
-          return false;
-          break;
-        } else if (lexer->lookahead == ']') {
-          lexer->mark_end(lexer);
-          lexer->result_symbol = CLOSE_SUBSCRIPT;
-          return true;
-          break;
-        }
-      }
-    }
-    if (valid_symbols[TERMINATOR]) {
-      while (lexer->lookahead >= 0) {
-        int currChar;
-        currChar = lexer->lookahead;
-        if (currChar == '\n'
-          || currChar == '\r'
-          || currChar == ';'
-          || currChar == 0)
-        {
-          lexer->mark_end(lexer);
-          breakChar = currChar;
-          break;
-          /* Spaces need to be handled specially */
-        } else if (currChar == ' ' || currChar == '\t') {
-          if (space_handler(lexer) == true) {
-            breakChar = currChar;
-            break;
-          } else {
-            breakChar = -1;
-            break;
-          }
-        } else {
-          lexer->mark_end(lexer);
-          breakChar = -1;
-          break;
-        }
-      }
-    }
-
-    // all whitespace, null, and ';', are valid terminators
-    if (breakChar >= 0) {
+    int char_code = lexer->lookahead;
+    if (char_code == '.') {
+      lexer->result_symbol = DOT;
+      return true;
+    } else if (char_code == '[') {
+      lexer->result_symbol = OPEN_SUBSCRIPT;
+      return true;
+    } else if (char_code == '\n'
+            || char_code == '\r'
+            || char_code == ';'
+            || char_code == 0)
+    {
+      lexer->mark_end(lexer);
       lexer->result_symbol = TERMINATOR;
       return true;
-      // anything else is treated as an error
+      /* Spaces need to be handled specially */
+    } else if (char_code == ' ' || char_code == '\t') {
+      if (space_handler(lexer) == true) {
+        lexer->result_symbol = TERMINATOR;
+        return true;
+      } else {
+        return false;
+      }
+    } else if (valid_symbols[NO_WHITESPACE]) {
+      lexer->result_symbol = NO_WHITESPACE;
+      return true;
     } else {
+      /* printf("false\n"); */
+      lexer->mark_end(lexer);
       return false;
     }
   }

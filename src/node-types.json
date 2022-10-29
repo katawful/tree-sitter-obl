@@ -2,7 +2,18 @@
   {
     "type": "array_variable",
     "named": true,
-    "fields": {},
+    "fields": {
+      "variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -13,10 +24,6 @@
         },
         {
           "type": "subscript",
-          "named": true
-        },
-        {
-          "type": "variable",
           "named": true
         }
       ]
@@ -103,7 +110,11 @@
           "named": true
         },
         {
-          "type": "variable",
+          "type": "quest_variable",
+          "named": true
+        },
+        {
+          "type": "reference",
           "named": true
         }
       ]
@@ -257,11 +268,15 @@
           "named": true
         },
         {
-          "type": "unary_operator",
+          "type": "quest_variable",
           "named": true
         },
         {
-          "type": "variable",
+          "type": "reference",
+          "named": true
+        },
+        {
+          "type": "unary_operator",
           "named": true
         }
       ]
@@ -280,17 +295,17 @@
             "named": true
           }
         ]
+      },
+      "variable": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "variable",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -360,11 +375,15 @@
           "named": true
         },
         {
-          "type": "unary_operator",
+          "type": "quest_variable",
           "named": true
         },
         {
-          "type": "variable",
+          "type": "reference",
+          "named": true
+        },
+        {
+          "type": "unary_operator",
           "named": true
         }
       ]
@@ -520,11 +539,15 @@
           "named": true
         },
         {
-          "type": "unary_operator",
+          "type": "quest_variable",
           "named": true
         },
         {
-          "type": "variable",
+          "type": "reference",
+          "named": true
+        },
+        {
+          "type": "unary_operator",
           "named": true
         }
       ]
@@ -556,11 +579,6 @@
     }
   },
   {
-    "type": "variable",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "variable_declaration",
     "named": true,
     "fields": {
@@ -569,7 +587,7 @@
         "required": true,
         "types": [
           {
-            "type": "variable",
+            "type": "reference",
             "named": true
           }
         ]

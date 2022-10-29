@@ -36,14 +36,35 @@ module.exports = grammar({
   externals: $ => [
     $._terminator,
     $._no_whitespace,
+    $._dot,
+    $._open_subscript,
     $._close_subscript,
   ],
 
   word: $ => $._identifier,
 
-  // conflicts: $ => [
-  //   [$._binary_expression, $.subscript],
-  // ],
+  precedence: $ => [
+    [
+      $._literal,
+      $._variable,
+    ],
+    [
+      $.array_variable,
+      $.variable,
+    ],
+    [
+      $._variable,
+      $._expression,
+    ],
+    [
+      $._dot,
+      $._open_subscript,
+    ],
+  ],
+
+  conflicts: $ => [
+    [$._literal, $._variable],
+  ],
 
   extras: $ => [
     /\\\r?\n/,
@@ -73,7 +94,7 @@ module.exports = grammar({
 
     variable_declaration: $ => seq(
       $.type,
-      field('variable', $.variable),
+      field('variable', $.reference),
       $._terminator,
     ),
 
@@ -171,36 +192,35 @@ module.exports = grammar({
     right: $ => $._expression,
 
     _variable: $ => choice(
-      // $.quest_variable, // namespace.var
+      $.quest_variable, // namespace.var
       $.array_variable, // array[x]
-      $.variable, // var
+      $.reference, // var -- these are all references anyways
     ),
-
-    variable: $ => prec(PREC.PLAIN, $._identifier),
 
     quest_variable: $ => seq(
       field('quest', $.reference),
-      $._no_whitespace,
+      $._dot,
       '.',
       $._no_whitespace,
-      $.variable,
+      field('variable', $.reference),
     ),
 
-    array_variable: $ => seq(
-      choice($.quest_variable, $.variable),
-      $._no_whitespace,
+    array_variable: $ => prec.left(seq(
+      choice($.quest_variable, field('variable', $.reference)),
+      $._open_subscript,
       repeat1($.subscript),
-    ),
+    )),
 
     subscript: $ => seq(
+      $._open_subscript,
       '[',
       $._expression,
       ']',
     ),
 
     _expression: $ => choice(
-      prec(PREC.LITERAL, $._literal), // note that this will have to cover variables and literals for now
-      prec(PREC.PLAIN, $._variable),
+      $._literal,
+      $._variable,
       $._binary_expression,
       $._unary_expression,
       $.parenthesized_expression,
@@ -264,16 +284,7 @@ module.exports = grammar({
       prec(PREC.BOX, '&'),
       prec(PREC.LOGICAL_NOT, '!'),
     ),
-
-    // i chose to keep identifiers anoymous as it is used in many areas
-    // TODO: address invalid characters
-    _identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]?\w*/,
-
-    comment: $ => seq(
-      ';',
-      /(\\(.|\r?\n)|[^\\\n])*/
-    ),
-
+    //
     // TODO: add ref, sci notation, type literals
     _literal: $ => choice(
       field('integer', $.integer),
@@ -288,6 +299,15 @@ module.exports = grammar({
     ),
     integer: $ => choice(
       /\-?\d+/,
+    ),
+
+    // i chose to keep identifiers anoymous as it is used in many areas
+    // TODO: address invalid characters
+    _identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]?\w*/,
+
+    comment: $ => seq(
+      ';',
+      /(\\(.|\r?\n)|[^\\\n])*/
     ),
 
   }

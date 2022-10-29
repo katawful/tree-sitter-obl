@@ -88,7 +88,7 @@
           "name": "variable",
           "content": {
             "type": "SYMBOL",
-            "name": "variable"
+            "name": "reference"
           }
         },
         {
@@ -519,21 +519,17 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "quest_variable"
+        },
+        {
+          "type": "SYMBOL",
           "name": "array_variable"
         },
         {
           "type": "SYMBOL",
-          "name": "variable"
+          "name": "reference"
         }
       ]
-    },
-    "variable": {
-      "type": "PREC",
-      "value": -5,
-      "content": {
-        "type": "SYMBOL",
-        "name": "_identifier"
-      }
     },
     "quest_variable": {
       "type": "SEQ",
@@ -548,7 +544,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_no_whitespace"
+          "name": "_dot"
         },
         {
           "type": "STRING",
@@ -559,43 +555,59 @@
           "name": "_no_whitespace"
         },
         {
-          "type": "SYMBOL",
-          "name": "variable"
-        }
-      ]
-    },
-    "array_variable": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "quest_variable"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "variable"
-            }
-          ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_no_whitespace"
-        },
-        {
-          "type": "REPEAT1",
+          "type": "FIELD",
+          "name": "variable",
           "content": {
             "type": "SYMBOL",
-            "name": "subscript"
+            "name": "reference"
           }
         }
       ]
     },
+    "array_variable": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "quest_variable"
+              },
+              {
+                "type": "FIELD",
+                "name": "variable",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "reference"
+                }
+              }
+            ]
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_open_subscript"
+          },
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "SYMBOL",
+              "name": "subscript"
+            }
+          }
+        ]
+      }
+    },
     "subscript": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_open_subscript"
+        },
         {
           "type": "STRING",
           "value": "["
@@ -614,20 +626,12 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "PREC",
-          "value": -20,
-          "content": {
-            "type": "SYMBOL",
-            "name": "_literal"
-          }
+          "type": "SYMBOL",
+          "name": "_literal"
         },
         {
-          "type": "PREC",
-          "value": -5,
-          "content": {
-            "type": "SYMBOL",
-            "name": "_variable"
-          }
+          "type": "SYMBOL",
+          "name": "_variable"
         },
         {
           "type": "SYMBOL",
@@ -965,23 +969,6 @@
         }
       ]
     },
-    "_identifier": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z_][a-zA-Z_0-9]?\\w*"
-    },
-    "comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": ";"
-        },
-        {
-          "type": "PATTERN",
-          "value": "(\\\\(.|\\r?\\n)|[^\\\\\\n])*"
-        }
-      ]
-    },
     "_literal": {
       "type": "CHOICE",
       "members": [
@@ -1048,6 +1035,23 @@
           "value": "\\-?\\d+"
         }
       ]
+    },
+    "_identifier": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_][a-zA-Z_0-9]?\\w*"
+    },
+    "comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "PATTERN",
+          "value": "(\\\\(.|\\r?\\n)|[^\\\\\\n])*"
+        }
+      ]
     }
   },
   "extras": [
@@ -1068,7 +1072,12 @@
       "name": "comment"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "_literal",
+      "_variable"
+    ]
+  ],
   "precedences": [],
   "externals": [
     {
@@ -1078,6 +1087,14 @@
     {
       "type": "SYMBOL",
       "name": "_no_whitespace"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_dot"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_open_subscript"
     },
     {
       "type": "SYMBOL",
