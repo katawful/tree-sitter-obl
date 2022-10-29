@@ -147,24 +147,37 @@
   {
     "type": "left",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "array_variable",
-          "named": true
-        },
-        {
-          "type": "quest_variable",
-          "named": true
-        },
-        {
-          "type": "reference",
-          "named": true
-        }
-      ]
+    "fields": {
+      "array_variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_variable",
+            "named": true
+          }
+        ]
+      },
+      "quest_variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quest_variable",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -262,6 +275,16 @@
     "type": "parenthesized_expression",
     "named": true,
     "fields": {
+      "array_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_variable",
+            "named": true
+          }
+        ]
+      },
       "float": {
         "multiple": true,
         "required": false,
@@ -278,6 +301,16 @@
         "types": [
           {
             "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "quest_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "quest_variable",
             "named": true
           }
         ]
@@ -301,6 +334,16 @@
             "named": true
           }
         ]
+      },
+      "variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -308,23 +351,11 @@
       "required": false,
       "types": [
         {
-          "type": "array_variable",
-          "named": true
-        },
-        {
           "type": "binary_operator",
           "named": true
         },
         {
           "type": "parenthesized_expression",
-          "named": true
-        },
-        {
-          "type": "quest_variable",
-          "named": true
-        },
-        {
-          "type": "reference",
           "named": true
         },
         {
@@ -374,6 +405,16 @@
     "type": "right",
     "named": true,
     "fields": {
+      "array_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_variable",
+            "named": true
+          }
+        ]
+      },
       "float": {
         "multiple": true,
         "required": false,
@@ -390,6 +431,16 @@
         "types": [
           {
             "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "quest_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "quest_variable",
             "named": true
           }
         ]
@@ -413,6 +464,16 @@
             "named": true
           }
         ]
+      },
+      "variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -420,23 +481,11 @@
       "required": false,
       "types": [
         {
-          "type": "array_variable",
-          "named": true
-        },
-        {
           "type": "binary_operator",
           "named": true
         },
         {
           "type": "parenthesized_expression",
-          "named": true
-        },
-        {
-          "type": "quest_variable",
-          "named": true
-        },
-        {
-          "type": "reference",
           "named": true
         },
         {
@@ -544,6 +593,16 @@
     "type": "subscript",
     "named": true,
     "fields": {
+      "array_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_variable",
+            "named": true
+          }
+        ]
+      },
       "float": {
         "multiple": true,
         "required": false,
@@ -560,6 +619,16 @@
         "types": [
           {
             "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "quest_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "quest_variable",
             "named": true
           }
         ]
@@ -583,6 +652,16 @@
             "named": true
           }
         ]
+      },
+      "variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -590,23 +669,11 @@
       "required": false,
       "types": [
         {
-          "type": "array_variable",
-          "named": true
-        },
-        {
           "type": "binary_operator",
           "named": true
         },
         {
           "type": "parenthesized_expression",
-          "named": true
-        },
-        {
-          "type": "quest_variable",
-          "named": true
-        },
-        {
-          "type": "reference",
           "named": true
         },
         {
