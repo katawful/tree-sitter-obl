@@ -58,10 +58,6 @@
         }
       ]
     },
-    "script_name": {
-      "type": "SYMBOL",
-      "name": "_identifier"
-    },
     "_top_level": {
       "type": "SEQ",
       "members": [
@@ -84,8 +80,12 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "type"
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_type"
+          }
         },
         {
           "type": "FIELD",
@@ -101,7 +101,52 @@
         }
       ]
     },
-    "type": {
+    "_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "number",
+          "content": {
+            "type": "SYMBOL",
+            "name": "number_type"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "float",
+          "content": {
+            "type": "SYMBOL",
+            "name": "float_type"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "ref",
+          "content": {
+            "type": "SYMBOL",
+            "name": "ref_type"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "array",
+          "content": {
+            "type": "SYMBOL",
+            "name": "array_type"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "string",
+          "content": {
+            "type": "SYMBOL",
+            "name": "string_type"
+          }
+        }
+      ]
+    },
+    "number_type": {
       "type": "CHOICE",
       "members": [
         {
@@ -130,44 +175,44 @@
           },
           "named": false,
           "value": "long"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[fF][lL][oO][aA][tT]"
-          },
-          "named": false,
-          "value": "float"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[rR][eE][fF]"
-          },
-          "named": false,
-          "value": "ref"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[aA][rR][rR][aA][yY][__][vV][aA][rR]"
-          },
-          "named": false,
-          "value": "array_var"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[sS][tT][rR][iI][nN][gG][__][vV][aA][rR]"
-          },
-          "named": false,
-          "value": "string_var"
         }
       ]
+    },
+    "float_type": {
+      "type": "ALIAS",
+      "content": {
+        "type": "PATTERN",
+        "value": "[fF][lL][oO][aA][tT]"
+      },
+      "named": false,
+      "value": "float"
+    },
+    "ref_type": {
+      "type": "ALIAS",
+      "content": {
+        "type": "PATTERN",
+        "value": "[rR][eE][fF]"
+      },
+      "named": false,
+      "value": "ref"
+    },
+    "array_type": {
+      "type": "ALIAS",
+      "content": {
+        "type": "PATTERN",
+        "value": "[aA][rR][rR][aA][yY][__][vV][aA][rR]"
+      },
+      "named": false,
+      "value": "array_var"
+    },
+    "string_type": {
+      "type": "ALIAS",
+      "content": {
+        "type": "PATTERN",
+        "value": "[sS][tT][rR][iI][nN][gG][__][vV][aA][rR]"
+      },
+      "named": false,
+      "value": "string_var"
     },
     "block": {
       "type": "SEQ",
@@ -1126,6 +1171,8 @@
     }
   ],
   "inline": [],
-  "supertypes": []
+  "supertypes": [
+    "_type"
+  ]
 }
 

@@ -9,7 +9,7 @@ end
 ---
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -29,7 +29,7 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -52,7 +52,7 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -78,7 +78,7 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -103,7 +103,7 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -130,7 +130,7 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -158,7 +158,7 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -186,7 +186,7 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -210,9 +210,9 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (string_type) (reference))
   (block
     (game_feature)
     (statement
@@ -238,7 +238,7 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (game_feature)
     (statement
@@ -264,9 +264,9 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (string_type) (reference))
   (block
     (game_feature)
     (statement
@@ -295,9 +295,9 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (string_type) (reference))
   (block
     (game_feature)
     (statement
@@ -329,9 +329,9 @@ end
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (string_type) (reference))
   (block
     (game_feature)
     (statement

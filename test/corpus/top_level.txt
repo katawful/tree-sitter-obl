@@ -29,6 +29,7 @@ int int
 short short
 long long
 float float
+ref ref
 array_var neio
 string_var neo
 
@@ -36,12 +37,13 @@ string_var neo
 
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference)))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (float_type) (reference))
+  (variable_declaration (ref_type) (reference))
+  (variable_declaration (array_type) (reference))
+  (variable_declaration (string_type) (reference)))
 
 ============
 Block w/ EOL

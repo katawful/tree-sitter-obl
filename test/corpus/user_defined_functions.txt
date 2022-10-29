@@ -20,7 +20,7 @@ end
 ---
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (user_defined_function (parameter (reference)))))
 
@@ -35,8 +35,8 @@ end
 ---
 (source_file
   (script_declaration (reference))
-  (variable_declaration (type) (reference))
-  (variable_declaration (type) (reference))
+  (variable_declaration (number_type) (reference))
+  (variable_declaration (number_type) (reference))
   (block
     (user_defined_function (parameter (reference))
                            (parameter (reference)))))

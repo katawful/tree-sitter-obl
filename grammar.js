@@ -62,6 +62,10 @@ module.exports = grammar({
     ],
   ],
 
+  supertypes: $ => [
+    $._type,
+  ],
+
   conflicts: $ => [
     [$._literal, $._variable],
   ],
@@ -91,20 +95,29 @@ module.exports = grammar({
     ),
 
     variable_declaration: $ => seq(
-      $.type,
+      field('type', $._type),
       field('variable', $.reference),
       $._terminator,
     ),
 
-    type: $ => choice(
+    _type: $ => choice(
+      field('number', $.number_type),
+      field('float', $.float_type),
+      field('ref', $.ref_type),
+      field('array', $.array_type),
+      field('string', $.string_type),
+    ),
+
+    number_type: $ => choice(
       keyword("int"),
       keyword("short"),
       keyword("long"),
-      keyword("float"),
-      keyword("ref"),
-      keyword("array_var"),
-      keyword("string_var"),
     ),
+
+    float_type: $ => keyword("float"),
+    ref_type: $ => keyword("ref"),
+    array_type: $ => keyword("array_var"),
+    string_type: $ => keyword("string_var"),
 
     block: $ => seq(
       $._start_block,

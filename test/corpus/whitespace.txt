@@ -9,7 +9,7 @@ end
 (source_file
  (script_declaration (reference))
  (variable_declaration
-  (type) (reference))
+  (number_type) (reference))
  (block
   (game_feature)))
 
@@ -24,6 +24,6 @@ Tabs
 (source_file
   (script_declaration (reference))
   (variable_declaration
-    (type) (reference))
+    (number_type) (reference))
   (block
     (game_feature)))

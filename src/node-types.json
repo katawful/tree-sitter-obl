@@ -1,5 +1,36 @@
 [
   {
+    "type": "_type",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "array_type",
+        "named": true
+      },
+      {
+        "type": "float_type",
+        "named": true
+      },
+      {
+        "type": "number_type",
+        "named": true
+      },
+      {
+        "type": "ref_type",
+        "named": true
+      },
+      {
+        "type": "string_type",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "array_type",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "array_variable",
     "named": true,
     "fields": {
@@ -74,6 +105,11 @@
   },
   {
     "type": "float",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "float_type",
     "named": true,
     "fields": {}
   },
@@ -159,6 +195,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "number_type",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "parameter",
@@ -307,6 +348,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "ref_type",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "reference",
@@ -479,6 +525,11 @@
     "fields": {}
   },
   {
+    "type": "string_type",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "subscript",
     "named": true,
     "fields": {
@@ -555,11 +606,6 @@
     }
   },
   {
-    "type": "type",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "unary_operator",
     "named": true,
     "fields": {}
@@ -583,6 +629,16 @@
     "type": "variable_declaration",
     "named": true,
     "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_type",
+            "named": true
+          }
+        ]
+      },
       "variable": {
         "multiple": false,
         "required": true,
@@ -593,16 +649,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "type",
-          "named": true
-        }
-      ]
     }
   },
   {
