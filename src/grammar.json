@@ -45,8 +45,12 @@
           ]
         },
         {
-          "type": "SYMBOL",
-          "name": "script_name"
+          "type": "FIELD",
+          "name": "script_name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "reference"
+          }
         },
         {
           "type": "SYMBOL",

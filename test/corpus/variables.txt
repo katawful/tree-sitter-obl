@@ -8,7 +8,7 @@ let quest.var1 := quest.var2 := 2
 end
 ---
 (source_file
-  (script_declaration (script_name))
+  (script_declaration (reference))
   (block
     (game_feature)
     (statement
@@ -34,7 +34,7 @@ let var1 := var2 := 2
 end
 ---
 (source_file
-  (script_declaration (script_name))
+  (script_declaration (reference))
   (block
     (game_feature)
     (statement
@@ -57,11 +57,11 @@ scn test
 begin gamemode
 set x[a] to 1
 let x := y[x]
-let x[1][y] := x["n"] := x[3]
+let x[1][y] := x["n"] := x[3] + 1
 end
 ---
 (source_file
-  (script_declaration (script_name))
+  (script_declaration (reference))
   (block
     (game_feature)
     (statement
@@ -95,7 +95,9 @@ end
         (right
           (array_variable
             (reference)
-            (subscript (integer))))))))
+            (subscript (integer)))
+          (binary_operator)
+          (integer))))))
 
 =====================
 Quest Array Variables
@@ -106,7 +108,7 @@ let x.a[a] := x.a[a]
 end
 ---
 (source_file
-  (script_declaration (script_name))
+  (script_declaration (reference))
   (block
     (game_feature)
     (statement

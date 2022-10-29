@@ -81,11 +81,9 @@ module.exports = grammar({
 
     script_declaration: $ => seq(
       choice(keyword("scn"), keyword("scriptname")),
-      $.script_name,
+      field("script_name", $.reference),
       $._terminator,
     ),
-
-    script_name: $ => $._identifier,
 
     _top_level: $ => seq(
       choice($.variable_declaration, $.block),

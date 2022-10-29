@@ -392,22 +392,18 @@
   {
     "type": "script_declaration",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "script_name",
-          "named": true
-        }
-      ]
+    "fields": {
+      "script_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      }
     }
-  },
-  {
-    "type": "script_name",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "set_statement",

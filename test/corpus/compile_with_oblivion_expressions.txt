@@ -7,7 +7,7 @@ end
 ---
 (source_file
   (script_declaration
-    (script_name))
+    (reference))
   (block
     (game_feature)))
 
@@ -20,6 +20,6 @@ end
 ---
 (source_file
   (script_declaration
-    (script_name))
+    (reference))
   (block
     (user_defined_function)))

@@ -12,7 +12,7 @@ end
 
 ---
 (source_file
-  (script_declaration (script_name))
+  (script_declaration (reference))
   (comment)
   (variable_declaration
     (type) (reference))
@@ -33,7 +33,7 @@ end ;this is a comment without leading whitespace
 ---
 (source_file
   (script_declaration
-    (script_name))
+    (reference))
   (comment)
   (variable_declaration
     (type) (reference))

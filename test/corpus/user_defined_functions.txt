@@ -6,8 +6,7 @@ begin function {}
 end
 ---
 (source_file
-  (script_declaration
-    (script_name))
+  (script_declaration (reference))
   (block
     (user_defined_function)))
 
@@ -20,8 +19,7 @@ begin function {var}
 end
 ---
 (source_file
-  (script_declaration
-    (script_name))
+  (script_declaration (reference))
   (variable_declaration (type) (reference))
   (block
     (user_defined_function (parameter (reference)))))
@@ -36,10 +34,9 @@ begin function {var1, var2}
 end
 ---
 (source_file
-  (script_declaration
-    (script_name))
+  (script_declaration (reference))
   (variable_declaration (type) (reference))
   (variable_declaration (type) (reference))
   (block
-    (user_defined_function (parameter (reference)) 
+    (user_defined_function (parameter (reference))
                            (parameter (reference)))))

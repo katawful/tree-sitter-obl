@@ -7,7 +7,7 @@ scn        test
 end     
 ---
 (source_file
- (script_declaration (script_name))
+ (script_declaration (reference))
  (variable_declaration
   (type) (reference))
  (block
@@ -22,7 +22,7 @@ Tabs
 	end	
 ---
 (source_file
-  (script_declaration (script_name))
+  (script_declaration (reference))
   (variable_declaration
     (type) (reference))
   (block
