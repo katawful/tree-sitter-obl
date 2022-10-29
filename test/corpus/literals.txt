@@ -1,0 +1,47 @@
+======
+Floats
+======
+scn test
+begin gamemode
+let x := 1.1
+let x := -1.1
+let x := 1.1E2
+let x := -1.1E2
+let x := 1.1E-2
+let x := -1.1E-2
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (float))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (float))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (float))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (float))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (float))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (float))))))

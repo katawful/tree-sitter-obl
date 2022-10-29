@@ -68,6 +68,8 @@ module.exports = grammar({
 
   conflicts: $ => [
     [$._literal, $._variable],
+    [$.string],
+    [$._parameter_list_opt_comma],
   ],
 
   extras: $ => [
@@ -295,27 +297,72 @@ module.exports = grammar({
       prec.left(PREC.BOX, '&'),
       prec.left(PREC.LOGICAL_NOT, '!'),
     ),
-    //
-    // TODO: add ref, sci notation, type literals
+
+    pipe: $ => "|",
+
+    format_specifier: $ => seq(
+      "%",
+      choice(
+        "%",
+        "a",
+        "c",
+        "e",
+        /\d*\.\d*e/,
+        "f",
+        /[ \-+]?\d*\.\d*f/,
+        "g",
+        "i",
+        "k",
+        "n",
+        "ps",
+        "pp",
+        "po",
+        "q",
+        "r",
+        "v",
+        "x",
+        "z",
+        seq(
+          "{",
+          repeat(choice(
+            $.pipe,
+            /[^"%\|]+/,
+          )),
+          "%}",
+        ),
+        "B",
+        "b",
+      )),
+
+    // TODO: add  type literals
     _literal: $ => choice(
       field('integer', $.integer),
       field('float', $.float),
       field('string', $.string),
       field('reference', $.reference),
     ),
+
     reference: $ => prec(PREC.LITERAL, $._identifier),
-    // TODO: add format specifiers and pipes
+
     string: $ => seq(
       '"',
-      token.immediate(prec(1, /[^"\\]+/)),
+      repeat(choice(
+        $.format_specifier,
+        $.pipe,
+        /[^"%\|]+/,
+      )),
       '"',
+      // strings can have parameters for format specifiers
+      optional(seq(
+        optional(','),
+        $._parameter_list_opt_comma
+      )),
     ),
     float: $ => choice(
-      /\-?\d+\.\d*/,
+      /\-?\d+\.\d*/, // regular floats
+      /\-?\d+\.\d*E\-?\d+/, // sci-notation
     ),
-    integer: $ => choice(
-      /\-?\d+/,
-    ),
+    integer: $ => /\-?\d+/,
 
     // i chose to keep identifiers anoymous as it is used in many areas
     // TODO: address invalid characters

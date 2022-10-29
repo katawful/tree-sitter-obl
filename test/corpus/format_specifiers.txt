@@ -1,0 +1,227 @@
+==========
+Scientific
+==========
+scn test
+begin gamemode
+let x := "string %.3e" number
+let x := "string %e" number
+let x := "string %1.3e" number
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+            (parameter (reference))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+            (parameter (reference))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+            (parameter (reference))))))))
+
+=====
+Float
+=====
+scn test
+begin gamemode
+let x := "string %+.3f" number
+let x := "string %.f" number
+let x := "string % .f" number
+let x := "string %-1.3f" number
+let x := "string %0.3f" number
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+            (parameter (reference))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+            (parameter (reference))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+            (parameter (reference))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+            (parameter (reference))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+            (parameter (reference))))))))
+
+===========
+Conditional
+===========
+scn test
+begin gamemode
+let x := "string %{is really cool%}", var
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string
+            (format_specifier)
+            (parameter (reference))))))))
+
+====
+Pipe
+====
+scn test
+begin gamemode
+let x := "string | pipe"
+let x := "string | %z" format
+let x := "string %{|condit |condit%}" var
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (string (pipe)))))
+    (statement
+      (let_statement
+        (left
+          (reference))
+        (assignment)
+        (right
+          (string
+            (pipe)
+            (format_specifier)
+            (parameter (reference))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string
+            (format_specifier (pipe) (pipe))
+            (parameter (reference))))))))
+
+=====
+Plain
+=====
+scn test
+begin gamemode
+let x := "string %B"
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (string (format_specifier)))))))
+
+================
+Single Parameter
+================
+scn test
+begin gamemode
+let x := "string %z", string
+let x := "string %z" string
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+          (parameter (reference))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string (format_specifier)
+          (parameter (reference))))))))
+
+===============
+Multi-Parameter
+===============
+scn test
+begin gamemode
+let x := "string %z, number %g" string 1
+let x := "string %z, number %g", string, 1
+end
+---
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string
+            (format_specifier)
+            (format_specifier)
+            (parameter (reference))
+            (parameter (integer))))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string
+            (format_specifier)
+            (format_specifier)
+            (parameter (reference))
+            (parameter (integer))))))))
+
