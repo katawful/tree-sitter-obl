@@ -293,7 +293,12 @@ module.exports = grammar({
       field('reference', $.reference),
     ),
     reference: $ => prec(PREC.LITERAL, $._identifier),
-    string: $ => /".*"/,
+    // TODO: add format specifiers and pipes
+    string: $ => seq(
+      '"',
+      token.immediate(prec(1, /[^"\\]+/)),
+      '"',
+    ),
     float: $ => choice(
       /\-?\d+\.\d*/,
     ),

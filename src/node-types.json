@@ -478,6 +478,11 @@
     }
   },
   {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "subscript",
     "named": true,
     "fields": {
@@ -610,6 +615,10 @@
   },
   {
     "type": "!=",
+    "named": false
+  },
+  {
+    "type": "\"",
     "named": false
   },
   {
@@ -787,10 +796,6 @@
   {
     "type": "short",
     "named": false
-  },
-  {
-    "type": "string",
-    "named": true
   },
   {
     "type": "string_var",
