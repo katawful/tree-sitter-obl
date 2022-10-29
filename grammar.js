@@ -288,12 +288,12 @@ module.exports = grammar({
     assignment: $ => prec(PREC.ASSIGNMENT, ':='),
 
     unary_operator: $ => choice(
-      prec(PREC.NEGATION, '-'),
-      prec(PREC.STRINGIZE, '$'),
-      prec(PREC.NUMERICIZE, '#'),
-      prec(PREC.DEREFERENCE, '*'),
-      prec(PREC.BOX, '&'),
-      prec(PREC.LOGICAL_NOT, '!'),
+      prec.left(PREC.NEGATION, '-'),
+      prec.left(PREC.STRINGIZE, '$'),
+      prec.left(PREC.NUMERICIZE, '#'),
+      prec.left(PREC.DEREFERENCE, '*'),
+      prec.left(PREC.BOX, '&'),
+      prec.left(PREC.LOGICAL_NOT, '!'),
     ),
     //
     // TODO: add ref, sci notation, type literals
