@@ -1,0 +1,118 @@
+=======
+No Else
+=======
+scn test
+begin gamemode
+if x
+word
+endif
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (if
+        (condition
+          (reference)))
+      (statement))))
+
+==========
+Expression
+==========
+scn test
+begin gamemode
+if x + 1
+word
+endif
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (if
+        (condition
+          (reference)
+          (binary_operator)
+          (integer)))
+      (statement))))
+
+=======
+Else If
+=======
+scn test
+begin gamemode
+if x
+word
+elseif x
+word
+elseif x + 1
+word
+endif
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (if
+        (condition
+          (reference)))
+      (statement)
+      (else_if
+        (condition
+          (reference))
+        (statement))
+      (else_if
+        (condition
+          (reference)
+          (binary_operator)
+          (integer))
+        (statement)))))
+
+======
+Nested
+======
+scn test
+begin gamemode
+if x
+  let x := y
+elseif x
+  if x + 1
+    word
+  endif
+else
+  word
+endif
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (if
+        (condition (reference)))
+      (statement
+        (let_statement
+          (left (reference))
+          (assignment)
+          (right (reference))))
+      (else_if
+        (condition (reference))
+        (statement
+          (if
+            (condition
+              (reference)
+              (binary_operator)
+              (integer)))
+          (statement)))
+      (else (statement)))))

@@ -173,6 +173,7 @@ module.exports = grammar({
       "word",
       $.set_statement,
       $.let_statement,
+      $._conditional,
     ),
 
     set_statement: $ => seq(
@@ -203,6 +204,40 @@ module.exports = grammar({
 
     left: $ => $._variable,
     right: $ => $._expression,
+
+    _conditional: $ => seq(
+      $.if,
+      repeat($._inner_block),
+      repeat($.else_if),
+      optional($.else),
+      $._end_if,
+    ),
+
+    condition: $ => $._expression,
+
+    if: $ => seq(
+      keyword('if'),
+      $.condition,
+      $._terminator,
+    ),
+
+    else_if: $ => seq(
+      keyword("elseif"),
+      $.condition,
+      $._terminator,
+      repeat($._inner_block),
+    ),
+
+    else: $ => seq(
+      keyword("else"),
+      $._terminator,
+      repeat($._inner_block),
+    ),
+
+    _end_if: $ => seq(
+      keyword("endif"),
+      $._terminator,
+    ),
 
     _variable: $ => choice(
       field('quest_variable', $.quest_variable), // namespace.var
