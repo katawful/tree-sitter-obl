@@ -94,6 +94,11 @@
     }
   },
   {
+    "type": "break",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "comment",
     "named": true,
     "fields": {}
@@ -196,6 +201,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "continue",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "else",
@@ -749,6 +759,10 @@
         {
           "type": "statement",
           "named": true
+        },
+        {
+          "type": "while",
+          "named": true
         }
       ]
     }
@@ -944,6 +958,46 @@
     }
   },
   {
+    "type": "while",
+    "named": true,
+    "fields": {
+      "break": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "break",
+            "named": true
+          }
+        ]
+      },
+      "continue": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "continue",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "condition",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "!",
     "named": false
   },
@@ -1104,7 +1158,15 @@
     "named": false
   },
   {
+    "type": "break",
+    "named": false
+  },
+  {
     "type": "c",
+    "named": false
+  },
+  {
+    "type": "continue",
     "named": false
   },
   {
@@ -1172,6 +1234,10 @@
     "named": false
   },
   {
+    "type": "loop",
+    "named": false
+  },
+  {
     "type": "n",
     "named": false
   },
@@ -1225,6 +1291,10 @@
   },
   {
     "type": "v",
+    "named": false
+  },
+  {
+    "type": "while",
     "named": false
   },
   {

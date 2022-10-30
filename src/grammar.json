@@ -453,6 +453,10 @@
         {
           "type": "SYMBOL",
           "name": "_conditional"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "while"
         }
       ]
     },
@@ -705,6 +709,122 @@
           },
           "named": false,
           "value": "endif"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "while": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_while"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_inner_loop"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_loop"
+        }
+      ]
+    },
+    "_inner_loop": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_inner_block"
+            }
+          },
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "FIELD",
+              "name": "break",
+              "content": {
+                "type": "SYMBOL",
+                "name": "break"
+              }
+            }
+          },
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "FIELD",
+              "name": "continue",
+              "content": {
+                "type": "SYMBOL",
+                "name": "continue"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "break": {
+      "type": "ALIAS",
+      "content": {
+        "type": "PATTERN",
+        "value": "[bB][rR][eE][aA][kK]"
+      },
+      "named": false,
+      "value": "break"
+    },
+    "continue": {
+      "type": "ALIAS",
+      "content": {
+        "type": "PATTERN",
+        "value": "[cC][oO][nN][tT][iI][nN][uU][eE]"
+      },
+      "named": false,
+      "value": "continue"
+    },
+    "_while": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[wW][hH][iI][lL][eE]"
+          },
+          "named": false,
+          "value": "while"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "condition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "_loop": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[lL][oO][oO][pP]"
+          },
+          "named": false,
+          "value": "loop"
         },
         {
           "type": "SYMBOL",
@@ -1480,6 +1600,9 @@
     ],
     [
       "_parameter_list_opt_comma"
+    ],
+    [
+      "while"
     ]
   ],
   "precedences": [],

@@ -1,0 +1,73 @@
+=====
+Plain
+=====
+scn test
+begin gamemode
+while x
+word
+loop
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (while
+        (condition (reference))
+        (statement)))))
+
+=====
+Break
+=====
+scn test
+begin gamemode
+while x
+word
+break
+word
+continue
+loop
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (while
+        (condition (reference))
+        (statement)
+        (break)
+        (statement)
+        (continue)))))
+
+======
+Nested
+======
+scn test
+begin gamemode
+while x
+  while x
+    word
+  loop
+  word
+loop
+end
+---
+
+(source_file
+  (script_declaration
+    (reference))
+  (block
+    (game_feature)
+    (statement
+      (while
+        (condition (reference))
+        (statement
+          (while
+            (condition (reference))
+            (statement)))
+        (statement)))))

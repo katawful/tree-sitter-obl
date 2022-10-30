@@ -70,6 +70,7 @@ module.exports = grammar({
     [$._literal, $._variable],
     [$.string],
     [$._parameter_list_opt_comma],
+    [$.while],
   ],
 
   extras: $ => [
@@ -174,6 +175,7 @@ module.exports = grammar({
       $.set_statement,
       $.let_statement,
       $._conditional,
+      $.while,
     ),
 
     set_statement: $ => seq(
@@ -236,6 +238,32 @@ module.exports = grammar({
 
     _end_if: $ => seq(
       keyword("endif"),
+      $._terminator,
+    ),
+
+    while: $ => seq(
+      $._while,
+      repeat($._inner_loop),
+      $._loop,
+    ),
+
+    _inner_loop: $ => prec.left(choice(
+      repeat1($._inner_block),
+      repeat1(field("break", $.break)),
+      repeat1(field("continue", $.continue)),
+    )),
+
+    break: $ => keyword("break"),
+    continue: $ => keyword("continue"),
+
+    _while: $ => seq(
+      keyword("while"),
+      $.condition,
+      $._terminator
+    ),
+
+    _loop: $ => seq(
+      keyword("loop"),
       $._terminator,
     ),
 
