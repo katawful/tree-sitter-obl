@@ -71,6 +71,7 @@ module.exports = grammar({
     [$.string],
     [$._parameter_list_opt_comma],
     [$.while],
+    // [$.parameter, $._expression],
   ],
 
   extras: $ => [
@@ -179,6 +180,7 @@ module.exports = grammar({
       $.for_each,
       $.break,
       $.continue,
+      $.call,
     ),
 
     set_statement: $ => seq(
@@ -282,6 +284,27 @@ module.exports = grammar({
       choice($._literal, $._variable),
     ),
 
+    call: $ => prec.left(seq(
+      keyword("call"),
+      field("user_defined_function", $.reference),
+      optional($.args),
+    )),
+
+    args: $ => prec.right(1000, seq(
+      optional(","),
+      $.expression,
+      repeat(
+        seq(optional(','), field('argument', prec.right($.expression))),
+      ),
+    )),
+    // prec(PREC.TOP, choice(
+    //   seq(
+    //     optional(','),
+    //     $._parameter_list_opt_comma,
+    //   ),
+    //   $._expression,
+    // )),
+
     _variable: $ => choice(
       field('quest_variable', $.quest_variable), // namespace.var
       field('array_variable', $.array_variable), // array[x]
@@ -319,11 +342,13 @@ module.exports = grammar({
       ']',
     ),
 
-    slice: $ => seq(
+    slice: $ => prec.right(PREC.SLICE_PAIR, seq(
       optional($._literal),
       ':',
       optional($._literal),
-    ),
+    )),
+
+    expression: $ => prec(1000, alias($._expression, "expression")),
 
     _expression: $ => choice(
       $._literal,
@@ -332,6 +357,7 @@ module.exports = grammar({
       $._unary_expression,
       $.parenthesized_expression,
       $.slice,
+      $.call,
     ),
 
     parenthesized_expression: $ => seq(

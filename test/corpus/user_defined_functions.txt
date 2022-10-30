@@ -40,3 +40,135 @@ end
   (block
     (user_defined_function (parameter (reference))
                            (parameter (reference)))))
+
+
+===============================
+Statement Call w/ No Parameters
+===============================
+scn test
+begin gamemode
+call func
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (call (reference)))))
+
+======================================
+Statement Call w/ Expression Parameter
+======================================
+scn test
+begin gamemode
+call func x
+call func x + 1
+call func x[1]
+call func (x + 1)
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (call (reference)
+        (args
+          (expression (reference)))))
+    (statement
+      (call (reference)
+        (args
+          (expression
+            (reference)
+            (binary_operator)
+            (integer)))))
+    (statement
+      (call (reference)
+        (args
+          (expression
+            (array_variable
+              (reference)
+              (subscript (integer)))))))
+    (statement
+      (call (reference)
+        (args
+          (expression
+            (parenthesized_expression
+              (reference)
+              (binary_operator)
+              (integer))))))))
+
+============================================
+Statement Call w/ Multi Expression Parameter
+============================================
+scn test
+begin gamemode
+call func x x
+call func, x, x
+call func x + 1, x % 2
+end
+---
+
+(source_file
+  (script_declaration
+    (reference))
+  (block
+    (game_feature)
+    (statement
+      (call
+        (reference)
+        (args
+          (expression
+            (reference))
+          (expression
+            (reference)))))
+    (statement
+      (call
+        (reference)
+        (args
+          (expression
+            (reference))
+          (expression
+            (reference)))))
+    (statement
+      (call
+        (reference)
+        (args
+          (expression
+            (reference)
+            (binary_operator)
+            (integer))
+          (expression
+            (reference)
+            (binary_operator)
+            (integer)))))))
+
+=================================
+Statement Call w/ Expression Call
+=================================
+scn test
+begin gamemode
+call func call other_func
+call func, call other_func, call func
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (call (reference)
+        (args
+          (expression
+            (call (reference))))))
+    (statement
+      (call (reference)
+        (args
+          (expression
+            (call (reference)))
+          (expression
+            (call (reference))))))))

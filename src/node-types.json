@@ -26,6 +26,32 @@
     ]
   },
   {
+    "type": "args",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "array_type",
     "named": true,
     "fields": {}
@@ -101,6 +127,32 @@
     "type": "break",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "call",
+    "named": true,
+    "fields": {
+      "user_defined_function": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "args",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "comment",
@@ -196,6 +248,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "parenthesized_expression",
           "named": true
         },
@@ -244,6 +300,108 @@
         },
         {
           "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expression",
+    "named": true,
+    "fields": {
+      "array_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_variable",
+            "named": true
+          }
+        ]
+      },
+      "float": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          }
+        ]
+      },
+      "integer": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "quest_variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "quest_variable",
+            "named": true
+          }
+        ]
+      },
+      "reference": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
+      "string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "slice",
+          "named": true
+        },
+        {
+          "type": "unary_operator",
           "named": true
         }
       ]
@@ -689,6 +847,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "parenthesized_expression",
           "named": true
         },
@@ -828,6 +990,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "parenthesized_expression",
           "named": true
         },
@@ -963,6 +1129,10 @@
       "types": [
         {
           "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -1124,6 +1294,10 @@
       "types": [
         {
           "type": "binary_operator",
+          "named": true
+        },
+        {
+          "type": "call",
           "named": true
         },
         {
@@ -1395,6 +1569,10 @@
   },
   {
     "type": "c",
+    "named": false
+  },
+  {
+    "type": "call",
     "named": false
   },
   {
