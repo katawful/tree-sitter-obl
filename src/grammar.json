@@ -457,6 +457,18 @@
         {
           "type": "SYMBOL",
           "name": "while"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "for_each"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "break"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "continue"
         }
       ]
     },
@@ -727,7 +739,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_inner_loop"
+            "name": "_inner_block"
           }
         },
         {
@@ -735,44 +747,6 @@
           "name": "_loop"
         }
       ]
-    },
-    "_inner_loop": {
-      "type": "PREC_LEFT",
-      "value": 0,
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "REPEAT1",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_inner_block"
-            }
-          },
-          {
-            "type": "REPEAT1",
-            "content": {
-              "type": "FIELD",
-              "name": "break",
-              "content": {
-                "type": "SYMBOL",
-                "name": "break"
-              }
-            }
-          },
-          {
-            "type": "REPEAT1",
-            "content": {
-              "type": "FIELD",
-              "name": "continue",
-              "content": {
-                "type": "SYMBOL",
-                "name": "continue"
-              }
-            }
-          }
-        ]
-      }
     },
     "break": {
       "type": "ALIAS",
@@ -829,6 +803,78 @@
         {
           "type": "SYMBOL",
           "name": "_terminator"
+        }
+      ]
+    },
+    "for_each": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_for_each"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_inner_block"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_loop"
+        }
+      ]
+    },
+    "_for_each": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[fF][oO][rR][eE][aA][cC][hH]"
+          },
+          "named": false,
+          "value": "foreach"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "iter"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_terminator"
+        }
+      ]
+    },
+    "iter": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "variable",
+          "content": {
+            "type": "SYMBOL",
+            "name": "reference"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "<-"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_literal"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_variable"
+            }
+          ]
         }
       ]
     },

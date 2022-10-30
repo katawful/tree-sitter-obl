@@ -176,6 +176,9 @@ module.exports = grammar({
       $.let_statement,
       $._conditional,
       $.while,
+      $.for_each,
+      $.break,
+      $.continue,
     ),
 
     set_statement: $ => seq(
@@ -243,15 +246,9 @@ module.exports = grammar({
 
     while: $ => seq(
       $._while,
-      repeat($._inner_loop),
+      repeat($._inner_block),
       $._loop,
     ),
-
-    _inner_loop: $ => prec.left(choice(
-      repeat1($._inner_block),
-      repeat1(field("break", $.break)),
-      repeat1(field("continue", $.continue)),
-    )),
 
     break: $ => keyword("break"),
     continue: $ => keyword("continue"),
@@ -265,6 +262,24 @@ module.exports = grammar({
     _loop: $ => seq(
       keyword("loop"),
       $._terminator,
+    ),
+
+    for_each: $ => seq(
+      $._for_each,
+      repeat($._inner_block),
+      $._loop,
+    ),
+
+    _for_each: $ => seq(
+      keyword("foreach"),
+      $.iter,
+      $._terminator,
+    ),
+
+    iter: $ => seq(
+      field("variable", $.reference),
+      '<-',
+      choice($._literal, $._variable),
     ),
 
     _variable: $ => choice(

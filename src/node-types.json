@@ -260,6 +260,25 @@
     "fields": {}
   },
   {
+    "type": "for_each",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "iter",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "format_specifier",
     "named": true,
     "fields": {},
@@ -313,6 +332,82 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "iter",
+    "named": true,
+    "fields": {
+      "array_variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_variable",
+            "named": true
+          }
+        ]
+      },
+      "float": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          }
+        ]
+      },
+      "integer": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "quest_variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quest_variable",
+            "named": true
+          }
+        ]
+      },
+      "reference": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
+      "string": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -867,11 +962,23 @@
       "required": false,
       "types": [
         {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "continue",
+          "named": true
+        },
+        {
           "type": "else",
           "named": true
         },
         {
           "type": "else_if",
+          "named": true
+        },
+        {
+          "type": "for_each",
           "named": true
         },
         {
@@ -1094,28 +1201,7 @@
   {
     "type": "while",
     "named": true,
-    "fields": {
-      "break": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "break",
-            "named": true
-          }
-        ]
-      },
-      "continue": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "continue",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
@@ -1240,6 +1326,10 @@
     "named": false
   },
   {
+    "type": "<-",
+    "named": false
+  },
+  {
     "type": "<<",
     "named": false
   },
@@ -1337,6 +1427,10 @@
   },
   {
     "type": "float",
+    "named": false
+  },
+  {
+    "type": "foreach",
     "named": false
   },
   {

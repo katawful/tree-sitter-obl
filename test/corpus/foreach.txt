@@ -1,0 +1,69 @@
+=====
+Array
+=====
+scn test
+begin gamemode
+foreach iter <- array[1]
+word
+loop
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (for_each
+        (iter
+          (reference)
+          (array_variable
+            (reference)
+            (subscript (integer))))
+        (statement)))))
+
+======
+String
+======
+scn test
+begin gamemode
+foreach iter <- "string"
+word
+loop
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (for_each
+        (iter (reference) (string))
+        (statement)))))
+
+=========
+Reference
+=========
+scn test
+begin gamemode
+foreach iter <- reference
+word
+if x
+break
+endif
+loop
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (for_each
+        (iter (reference) (reference))
+        (statement)
+        (statement
+          (if (condition (reference)))
+          (statement (break)))))))

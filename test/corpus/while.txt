@@ -40,9 +40,9 @@ end
       (while
         (condition (reference))
         (statement)
-        (break)
+        (statement (break))
         (statement)
-        (continue)))))
+        (statement (continue))))))
 
 ======
 Nested
