@@ -130,6 +130,7 @@ scn test
 begin gamemode
 let a[1:2] := a[:1] := a[1:]
 let a[-1:-2] := a[:-1] := a[-1:]
+let a["begin":"end"] := 1
 end
 ---
 
@@ -174,7 +175,16 @@ end
           (array_variable
             (reference)
             (subscript
-              (slice (integer)))))))))
+              (slice (integer)))))))
+        (statement
+          (let_statement
+            (left
+              (array_variable
+                (reference)
+                (subscript
+                  (slice (string) (string)))))
+            (assignment)
+            (right (integer))))))
 
 =============
 Member Access
