@@ -473,6 +473,10 @@
         {
           "type": "SYMBOL",
           "name": "call"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "return"
         }
       ]
     },
@@ -976,6 +980,15 @@
           }
         ]
       }
+    },
+    "return": {
+      "type": "ALIAS",
+      "content": {
+        "type": "PATTERN",
+        "value": "[rR][eE][tT][uU][rR][nN]"
+      },
+      "named": false,
+      "value": "return"
     },
     "_variable": {
       "type": "CHOICE",

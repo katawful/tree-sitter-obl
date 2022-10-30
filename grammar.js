@@ -181,6 +181,7 @@ module.exports = grammar({
       $.break,
       $.continue,
       $.call,
+      $.return,
     ),
 
     set_statement: $ => seq(
@@ -297,13 +298,8 @@ module.exports = grammar({
         seq(optional(','), field('argument', prec.right($.expression))),
       ),
     )),
-    // prec(PREC.TOP, choice(
-    //   seq(
-    //     optional(','),
-    //     $._parameter_list_opt_comma,
-    //   ),
-    //   $._expression,
-    // )),
+
+    return: $ => keyword("return"),
 
     _variable: $ => choice(
       field('quest_variable', $.quest_variable), // namespace.var

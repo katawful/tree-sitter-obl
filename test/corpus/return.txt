@@ -1,0 +1,14 @@
+======
+Return
+======
+scn test
+begin gamemode
+return
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement (return))))

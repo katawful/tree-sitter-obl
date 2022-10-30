@@ -907,6 +907,11 @@
     "fields": {}
   },
   {
+    "type": "return",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "right",
     "named": true,
     "fields": {
@@ -1157,6 +1162,10 @@
         },
         {
           "type": "let_statement",
+          "named": true
+        },
+        {
+          "type": "return",
           "named": true
         },
         {
@@ -1677,6 +1686,10 @@
   },
   {
     "type": "ref",
+    "named": false
+  },
+  {
+    "type": "return",
     "named": false
   },
   {
