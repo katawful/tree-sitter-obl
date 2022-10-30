@@ -122,3 +122,78 @@ end
           (array_variable
             (quest_variable (reference) (reference))
             (subscript (reference))))))))
+
+=====
+Slice
+=====
+scn test
+begin gamemode
+let a[1:2] := a[:1] := a[1:]
+let a[-1:-2] := a[:-1] := a[-1:]
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left
+          (array_variable
+            (reference)
+            (subscript
+              (slice (integer) (integer)))))
+        (assignment)
+        (left
+          (array_variable
+            (reference)
+            (subscript
+              (slice (integer)))))
+        (assignment)
+        (right
+          (array_variable
+            (reference)
+            (subscript
+              (slice (integer)))))))
+    (statement
+      (let_statement
+        (left
+          (array_variable
+            (reference)
+            (subscript
+              (slice (integer) (integer)))))
+        (assignment)
+        (left
+          (array_variable
+            (reference)
+            (subscript
+              (slice (integer)))))
+        (assignment)
+        (right
+          (array_variable
+            (reference)
+            (subscript
+              (slice (integer)))))))))
+
+=============
+Member Access
+=============
+scn test
+begin gamemode
+let x->key := 1
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left
+          (array_variable
+            (reference)
+            (member_access (reference))))
+        (assignment)
+        (right (integer))))))

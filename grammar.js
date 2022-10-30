@@ -283,9 +283,19 @@ module.exports = grammar({
 
     array_variable: $ => prec.left(seq(
       choice($.quest_variable, field('variable', $.reference)),
-      $._open_subscript,
-      repeat1($.subscript),
+      choice(
+        seq(
+          $._open_subscript,
+          repeat1($.subscript)
+        ),
+        repeat1($.member_access),
+      ),
     )),
+
+    member_access: $ => seq(
+      '->',
+      field("key", $._literal),
+    ),
 
     subscript: $ => seq(
       $._open_subscript,
@@ -294,12 +304,19 @@ module.exports = grammar({
       ']',
     ),
 
+    slice: $ => seq(
+      optional($._literal),
+      ':',
+      optional($._literal),
+    ),
+
     _expression: $ => choice(
       $._literal,
       $._variable,
       $._binary_expression,
       $._unary_expression,
       $.parenthesized_expression,
+      $.slice,
     ),
 
     parenthesized_expression: $ => seq(

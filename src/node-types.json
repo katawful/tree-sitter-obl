@@ -50,6 +50,10 @@
       "required": true,
       "types": [
         {
+          "type": "member_access",
+          "named": true
+        },
+        {
           "type": "quest_variable",
           "named": true
         },
@@ -193,6 +197,10 @@
         },
         {
           "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "slice",
           "named": true
         },
         {
@@ -384,6 +392,74 @@
     }
   },
   {
+    "type": "member_access",
+    "named": true,
+    "fields": {
+      "float": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          }
+        ]
+      },
+      "integer": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "reference",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "reference": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
+      "string": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "number_type",
     "named": true,
     "fields": {}
@@ -522,6 +598,10 @@
           "named": true
         },
         {
+          "type": "slice",
+          "named": true
+        },
+        {
           "type": "unary_operator",
           "named": true
         }
@@ -657,6 +737,10 @@
           "named": true
         },
         {
+          "type": "slice",
+          "named": true
+        },
+        {
           "type": "unary_operator",
           "named": true
         }
@@ -699,6 +783,52 @@
         "types": [
           {
             "type": "right",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "slice",
+    "named": true,
+    "fields": {
+      "float": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "float",
+            "named": true
+          }
+        ]
+      },
+      "integer": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "reference": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
+      "string": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -894,6 +1024,10 @@
           "named": true
         },
         {
+          "type": "slice",
+          "named": true
+        },
+        {
           "type": "unary_operator",
           "named": true
         }
@@ -1070,6 +1204,10 @@
     "named": false
   },
   {
+    "type": "->",
+    "named": false
+  },
+  {
     "type": ".",
     "named": false
   },
@@ -1079,6 +1217,10 @@
   },
   {
     "type": "/=",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {
