@@ -1010,6 +1010,31 @@
         ]
       }
     },
+    "filter": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "field",
+          "content": {
+            "type": "SYMBOL",
+            "name": "reference"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "::"
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_literal"
+          }
+        }
+      ]
+    },
     "return": {
       "type": "ALIAS",
       "content": {
@@ -1260,6 +1285,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "filter"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_function"
         }
       ]
@@ -1340,14 +1369,6 @@
           "content": {
             "type": "STRING",
             "value": "&&"
-          }
-        },
-        {
-          "type": "PREC_LEFT",
-          "value": 12,
-          "content": {
-            "type": "STRING",
-            "value": "::"
           }
         },
         {
@@ -1740,8 +1761,17 @@
           "type": "FIELD",
           "name": "string",
           "content": {
-            "type": "SYMBOL",
-            "name": "string"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "string"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "plain_string"
+              }
+            ]
           }
         },
         {
@@ -1761,6 +1791,23 @@
         "type": "SYMBOL",
         "name": "_identifier"
       }
+    },
+    "plain_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\"%\\|]+"
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
     },
     "string": {
       "type": "SEQ",
@@ -1870,6 +1917,10 @@
       "_variable"
     ],
     [
+      "string"
+    ],
+    [
+      "plain_string",
       "string"
     ],
     [

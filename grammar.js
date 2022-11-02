@@ -49,6 +49,10 @@ module.exports = grammar({
       $._variable,
     ],
     [
+      $.plain_string,
+      $.string,
+    ],
+    [
       $._start_block,
       $.statement,
     ],
@@ -74,6 +78,7 @@ module.exports = grammar({
   conflicts: $ => [
     [$._literal, $._variable],
     [$.string],
+    [$.plain_string, $.string],
     [$._parameter_list_opt_comma],
     [$.while],
     // [$.parameter, $._expression],
@@ -310,6 +315,12 @@ module.exports = grammar({
       ),
     )),
 
+    filter: $ => seq(
+      field("field", $.reference),
+      '::',
+      field("value", $._literal),
+    ),
+
     return: $ => keyword("return"),
 
     _variable: $ => prec.left(1000, choice(
@@ -365,6 +376,7 @@ module.exports = grammar({
       $.parenthesized_expression,
       $.slice,
       $.call,
+      $.filter,
       $._function,
     ),
 
@@ -388,7 +400,6 @@ module.exports = grammar({
     binary_operator: $ => choice(
       prec.left(PREC.LOGICAL_OR, '||'),
       prec.left(PREC.LOGICAL_AND, '&&'),
-      prec.left(PREC.SLICE_PAIR, '::'),
       prec.left(PREC.EQUALITY, '=='),
       prec.left(PREC.EQUALITY, '!='),
       prec.left(PREC.GREATER_LESS, '>'),
@@ -467,11 +478,17 @@ module.exports = grammar({
     _literal: $ => choice(
       field('integer', $.integer),
       field('float', $.float),
-      field('string', $.string),
+      field('string', choice($.string, $.plain_string)),
       field('reference', $.reference),
     ),
 
     reference: $ => prec(PREC.LITERAL, $._identifier),
+
+    plain_string: $ => seq(
+      '"',
+      /[^"%\|]+/,
+      '"',
+    ),
 
     string: $ => seq(
       '"',
@@ -485,7 +502,7 @@ module.exports = grammar({
       prec(1000, optional($.args)),
     ),
     float: $ => choice(
-      /\-?\d+\.\d*/, // regular floats
+      /\-?\d+\.\d*/, // regular floatsneovim/
       /\-?\d+\.\d*E\-?\d+/, // sci-notation
     ),
     integer: $ => /\-?\d+/,

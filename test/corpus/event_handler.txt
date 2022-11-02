@@ -1,0 +1,49 @@
+===========
+Plain Event
+===========
+scn test
+begin gamemode
+seteventhandler "OnLoad" function
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (function)
+      (args
+        (expression (plain_string))
+        (expression (reference))))))
+
+==============
+Filtered Event
+==============
+scn test
+begin gamemode
+seteventhandler "OnHit" FnOnHitByPlayer second::PlayerRef
+seteventhandler "OnHit", FnOnHitByPlayer, first::"string", second::PlayerRef
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (function)
+      (args
+        (expression (plain_string))
+        (expression (reference))
+        (expression
+          (filter (reference) (reference)))))
+    (statement
+      (function)
+      (args
+        (expression (plain_string))
+        (expression (reference))
+        (expression
+          (filter (reference) (plain_string)))
+        (expression
+          (filter (reference) (reference)))))))

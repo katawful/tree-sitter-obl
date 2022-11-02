@@ -172,6 +172,7 @@ disablekey
 disablelinkedpathpoints
 disablemouse
 disableplayercontrols
+dispatchevent
 dispel
 dispelallspells
 dispelnthactiveeffect
@@ -672,7 +673,6 @@ getmodlocaldata
 getmousebuttonpress
 getmousebuttonsswapped
 getmpspell
-getname
 getname
 getnextref
 getnorumors
@@ -1437,7 +1437,6 @@ positionworld
 pow
 preloadmagiceffect
 print
-print
 printactivetileinfo
 printc
 printd
@@ -1462,6 +1461,7 @@ removeallitems
 removebasespell
 removeenchantment
 removeequippedweaponpoison
+removeeventhandler
 removeflames
 removefromleveledlist
 removeitem
@@ -1663,6 +1663,7 @@ setequippedcurrentcharge
 setequippedcurrenthealth
 setequippedweaponpoison
 setessential
+seteventhandler
 seteyes
 setfactionevil
 setfactionhidden

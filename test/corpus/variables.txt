@@ -90,7 +90,7 @@ end
         (left
           (array_variable
             (reference)
-            (subscript (string))))
+            (subscript (plain_string))))
         (assignment)
         (right
           (array_variable
@@ -182,7 +182,7 @@ end
               (array_variable
                 (reference)
                 (subscript
-                  (slice (string) (string)))))
+                  (slice (plain_string) (plain_string)))))
             (assignment)
             (right (integer))))))
 

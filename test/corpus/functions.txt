@@ -35,7 +35,7 @@ end
     (game_feature)
     (statement
       (function)
-      (args (expression (string))))
+      (args (expression (plain_string))))
     (statement
       (set_statement
         (left (reference))
@@ -51,3 +51,14 @@ begin gamemode
 printc "name is: %z", getname player
 end
 ---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (function)
+      (args
+        (expression (string (format_specifier)))
+        (expression (function))
+        (expression (reference))))))

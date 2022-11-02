@@ -39,7 +39,7 @@ end
     (game_feature)
     (statement
       (for_each
-        (iter (reference) (string))
+        (iter (reference) (plain_string))
         (statement)))))
 
 =========
