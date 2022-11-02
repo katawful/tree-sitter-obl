@@ -439,6 +439,10 @@
       "type": "CHOICE",
       "members": [
         {
+          "type": "SYMBOL",
+          "name": "_function"
+        },
+        {
           "type": "STRING",
           "value": "word"
         },
@@ -479,6 +483,31 @@
           "name": "return"
         }
       ]
+    },
+    "_function": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "function"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "args"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "set_statement": {
       "type": "SEQ",
@@ -991,33 +1020,37 @@
       "value": "return"
     },
     "_variable": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "quest_variable",
-          "content": {
-            "type": "SYMBOL",
-            "name": "quest_variable"
+      "type": "PREC_LEFT",
+      "value": 1000,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "quest_variable",
+            "content": {
+              "type": "SYMBOL",
+              "name": "quest_variable"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "array_variable",
+            "content": {
+              "type": "SYMBOL",
+              "name": "array_variable"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "variable",
+            "content": {
+              "type": "SYMBOL",
+              "name": "reference"
+            }
           }
-        },
-        {
-          "type": "FIELD",
-          "name": "array_variable",
-          "content": {
-            "type": "SYMBOL",
-            "name": "array_variable"
-          }
-        },
-        {
-          "type": "FIELD",
-          "name": "variable",
-          "content": {
-            "type": "SYMBOL",
-            "name": "reference"
-          }
-        }
-      ]
+        ]
+      }
     },
     "quest_variable": {
       "type": "SEQ",
@@ -1224,6 +1257,10 @@
         {
           "type": "SYMBOL",
           "name": "call"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_function"
         }
       ]
     },
@@ -1757,33 +1794,20 @@
           "value": "\""
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ","
-                    },
-                    {
-                      "type": "BLANK"
-                    }
-                  ]
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_parameter_list_opt_comma"
-                }
-              ]
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "PREC",
+          "value": 1000,
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "args"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1875,7 +1899,7 @@
     },
     {
       "type": "SYMBOL",
-      "name": "_close_subscript"
+      "name": "function"
     }
   ],
   "inline": [],

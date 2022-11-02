@@ -38,7 +38,7 @@ module.exports = grammar({
     $._no_whitespace,
     $._dot,
     $._open_subscript,
-    $._close_subscript,
+    $.function,
   ],
 
   word: $ => $._identifier,
@@ -49,6 +49,11 @@ module.exports = grammar({
       $._variable,
     ],
     [
+      $._start_block,
+      $.statement,
+    ],
+    [
+      $._variable,
       $.array_variable,
       $.variable,
     ],
@@ -172,6 +177,7 @@ module.exports = grammar({
     _end_block: $ => seq(keyword("end"), $._terminator),
 
     statement: $ => choice(
+      $._function,
       "word",
       $.set_statement,
       $.let_statement,
@@ -183,6 +189,11 @@ module.exports = grammar({
       $.call,
       $.return,
     ),
+
+    _function: $ => prec.left(seq(
+      $.function,
+      optional($.args),
+    )),
 
     set_statement: $ => seq(
       keyword("set"),
@@ -301,11 +312,11 @@ module.exports = grammar({
 
     return: $ => keyword("return"),
 
-    _variable: $ => choice(
+    _variable: $ => prec.left(1000, choice(
       field('quest_variable', $.quest_variable), // namespace.var
       field('array_variable', $.array_variable), // array[x]
       field('variable', $.reference), // var -- these are all references anyways
-    ),
+    )),
 
     quest_variable: $ => seq(
       field('quest', $.reference),
@@ -354,6 +365,7 @@ module.exports = grammar({
       $.parenthesized_expression,
       $.slice,
       $.call,
+      $._function,
     ),
 
     parenthesized_expression: $ => seq(
@@ -470,10 +482,7 @@ module.exports = grammar({
       )),
       '"',
       // strings can have parameters for format specifiers
-      optional(seq(
-        optional(','),
-        $._parameter_list_opt_comma
-      )),
+      prec(1000, optional($.args)),
     ),
     float: $ => choice(
       /\-?\d+\.\d*/, // regular floats

@@ -1,24 +1,28 @@
 #include <tree_sitter/parser.h>
 #include <iostream>
+#include <fstream>
+#include <filesystem>
 #include <string>
 #include <typeinfo>
-/* #include <set> */
+#include <set>
 #include <cwctype>
 
 namespace {
 
 using std::string;
-/* using std::set; */
+using std::set;
+using namespace std;
 
 enum TokenType {
   TERMINATOR,
   NO_WHITESPACE,
   DOT,
   OPEN_SUBSCRIPT,
-  CLOSE_SUBSCRIPT,
+  FUNCTION,
 };
 
 struct Scanner {
+  set<string> function_set;
 
   void skip(TSLexer *lexer) {
     lexer->advance(lexer, true);
@@ -51,59 +55,130 @@ struct Scanner {
     while (lexer->lookahead == ' ' || lexer->lookahead == '\t') {
       int col = lexer->get_column(lexer);
       skip(lexer);
-      // if at end of line, and nothing but whitespace
-      // end the mark and return true
-      // we've found what we were looking for
+      // If at end of line, and nothing but whitespace
+      // end the mark and return true we've found what we were looking for
       if (lexer->lookahead == '\n'
         || lexer->lookahead == '\r'
         || lexer->lookahead == ';'
         || lexer->lookahead == 0)
       {
-        lexer->mark_end(lexer);
+        /* lexer->mark_end(lexer); */
         return true;
         // Any other character is **NOT** the terminator for the whitespace
       } else if (lexer->lookahead != ' ' && lexer->lookahead != '\t') {
-        lexer->mark_end(lexer);
+        /* lexer->mark_end(lexer); */
         return false;
         // if we somehow got to the next line, we were at eol anyways
       } else if (col == 0) {
-        lexer->mark_end(lexer);
+        /* lexer->mark_end(lexer); */
         return true;
       }
       prevCol = col;
     }
   }
 
+  bool functions() {
+    char input[256];
+    if (std::filesystem::exists("src/functions.txt")
+    && function_set.size() == 0) {
+      ifstream function_file ("src/functions.txt");
+      string line;
+      while (getline(function_file, line)) {
+        function_set.insert(line);
+        if (function_file.eof()) {break;}
+      }
+      function_file.close();
+      return true;
+    } else if (function_set.size() > 0
+      && std::filesystem::exists("src/functions.txt")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   bool scan(TSLexer *lexer, const bool *valid_symbols) {
     int char_code = lexer->lookahead;
-    if (char_code == '.') {
+    /* For FUNCTION
+     * We want to make sure we have the set of functions
+     * as well as the current lookahead is an alphanumeric.
+     */
+    if (functions() == true 
+    && valid_symbols[FUNCTION] && !valid_symbols[TERMINATOR]) {
+      /* Advance lexer until we have built a word
+       */
+      string func_word = "";
+      while (lexer->lookahead) {
+        // If we have a space and func_word is not filled, we gotta
+        // advance until we find a word char
+        if ((lexer->lookahead == ' '
+          || lexer->lookahead == '\t'
+          || lexer->lookahead == '\n'
+          || lexer->lookahead == '\r'
+          || lexer->lookahead == 0)
+        && func_word.length() == 0) {
+          skip(lexer);
+          continue;
+        } else if (isalnum(lexer->lookahead) || lexer->lookahead == '_') {
+          // Is a possible word character, add char to string
+          func_word += tolower(lexer->lookahead);
+          advance(lexer);
+          continue;
+          // If found a whitespace and func_word is bigger then we have to end
+          // Functions can only be one word
+        } else if (
+          (lexer->lookahead == ' '
+          || lexer->lookahead == '\t'
+          || lexer->lookahead == '\n'
+          || lexer->lookahead == '\r'
+          || lexer->lookahead == 0)
+        && func_word.length() > 0) {
+          break;
+          // Anything else can't be a word character
+        } else {
+          break;
+        }
+      }
+      // Done lexing
+      lexer->mark_end(lexer);
+      if (func_word.length() > 0) {
+        if (function_set.find(func_word) != function_set.end()) {
+          lexer->result_symbol = FUNCTION;
+          return true;
+        } else {return false;}
+      } else {
+        return false;
+      }
+
+    } else if (lexer->lookahead == '.' && valid_symbols[DOT]) {
       lexer->result_symbol = DOT;
       return true;
-    } else if (char_code == '[') {
+    } else if (lexer->lookahead == '[' && valid_symbols[OPEN_SUBSCRIPT]) {
       lexer->result_symbol = OPEN_SUBSCRIPT;
       return true;
-    } else if (char_code == '\n'
-            || char_code == '\r'
-            || char_code == ';'
-            || char_code == 0)
+    } else if ((lexer->lookahead == '\n'
+            || lexer->lookahead == '\r'
+            || lexer->lookahead == ';'
+            || lexer->lookahead == 0)
+      && valid_symbols[TERMINATOR])
     {
       lexer->mark_end(lexer);
+      advance(lexer);
       lexer->result_symbol = TERMINATOR;
       return true;
       /* Spaces need to be handled specially */
-    } else if (char_code == ' ' || char_code == '\t') {
+    } else if (lexer->lookahead == ' ' || lexer->lookahead == '\t'
+      && valid_symbols[TERMINATOR]) {
       if (space_handler(lexer) == true) {
         lexer->result_symbol = TERMINATOR;
         return true;
       } else {
         return false;
       }
-    } else if (valid_symbols[NO_WHITESPACE]) {
+    } else if (valid_symbols[NO_WHITESPACE] && valid_symbols[NO_WHITESPACE]) {
       lexer->result_symbol = NO_WHITESPACE;
       return true;
     } else {
-      /* printf("false\n"); */
-      lexer->mark_end(lexer);
       return false;
     }
   }

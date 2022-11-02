@@ -244,11 +244,19 @@
       "required": false,
       "types": [
         {
+          "type": "args",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -385,11 +393,19 @@
       "required": false,
       "types": [
         {
+          "type": "args",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -843,11 +859,19 @@
       "required": false,
       "types": [
         {
+          "type": "args",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -991,11 +1015,19 @@
       "required": false,
       "types": [
         {
+          "type": "args",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1133,6 +1165,10 @@
       "required": false,
       "types": [
         {
+          "type": "args",
+          "named": true
+        },
+        {
           "type": "break",
           "named": true
         },
@@ -1154,6 +1190,10 @@
         },
         {
           "type": "for_each",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1186,28 +1226,17 @@
   {
     "type": "string",
     "named": true,
-    "fields": {
-      "parameter": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "parameter",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": false,
       "types": [
         {
-          "type": "format_specifier",
+          "type": "args",
           "named": true
         },
         {
-          "type": "parameter",
+          "type": "format_specifier",
           "named": true
         },
         {
@@ -1302,11 +1331,19 @@
       "required": false,
       "types": [
         {
+          "type": "args",
+          "named": true
+        },
+        {
           "type": "binary_operator",
           "named": true
         },
         {
           "type": "call",
+          "named": true
+        },
+        {
+          "type": "function",
           "named": true
         },
         {
@@ -1619,6 +1656,10 @@
   {
     "type": "foreach",
     "named": false
+  },
+  {
+    "type": "function",
+    "named": true
   },
   {
     "type": "function",
