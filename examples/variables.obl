@@ -7,4 +7,5 @@ begin gamemode
   set x.a to x.a
   set x.a to x[a]
   set x[a] to x[a]
+  set x[a] to x[a[1]]
 end

@@ -1,0 +1,96 @@
+scn DemoMenuScript
+
+float fQuestDelayTime
+
+ref rBirthsign
+string_var rActiveTile
+int iNothing
+int iActiveTile
+int bZoomed
+array_var aArrays
+
+int iSliderPosition
+int temp
+int iDoOnce
+
+string_var sText
+string_var sIcon
+string_var sName
+
+Begin GameMode
+
+  if GetGameLoaded
+    SetDebugMode 0
+    let aArrays := ar_Construct Array
+    ar_Append aArrays "\o/"
+    ar_Append aArrays "This is a list"
+    ar_Append aArrays "I can't believe I did this"
+    ar_Append aArrays "I am a deity"
+    ar_Append aArrays "1"
+    ar_Append aArrays "2"
+    ar_Append aArrays "3"
+    ar_Append aArrays "4"
+    ar_Append aArrays "5"
+    ar_Append aArrays "6"
+    ar_Append aArrays "7"
+    ar_Append aArrays "8"
+    ar_Append aArrays "9"
+  endif
+
+  let iDoOnce := 0
+End
+
+; Begin MenuMode
+
+;   let fQuestDelayTime := 0.0001
+;   let rActiveTile := GetActiveUIComponentName
+;   set iActiveTile to GetActiveUIComponentID
+;   DebugPrint "active tile is: %z %g", rActiveTile, iActiveTile
+
+; End
+
+Begin MenuMode 1011
+  let fQuestDelayTime := 0.1
+  set iActiveTile to GetActiveUIComponentID
+  let rActiveTile := GetActiveUIComponentFullName
+  if iActiveTile == 111 || iActiveTile == 200
+		if IsKeyPressed3 265
+			call DemoMenuScrollHandler
+		endif
+    ; if iDoOnce != 1
+    ;   Call DemoMenuEventHandler
+    ;   let iDoOnce := 1
+    ; endif
+    ; if IsKeyPressed2 265 ; mouse down
+    ;   let temp := -1
+    ;   Call DemoMenuScrollFunction iActiveTile (-1)
+    ; elseif IsKeyPressed2 264 ; mouse up
+    ;   Call DemoMenuScrollFunction iActiveTile 1
+    ; elseif IsKeyPressed2 200 ; up arrow
+    ;   DebugPrint "up"
+    ; elseif IsKeyPressed2 208 ; down arrow
+    ;   DebugPrint "down"
+    ; elseif IsKeyPressed2 256 ; mouse click
+    ;   DebugPrint "click"
+    ; endif
+  endif
+End
+
+; Begin MenuMode 1003
+
+;   let fQuestDelayTime := 0.01
+;   if (OnKeyDown 256) ; left mouse button
+;     if (GetActiveUIComponentID == 14)
+;       let rBirthsign := GetPlayerBirthsign
+;       let sName := GetName rBirthsign
+;       let sIcon := GetTexturePath rBirthsign
+;       let sText := "Custom description found"
+;       ShowGenericMenu "kat\menu_demo.xml"
+;       SetMenuStringValue "background\button\user0|%z", sName, 1011
+;       SetMenuStringValue "user1|%z", sText, 1011
+;       SetMenuStringValue "user2|%z", sName, 1011
+;     endif
+;   endif
+
+
+; End
