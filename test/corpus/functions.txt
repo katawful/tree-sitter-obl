@@ -1,0 +1,53 @@
+==============
+Plain Function
+==============
+scn test
+begin gamemode
+priNtc
+set x to getfps
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement (function))
+    (statement
+      (set_statement
+        (left (reference))
+        (right (function))))))
+
+=====================
+Function w/ Arguments
+=====================
+scn test
+begin gamemode
+print "hi"
+set x to getname player
+end
+---
+
+(source_file
+  (script_declaration
+    (reference))
+  (block
+    (game_feature)
+    (statement
+      (function)
+      (args (expression (string))))
+    (statement
+      (set_statement
+        (left (reference))
+        (right
+          (function)
+          (args (expression (reference))))))))
+
+==============================
+Function w/ Function Arguments
+==============================
+scn test
+begin gamemode
+printc "name is: %z", getname player
+end
+---

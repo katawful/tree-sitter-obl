@@ -65,9 +65,8 @@ end
 =============
 Block w/o EOL
 =============
-
 scn block
-begin gamemode
+begin w
 word
 end
 ---
