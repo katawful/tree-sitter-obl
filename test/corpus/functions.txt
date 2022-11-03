@@ -25,6 +25,8 @@ scn test
 begin gamemode
 print "hi"
 set x to getname player
+ar_append x "hi"
+let x := ar_construct array
 end
 ---
 
@@ -41,7 +43,23 @@ end
         (left (reference))
         (right
           (function)
-          (args (expression (reference))))))))
+          (args (expression (reference))))))
+        (statement
+          (function)
+          (args
+            (expression
+              (reference))
+            (expression
+              (plain_string))))
+        (statement
+          (let_statement
+            (left
+              (reference))
+            (assignment)
+            (right
+              (function)
+              (args
+                (expression (reference))))))))
 
 ==============================
 Function w/ Function Arguments
@@ -62,3 +80,52 @@ end
         (expression (string (format_specifier)))
         (expression (function))
         (expression (reference))))))
+
+=====================
+Condition w/ Function
+=====================
+scn test
+begin gamemode
+if GetGameLoaded
+endif
+end
+---
+
+(source_file
+  (script_declaration
+    (reference))
+  (block
+    (game_feature)
+    (statement
+      (if
+        (condition
+          (function))))))
+
+======
+Method
+======
+scn test
+begin gamemode
+let x := player.getname
+player.getname
+end
+---
+
+(source_file
+  (script_declaration
+    (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left
+          (reference))
+        (assignment)
+        (right
+          (method
+            (reference)
+            (function)))))
+    (statement
+      (method
+        (reference)
+        (function)))))

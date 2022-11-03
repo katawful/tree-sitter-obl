@@ -196,9 +196,17 @@ module.exports = grammar({
     ),
 
     _function: $ => prec.left(seq(
-      $.function,
+      choice($.method, $.function),
       optional($.args),
     )),
+
+    method: $ => seq(
+      $.reference,
+      $._dot,
+      '.',
+      $._no_whitespace,
+      $.function,
+    ),
 
     set_statement: $ => seq(
       keyword("set"),

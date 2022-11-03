@@ -491,8 +491,17 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "SYMBOL",
-            "name": "function"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "method"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "function"
+              }
+            ]
           },
           {
             "type": "CHOICE",
@@ -508,6 +517,31 @@
           }
         ]
       }
+    },
+    "method": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "reference"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_dot"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_no_whitespace"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "function"
+        }
+      ]
     },
     "set_statement": {
       "type": "SEQ",
