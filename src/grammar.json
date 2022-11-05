@@ -382,7 +382,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "_parameter_list"
+              "name": "_parameter_list_opt_comma"
             },
             {
               "type": "BLANK"
