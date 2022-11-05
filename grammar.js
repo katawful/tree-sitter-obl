@@ -317,7 +317,7 @@ module.exports = grammar({
 
     args: $ => prec.right(1000, seq(
       optional(","),
-      $.expression,
+      field('argument', $.expression),
       repeat(
         seq(optional(','), field('argument', prec.right($.expression))),
       ),
