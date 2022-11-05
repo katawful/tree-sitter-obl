@@ -1,0 +1,37 @@
+====
+Goto
+====
+scn test
+begin gamemode
+goto
+goto 1
+goto x
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement (goto))
+    (statement (goto (integer)))
+    (statement (goto (reference)))))
+
+=====
+Label
+=====
+scn test
+begin gamemode
+label
+label 1
+label x
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement (label))
+    (statement (label (integer)))
+    (statement (label (reference)))))

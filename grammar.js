@@ -193,6 +193,8 @@ module.exports = grammar({
       $.continue,
       $.call,
       $.return,
+      $.goto,
+      $.label,
     ),
 
     _function: $ => prec.left(seq(
@@ -236,6 +238,22 @@ module.exports = grammar({
 
     left: $ => $._variable,
     right: $ => $._expression,
+
+    goto: $ => seq(
+      choice(keyword("saveip"), keyword("goto")),
+      optional(choice(
+        $.integer,
+        $.reference,
+      )),
+    ),
+
+    label: $ => seq(
+      choice(keyword("restoreip"), keyword("label")),
+      optional(choice(
+        $.integer,
+        $.reference,
+      )),
+    ),
 
     _conditional: $ => seq(
       $.if,

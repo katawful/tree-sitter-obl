@@ -481,6 +481,14 @@
         {
           "type": "SYMBOL",
           "name": "return"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "goto"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "label"
         }
       ]
     },
@@ -661,6 +669,104 @@
     "right": {
       "type": "SYMBOL",
       "name": "_expression"
+    },
+    "goto": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[sS][aA][vV][eE][iI][pP]"
+              },
+              "named": false,
+              "value": "saveip"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[gG][oO][tT][oO]"
+              },
+              "named": false,
+              "value": "goto"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "integer"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "reference"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "label": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[rR][eE][sS][tT][oO][rR][eE][iI][pP]"
+              },
+              "named": false,
+              "value": "restoreip"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "PATTERN",
+                "value": "[lL][aA][bB][eE][lL]"
+              },
+              "named": false,
+              "value": "label"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "integer"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "reference"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
     "_conditional": {
       "type": "SEQ",
@@ -1006,8 +1112,12 @@
             ]
           },
           {
-            "type": "SYMBOL",
-            "name": "expression"
+            "type": "FIELD",
+            "name": "argument",
+            "content": {
+              "type": "SYMBOL",
+              "name": "expression"
+            }
           },
           {
             "type": "REPEAT",
