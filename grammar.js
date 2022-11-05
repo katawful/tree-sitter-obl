@@ -156,14 +156,14 @@ module.exports = grammar({
     ),
 
     _parameter_list: $ => seq(
-      $.parameter,
+      field("parameter", $.parameter),
       repeat(
         seq(',', field('parameter', $.parameter)),
       ),
     ),
 
     _parameter_list_opt_comma: $ => seq(
-      $.parameter,
+      field("parameter", $.parameter),
       repeat(
         seq(optional(','), field('parameter', $.parameter)),
       ),
