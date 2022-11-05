@@ -171,7 +171,7 @@ module.exports = grammar({
 
     _enclosed_parameter_list: $ => seq(
       "{",
-      optional($._parameter_list),
+      optional($._parameter_list_opt_comma),
       "}",
     ),
 
