@@ -19,8 +19,8 @@ TES 4: Oblivion scripting language (obl) grammar for {https://github.com/tree-si
    -- [x] While Loop Statement
    -- [x] ForEach Loop Statement
    -- [x] Return, Break, Continue Statement
-   -- [ ] Goto Statement
-   -- [ ] Label Statement
+   -- [x] Goto Statement
+   -- [x] Label Statement
    -- [-] Expressions
    --- [ ] Built-in Functions
   ----- [ ] OBSE Plugins
@@ -32,3 +32,11 @@ TES 4: Oblivion scripting language (obl) grammar for {https://github.com/tree-si
    -- [x] Variables
    --- [x] Array Variables
    --- [x] Quest Variables
+
+* Built-in Functions
+  Built in functions have to be defined statically, as the syntax for calling them is generally
+  identical to that of a general variable/reference. Because of this, any function not found within
+  the parser itself will simply not be able to be parsed, and will present a warning to the user
+
+  Currently this warning is highlighting the entire statement with the hl-group `@warning`. This may
+  be subject to change.
