@@ -9,9 +9,7 @@ parameter: (parameter) @local.reference
 
 (block (game_feature) @local.definition.namespace)
 (block
-  (user_defined_function) @local.definition.function
-  parameter: (parameter) @local.definition.parameter
-)
+  (user_defined_function) @local.definition.function)
 
 (let_statement
   left: (left) @local.definition.var)
