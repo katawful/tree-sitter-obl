@@ -497,8 +497,16 @@
         {
           "type": "SYMBOL",
           "name": "label"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "unimplemented"
         }
       ]
+    },
+    "unimplemented": {
+      "type": "SYMBOL",
+      "name": "_identifier"
     },
     "_function": {
       "type": "PREC_LEFT",

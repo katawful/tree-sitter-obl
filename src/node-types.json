@@ -1429,6 +1429,10 @@
           "named": true
         },
         {
+          "type": "unimplemented",
+          "named": true
+        },
+        {
           "type": "while",
           "named": true
         }
@@ -1587,6 +1591,11 @@
   },
   {
     "type": "unary_operator",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "unimplemented",
     "named": true,
     "fields": {}
   },

@@ -5,6 +5,7 @@
 (string) @string
 (function) @function.builtin
 (reference) @symbol
+(unimplemented) @warning
 
 [
   (string_type)
