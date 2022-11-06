@@ -126,7 +126,7 @@ end
         (assignment)
         (right
           (string
-            (format_specifier)
+            (format_specifier (internal_string))
             (args (expression (reference)))))))))
 
 ====
@@ -164,7 +164,11 @@ end
         (assignment)
         (right
           (string
-            (format_specifier (pipe) (pipe))
+            (format_specifier
+              (pipe)
+              (internal_string)
+              (pipe)
+              (internal_string))
             (args (expression (reference)))))))))
 
 =====

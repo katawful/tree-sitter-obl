@@ -475,10 +475,12 @@ module.exports = grammar({
         "%{",
         repeat(choice(
           $.pipe,
-          /[^"%\|]+/,
+          $.internal_string,
         )),
         "%}",
       )),
+
+    internal_string: $ => /[^"%\|]+/,
 
     // TODO: add  type literals
     _literal: $ => choice(

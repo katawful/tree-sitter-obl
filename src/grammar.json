@@ -1799,8 +1799,8 @@
                     "name": "pipe"
                   },
                   {
-                    "type": "PATTERN",
-                    "value": "[^\"%\\|]+"
+                    "type": "SYMBOL",
+                    "name": "internal_string"
                   }
                 ]
               }
@@ -1812,6 +1812,10 @@
           ]
         }
       ]
+    },
+    "internal_string": {
+      "type": "PATTERN",
+      "value": "[^\"%\\|]+"
     },
     "_literal": {
       "type": "CHOICE",

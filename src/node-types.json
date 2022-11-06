@@ -556,6 +556,10 @@
       "required": false,
       "types": [
         {
+          "type": "internal_string",
+          "named": true
+        },
+        {
           "type": "pipe",
           "named": true
         }
@@ -611,6 +615,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "internal_string",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "iter",
@@ -1844,11 +1853,11 @@
   },
   {
     "type": "function",
-    "named": true
+    "named": false
   },
   {
     "type": "function",
-    "named": false
+    "named": true
   },
   {
     "type": "goto",
