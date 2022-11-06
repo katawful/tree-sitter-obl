@@ -201,9 +201,12 @@ module.exports = grammar({
     // This is for any functions used as a statement that haven't been added to this parser
     // It is *not* meant to make things simpler, it is meant to not not error out entirely so
     // end users can still use this. Users should report these missing functions on GitHub
-    unimplemented: $ => $._identifier,
+    unimplemented: $ => prec.left(seq(
+      choice($._identifier, $.method),
+      optional($.args),
+    )),
 
-    _function: $ => prec.left(seq(
+    _function: $ => prec.left(1000, seq(
       choice($.method, $.function),
       optional($.args),
     )),

@@ -505,12 +505,42 @@
       ]
     },
     "unimplemented": {
-      "type": "SYMBOL",
-      "name": "_identifier"
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_identifier"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "method"
+              }
+            ]
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "args"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     },
     "_function": {
       "type": "PREC_LEFT",
-      "value": 0,
+      "value": 1000,
       "content": {
         "type": "SEQ",
         "members": [

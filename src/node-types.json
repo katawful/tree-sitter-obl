@@ -1597,7 +1597,21 @@
   {
     "type": "unimplemented",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "args",
+          "named": true
+        },
+        {
+          "type": "method",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "user_defined_function",
