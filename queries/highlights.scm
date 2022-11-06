@@ -5,7 +5,21 @@
 (string) @string
 (function) @function.builtin
 (reference) @symbol
-(unimplemented) @warning
+(unimplemented) @text.underline
+
+[
+  "["
+  "]"
+  "{"
+  "}"
+  "("
+  ")"]
+@punctuation.bracket
+
+[
+  "."
+  ","]
+@punctuation
 
 [
   (string_type)
@@ -24,6 +38,7 @@ user_defined_function: (reference) @function
 variable: (reference) @variable
 (method
   (reference) @variable
+  "." @method.call
   (function) @method)
 
 field: (reference) @field
@@ -35,7 +50,7 @@ field: (reference) @field
   "end"]
 @keyword
 
-"call" @keyword.function
+"call" @function.call
 "return" @keyword.return
 
 [
@@ -102,23 +117,8 @@ field: (reference) @field
   "<-"]
 @operator
 
-[
-  "["
-  "]"
-  "{"
-  "}"
-  "("
-  ")"]
-@punctuation.bracket
-
-[
-  "."
-  ","]
-@punctuation
-
-[
-  (pipe)
-  (format_specifier)] @string.escape
+"|" @string.special
+(format_specifier) @string.escape
 (internal_string) @string
 
 (game_feature) @namespace
