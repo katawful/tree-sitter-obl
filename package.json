@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-obl",
-  "version": "0.0.1",
+  "version": "1.0",
   "description": "Tree-sitter grammar for the video game Oblivion's scripting language (obl)",
   "main": "bindings/node",
   "scripts": {
