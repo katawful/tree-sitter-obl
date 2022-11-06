@@ -3,37 +3,37 @@ TES 4: Oblivion scripting language (obl) grammar for [tree-sitter](https://githu
 
 # Status
 
-- Top Level
-    - Scriptname
-    - Blocks
-    - Variable Declarations
-- Blocks
-    - Structure
-    - Feature Type
-    - Parameters
-    - User-Defined Functions
-- Inner Block
-    - Set Statement
-    - Let Statement
-    - User-defined Function Call
-    - Conditional Statement
-        - `elseif`, `else`
-    - While Loop Statement
-    - ForEach Loop Statement
-    - Return, Break, Continue Statement
-    - Goto Statement
-    - Label Statement
-    - Expressions
-        - Built-in Functions
-                - OBSE Plugins
-        - Binary Expressions
-        - Unary Expressions
-        - Parentheses
-        - Method-type Functions
-        - Filter Operator
-    - Variables
-        - Array Variables
-        - Quest Variables
+- [x] Top Level
+    - [x] Scriptname
+    - [x] Blocks
+    - [x] Variable Declarations
+- [x] Blocks
+    - [x] Structure
+    - [x] Feature Type
+    - [x] Parameters
+    - [x] User-Defined Functions
+- [x] Inner Block
+    - [x] Set Statement
+    - [x] Let Statement
+    - [x] User-defined Function Call
+    - [x] Conditional Statement
+        - [x] `elseif`, `else`
+    - [x] While Loop Statement
+    - [x] ForEach Loop Statement
+    - [x] Return, Break, Continue Statement
+    - [x] Goto Statement
+    - [x] Label Statement
+    - [x] Expressions
+        - [ ] Built-in Functions
+             - [ ] OBSE Plugins
+        - [x] Binary Expressions
+        - [x] Unary Expressions
+        - [x] Parentheses
+        - [x] Method-type Functions
+        - [x] Filter Operator
+    - [x] Variables
+        - [x] Array Variables
+        - [x] Quest Variables
 
 
 # Built-in Functions
