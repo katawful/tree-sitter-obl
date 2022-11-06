@@ -42,3 +42,31 @@ end ;this is a comment without leading whitespace
     (game_feature)
     (comment))
   (comment))
+
+=======================
+Semicolon Inside String
+=======================
+scn test
+begin gamemode
+let x := "hi;bye"
+let x := "hi%ghi;bye%gbye"
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right (plain_string))))
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string
+            (format_specifier)
+            (format_specifier)))))))

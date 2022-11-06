@@ -466,38 +466,18 @@ module.exports = grammar({
 
     pipe: $ => "|",
 
-    format_specifier: $ => seq(
-      "%",
-      choice(
-        "%",
-        "a",
-        "c",
-        "e",
-        /\d*\.\d*e/,
-        "f",
-        /[ \-+]?\d*\.\d*f/,
-        "g",
-        "i",
-        "k",
-        "n",
-        "ps",
-        "pp",
-        "po",
-        "q",
-        "r",
-        "v",
-        "x",
-        "z",
-        seq(
-          "{",
-          repeat(choice(
-            $.pipe,
-            /[^"%\|]+/,
-          )),
-          "%}",
-        ),
-        "B",
-        "b",
+    format_specifier: $ => choice(
+      /%[%acefgiknqrvxzBb]/,
+      /%\d*\.\d*e/,
+      /%[ \-+]?\d*\.\d*f/,
+      /%p[spo]/,
+      seq(
+        "%{",
+        repeat(choice(
+          $.pipe,
+          /[^"%\|]+/,
+        )),
+        "%}",
       )),
 
     // TODO: add  type literals
@@ -518,10 +498,10 @@ module.exports = grammar({
 
     string: $ => seq(
       '"',
-      repeat(choice(
+      repeat1(choice(
+        /[^"%\|]+/,
         $.format_specifier,
         $.pipe,
-        /[^"%\|]+/,
       )),
       '"',
       // strings can have parameters for format specifiers
@@ -537,10 +517,11 @@ module.exports = grammar({
     // TODO: address invalid characters
     _identifier: $ => /[a-zA-Z_][a-zA-Z_0-9]?\w*/,
 
-    comment: $ => seq(
+    comment: $ => token(seq(
       ';',
-      /(\\(.|\r?\n)|[^\\\n])*/
-    ),
+      // /(\\(.|\r?\n)|[^\\\n])*/
+      /.*/,
+    )),
 
   }
 });

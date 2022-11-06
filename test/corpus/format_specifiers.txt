@@ -1,4 +1,26 @@
 ==========
+Whitespace
+==========
+scn test
+begin gamemode
+let x := "string%g%gstring"
+end
+---
+
+(source_file
+  (script_declaration (reference))
+  (block
+    (game_feature)
+    (statement
+      (let_statement
+        (left (reference))
+        (assignment)
+        (right
+          (string
+            (format_specifier)
+            (format_specifier)))))))
+
+==========
 Scientific
 ==========
 scn test
