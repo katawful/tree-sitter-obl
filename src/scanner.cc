@@ -503,6 +503,220 @@ struct Scanner {
     "updatespellpurchasemenu", "vampirefeed", "vecmag", "vecnorm", "vectorcross", "vectordot", "vectormagnitude", "vectornormalize", "wait",
     "wakeuppc", "whichservicemenu", "yield", "zeromat",
     //-------------------------------
+
+    // Pluggy
+
+    "arraycmp", "arraycount", "arrayesp", "arrayprotect", "arraysize", "autosclhuds", "autosclhudt", "copyarray", "copystring", "createarray",
+    "createespbook", "createstring", "delallhudss", "delallhudts", "delfile", "delhuds", "delhudt", "deltxtfile", "destroyallarrays",
+    "destroyallstrings", "destroyarray", "destroystring", "duparray", "esptostring", "filetostring", "findfirstfile", "findfloatinarray",
+    "findinarray", "findnextfile", "findrefinarray", "firstfreeinarray", "firstinarray", "fixname", "fixnameex", "floattostring", "fmtstring",
+    "fromobsestring", "fromtsfc", "getesp", "getfilesize", "getinarray", "getrefesp", "gettypeinarray", "halt", "hasfixedname", "hudsesp",
+    "hudsprotect", "huds_align", "huds_l", "huds_opac", "huds_sclx", "huds_scly", "huds_show", "huds_tex", "huds_x", "huds_y", "hudtesp", "hudtinfo",
+    "hudtprotect", "hudt_align", "hudt_font", "hudt_l", "hudt_opac", "hudt_sclx", "hudt_scly", "hudt_show", "hudt_text", "hudt_x", "hudt_y",
+    "hudsinfo", "inidelkey", "inigetnthsection", "inikeyexists", "inireadfloat", "inireadint", "inireadref", "inireadstring", "inisectionscount",
+    "iniwritefloat", "iniwriteint", "iniwriteref", "iniwritestring", "inttohex", "inttostring", "ishudenabled", "ispluggydatareset", "killmenu", "lc",
+    "longtoref", "modrefesp", "newhuds", "newhudt", "packarray", "pausebox", "plgyspcl", "reftolong", "reftostring", "reminarray", "renfile",
+    "rentxtfile", "resetname", "runbatstring", "sanstring", "screeninfo", "setfloatinarray", "sethudt", "setinarray", "setrefinarray", "setstring",
+    "strlc", "stringcat", "stringcmp", "stringesp", "stringgetname", "stringgetnameex", "stringins", "stringlen", "stringmsg", "stringmsgbox",
+    "stringpos", "stringprotect", "stringrep", "stringsetname", "stringsetnameex", "stringtofloat", "stringtoint", "stringtoref", "stringtotxtfile",
+    "toobse", "toobsestring", "totsfc", "txtfileexists", "userfileexists", "csc", "rcsc",
+    //---------------------------
+
+    // tfsc
+
+    "straddnewline", "strappend", "strappendcharcode", "strcat", "strclear", "strclearlast", "strcompare", "strcopy", "strdel", "strdeleteall",
+    "strexpr", "strgetfemalebipedpath", "strgetfemalegroundpath", "strgetfemaleiconpath", "strgetmalebipedpath", "strgetmaleiconpath",
+    "strgetmodelpath", "strgetname", "strgetntheffectitemscriptname", "strgetnthfactionrankname", "strgetrandomname", "stridreplace", "strlength",
+    "strload", "strmessagebox", "strnew", "strprint", "strreplace", "strsave", "strset", "strsetfemalebipedpath", "strsetfemalegroundpath",
+    "strsetfemaleiconpath", "strsetmalebipedpath", "strsetmaleiconpath", "strsetmodelpath", "strsetname", "strsetntheffectitemscriptname", 
+    //---------------------------
+
+    // Blockhead
+
+
+    "getbodyassetoverride", "getfacegenage", "getheadassetoverride", "refreshanimdata", "registerequipmentoverridehandler", "resetagetextureoverride",
+    "resetbodyassetoverride", "resetheadassetoverride", "setagetextureoverride", "setbodyassetoverride", "setfacegenage", "setheadassetoverride",
+    "toggleanimoverride", "unregisterequipmentoverridehandler", 
+    //---------------------------
+
+    // Switch Nighteye
+
+    "enumnighteyeshader", "setnighteyeshader", 
+    //---------------------------
+    //
+    // MenuQue
+
+    "getallskills", "getavskillmasterylevelc", "getavskillmasterylevelf", "getfontloaded", "getgenericbuttonpressed", "getloadedfonts",
+    "getlocalmapseen", "getmenueventtype", "getmenufloatvalue", "getmenustringvalue", "getmouseimage", "getmousepos", "getplayerskilladvancesf",
+    "getplayerskillusef", "getrequiredskillexpc", "getrequiredskillexpf", "getskillcode", "getskillform", "getskillgoverningattributef",
+    "getskillspecializationc", "getskillspecializationf", "getskilluseincrementf", "gettexteditbox", "gettexteditstring", "gettrainingmenucost",
+    "gettrainingmenulevel", "gettrainingmenuskill", "getworldmapdata", "getworldmapdoor", "incrementplayerskillusef", "insertxml",
+    "insertxmltemplate", "istexteditinuse", "kyoma_test", "modplayerskillexpf", "mqcreatemenufloatvalue", "mqcreatemenustringvalue",
+    "mqgetactivequest", "mqgetactivequesttargets", "mqgetcompletedquests", "mqgetcurrentquests", "mqgetenchmenubaseitem", "mqgethighlightedclass",
+    "mqgetmapmarkers", "mqgetmenuactivechildindex", "mqgetmenuactivefloatvalue", "mqgetmenuactivestringvalue", "mqgetmenuchildcount",
+    "mqgetmenuchildfloatvalue", "mqgetmenuchildhastrait", "mqgetmenuchildname", "mqgetmenuchildstringvalue", "mqgetmenuglobalfloatvalue",
+    "mqgetmenuglobalstringvalue", "mqgetquestcompleted", "mqgetselectedclass", "mqsetactivequest", "mqsetmenuactivefloatvalue",
+    "mqsetmenuactivestringvalue", "mqsetmenuchildfloatvalue", "mqsetmenuchildstringvalue", "mqsetmenuglobalstringvalue", "mqsetmenuglobalfloatvalue",
+    "mqsetmessageboxsource", "mquncompletequest", "removemenueventhandler", "setmenueventhandler", "setmouseimage", "setplayerskilladvancesf",
+    "setskillgoverningattributef", "setskillspecializationc", "setskillspecializationf", "setskilluseincrementf", "settexteditstring",
+    "settrainerskillc", "setworldmapdata", "showgenericmenu", "showlevelupmenu", "showmagicpopupmenu", "showtexteditmenu", "showtrainingmenu",
+    "tile_fadefloat", "tile_getfloat", "tile_getinfo", "tile_getname", "tile_getstring", "tile_getvar", "tile_hastrait", "tile_setfloat",
+    "tile_setstring", "triggerplayerskillusef", "updatelocalmap", 
+    //---------------------------
+    //
+    // EAX Functions
+
+    "createeaxeffect", "deleteeaxeffect", "disableeax", "eaxcopyeffect", "eaxeffectexists", "eaxeffectsareequal", "eaxgetactiveeffect",
+    "eaxnumeffects", "eaxpusheffect", "eaxpopeffect", "eaxremoveallinstances", "eaxremovefirstinstance", "eaxstackisempty", "eaxstacksize",
+    "enableeax", "geteaxairabsorptionhf", "geteaxdecayhfratio", "geteaxdecaytime", "geteaxenvironment", "geteaxenvironmentsize",
+    "geteaxenvironmentdiffusion", "geteaxreflections", "geteaxreflectionsdelay", "geteaxreverb", "geteaxreverbdelay", "geteaxroom", "geteaxroomhf",
+    "geteaxroomrollofffactor", "initializeeax", "iseaxenabled", "iseaxinitialized", "seteaxairabsorptionhf", "seteaxallproperties", "seteaxdecaytime",
+    "seteaxdecayhfratio", "seteaxenvironment", "seteaxenvironmentsize", "seteaxenvironmentdiffusion", "seteaxreflections", "seteaxreflectionsdelay",
+    "seteaxreverb", "seteaxreverbdelay", "seteaxroom", "seteaxroomhf", "seteaxroomrollofffactor", 
+    //---------------------------
+    //
+    // NetworkPipe
+
+    "networkpipe_createclient", "networkpipe_getdata", "networkpipe_isnewgame", "networkpipe_killclient", "networkpipe_receive",
+    "networkpipe_setdata", "networkpipe_send", "networkpipe_startservice", "networkpipe_stopservice",
+    //---------------------------
+    //
+    // NifSe
+
+
+    "bsfurnituremarkergetpositionrefs", "bsfurnituremarkersetpositionrefs", "getniftypeindex", "niavobjectaddproperty",
+    "niavobjectclearcollisionobject", "niavobjectcopycollisionobject", "niavobjectdeleteproperty", "niavobjectgetcollisionmode",
+    "niavobjectgetcollisionobject", "niavobjectgetlocalrotation", "niavobjectgetlocalscale", "niavobjectgetlocaltransform",
+    "niavobjectgetlocaltranslation", "niavobjectgetnumproperties", "niavobjectgetproperties", "niavobjectgetpropertybytype",
+    "niavobjectsetcollisionmode", "niavobjectsetlocalrotation", "niavobjectsetlocalscale", "niavobjectsetlocaltransform",
+    "niavobjectsetlocaltranslation", "nialphapropertygetblendstate", "nialphapropertygetdestinationblendfunction",
+    "nialphapropertygetsourceblendfunction", "nialphapropertygettestfunction", "nialphapropertygetteststate", "nialphapropertygettestthreshold",
+    "nialphapropertygettrianglesortmode", "nialphapropertysetblendstate", "nialphapropertysetdestinationblendfunction",
+    "nialphapropertysetsourceblendfunction", "nialphapropertysettestfunction", "nialphapropertysetteststate", "nialphapropertysettestthreshold",
+    "nialphapropertysettrianglesortmode", "niextradatagetarray", "niextradatagetname", "niextradatagetnumber", "niextradatagetstring",
+    "niextradatasetarray", "niextradatasetname", "niextradatasetnumber", "niextradatasetstring", "nimaterialpropertygetambientcolor",
+    "nimaterialpropertygetdiffusecolor", "nimaterialpropertygetemissivecolor", "nimaterialpropertygetglossiness",
+    "nimaterialpropertygetspecularcolor", "nimaterialpropertygettransparency", "nimaterialpropertysetambientcolor",
+    "nimaterialpropertysetdiffusecolor", "nimaterialpropertysetemissivecolor", "nimaterialpropertysetglossiness",
+    "nimaterialpropertysetspecularcolor", "nimaterialpropertysettransparency", "ninodeaddchild", "ninodecopychild", "ninodedeletechild",
+    "ninodegetchildbyname", "ninodegetchildren", "ninodegetnumchildren", "niobjectgettype", "niobjectgettypename", "niobjectnetaddextradata",
+    "niobjectnetdeleteextradata", "niobjectnetgetextradata", "niobjectnetgetextradatabyname", "niobjectnetgetname", "niobjectnetgetnumextradata",
+    "niobjectnetsetname", "niobjecttypederivesfrom", "nisourcetexturegetfile", "nisourcetextureisexternal", "nisourcetexturesetexternaltexture",
+    "nistencilpropertygetfacedrawmode", "nistencilpropertygetfailaction", "nistencilpropertygetpassaction", "nistencilpropertygetstencilfunction",
+    "nistencilpropertygetstencilmask", "nistencilpropertygetstencilref", "nistencilpropertygetstencilstate", "nistencilpropertygetzfailaction",
+    "nistencilpropertysetfacedrawmode", "nistencilpropertysetfailaction", "nistencilpropertysetpassaction", "nistencilpropertysetstencilfunction",
+    "nistencilpropertysetstencilmask", "nistencilpropertysetstencilref", "nistencilpropertysetstencilstate", "nistencilpropertysetzfailaction",
+    "nitexturingpropertyaddtexturesource", "nitexturingpropertydeletetexturesource", "nitexturingpropertygettexturecenteroffset",
+    "nitexturingpropertygettextureclampmode", "nitexturingpropertygettexturecount", "nitexturingpropertygettexturefiltermode",
+    "nitexturingpropertygettextureflags", "nitexturingpropertygettexturerotation", "nitexturingpropertygettexturesource",
+    "nitexturingpropertygettexturetiling", "nitexturingpropertygettexturetranslation", "nitexturingpropertygettextureuvset",
+    "nitexturingpropertyhastexture", "nitexturingpropertysettexturecenteroffset", "nitexturingpropertysettextureclampmode",
+    "nitexturingpropertysettexturecount", "nitexturingpropertysettexturefiltermode", "nitexturingpropertysettextureflags",
+    "nitexturingpropertysettexturehastransform", "nitexturingpropertysettexturerotation", "nitexturingpropertysettexturetiling",
+    "nitexturingpropertysettexturetranslation", "nitexturingpropertysettextureuvset", "nitexturingpropertytexturehastransform",
+    "nivertexcolorpropertygetlightingmode", "nivertexcolorpropertygetvertexmode", "nivertexcolorpropertysetlightingmode",
+    "nivertexcolorpropertysetvertexmode", "nifclose", "nifgetaltgrip", "nifgetbackshield", "nifgetnumblocks", "nifgetoffhand", "nifgetoriginalpath",
+    "nifgetpath", "nifopen", "nifwritetodisk", 
+    //------------------------
+    //
+    // reid
+
+
+    "getruntimeeditorid", 
+    //------------------------
+    //
+    // runtimedebugger
+
+    "debugbreak", "toggledebugbreaking", 
+    //------------------------
+    //
+    // addActorValues
+
+    "dumpactorvaluec", "dumpactorvaluef", "getactorvaluebasecalcc", "getactorvaluebasecalcf", "getactorvaluecurrentc", "getactorvaluecurrentf",
+    "getactorvaluemaxc", "getactorvaluemaxf", "getactorvaluemodc", "getactorvaluemodf", "modactorvaluemodc", "modactorvaluemodf", "setactorvaluemodc",
+    "setactorvaluemodf", "dumpavc", "dumpavf", "getavmodc", "getavmodf", "modavmodc", "modavmodf", "setavmodc", "setavmodf", "getavbasecalcc",
+    "getavbasecalcf", "getavmaxc", "getavmaxf", "getavcurrentc", "getavcurrent", 
+    //---------------------
+    //
+    // memoryDumper
+
+    "setdumpaddr", "setdumptype", "setfadeamount", "setobjectaddr", "showmemorydump", 
+    //---------------------
+    //
+    // algohol
+
+    "qfromaxisangle", "qfromeuler", "qinterpolate", "qmultquat", "qmultvector3", "qnormalize", "qtoeuler", "v3crossproduct", "v3length",
+    "v3normalize", 
+    //---------------------
+    //
+    // soundCommands
+
+    "fademusic", "geteffectsvolume", "getfootvolume", "getmastervolume", "getmusicvolume", "getvoicevolume", "playmusicfile", "seteffectsvolume",
+    "setfootvolume", "setmastervolume", "setmusicvolume", "setvoicevolume", 
+    //---------------------
+    //
+    // Enhanced Music Controls
+
+    "emcaddpathtoplaylist", "emccreateplaylist", "emcgetallplaylists", "emcgetafterbattledelay", "emcgetbattledelay", "emcgeteffectsvolume",
+    "emcgetfadetime", "emcgetfootvolume", "emcgetmastervolume", "emcgetmaxrestoretime", "emcgetmusicspeed", "emcgetmusictype", "emcgetmusicvolume",
+    "emcgetpausetime", "emcgetplaylist", "emcgetplaylisttracks", "emcgettrackname", "emcgettrackduration", "emcgettrackposition", "emcgetvoicevolume",
+    "emcisbattleoverridden", "emcismusiconhold", "emcismusicswitching", "emcisplaylistactive", "emcmusicnexttrack", "emcmusicpause",
+    "emcmusicrestart", "emcmusicresume", "emcmusicstop", "emcplaylistexists", "emcplaytrack", "emcrestoreplaylist", "emcsetafterbattledelay",
+    "emcsetbattledelay", "emcsetbattleoverride", "emcseteffectsvolume", "emcsetfadetime", "emcsetfootvolume", "emcsetmastervolume",
+    "emcsetmaxrestoretime", "emcsetmusichold", "emcsetmusicspeed", "emcsetmusicvolume", "emcsetpausetime", "emcsetplaylist", "emcsettrackposition",
+    "emcsetmusictype", "emcsetvoicevolume", 
+    //---------------------
+    //
+    // vipcjx
+
+    "vcaddmark", "vcgetfilepath", "vcgethaircolorrgb", "vcgetvaluenumeric", "vcgetvaluestring", "vcismarked", "vcprintini", "vcsetactorstate",
+    "vcsethaircolor", "vcsethaircolorrgb", "vcsethaircolorrgb3p", 
+    //---------------------
+    //
+    // cameraCommands
+
+    "cameragetref", "cameralookat", "cameralookatposition", "cameramove", "cameramovetoposition", "camerareset", "camerarotate",
+    "camerarotatetoposition", "camerasetref", "camerastoplook", 
+    //---------------------
+    //
+    // obme
+
+    "clearntheibasecost", "clearntheieffectname", "clearntheihandlerparam", "clearntheihostility", "clearntheiiconpath", "clearntheiresistav",
+    "clearntheischool", "clearntheivfxcode", "createmgef", "getmagiceffecthandlerc", "getmagiceffecthandlerparamc", "getmagiceffecthostilityc",
+    "getntheibasecost", "getntheieffectname", "getntheihandlerparam", "getntheihostility", "getntheiiconpath", "getntheiresistav", "getntheischool",
+    "getntheivfxcode", "resolvemgefcode", "setmagiceffecthandlerc", "setmagiceffecthandlerintparamc", "setmagiceffecthandlerrefparamc",
+    "setmagiceffecthostilityc", "setntheibasecost", "setntheieffectname", "setntheihandlerintparam", "setntheihandlerrefparam", "setntheihostility",
+    "setntheiiconpath", "setntheiresistav", "setntheischool", "setntheivfxcode", 
+    //---------------------
+    //
+    // conscribe
+
+    "deletelinesfromlog", "getloglinecount", "getregisteredlognames", "readfromlog", "registerlog", "scribe", "unregisterlog", 
+    //---------------------
+    //
+    // systemDialog
+
+    "sysdlg_browser", "sysdlg_readbrowser", "sysdlg_textinput", 
+    //---------------------
+    //
+    // clearspellicon
+
+    "clearspellicon", "hasassignedicon", "overwritespellicon", "setspellicon", 
+    //---------------------
+    //
+    // HUDActiveEffectLimit
+
+    "gethudactiveeffectlimit", "sethudactiveeffectlimit", 
+    //---------------------
+    //
+    // lcd
+
+    "lcd_addinttobuffer", "lcd_addtexttobuffer", "lcd_clearrect", "lcd_cleartextbuffer", "lcd_close", "lcd_drawcircle", "lcd_drawgrid", "lcd_drawint",
+    "lcd_drawline", "lcd_drawprogressbarh", "lcd_drawprogressbarv", "lcd_drawprogresscircle", "lcd_drawrect", "lcd_drawtext", "lcd_drawtextbuffer",
+    "lcd_drawtexture", "lcd_flush", "lcd_getbuttonstate", "lcd_getheight", "lcd_getwidth", "lcd_ismulti", "lcd_isopen", "lcd_open", "lcd_refresh",
+    "lcd_savebuttonsnapshot", "lcd_scale", "lcd_setfont", 
+    //---------------------
+
   };
 
 };
