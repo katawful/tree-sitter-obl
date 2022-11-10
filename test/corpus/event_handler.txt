@@ -24,6 +24,7 @@ scn test
 begin gamemode
 seteventhandler "OnHit" FnOnHitByPlayer second::PlayerRef
 seteventhandler "OnHit", FnOnHitByPlayer, first::"string", second::PlayerRef
+seteventhandler "OnHit", FnOnHitByPlayer, first::arr[x], second::quest.x
 end
 ---
 
@@ -43,4 +44,17 @@ end
         (plain_string)
         (reference)
         (filter (reference) (plain_string))
-        (filter (reference) (reference))))))
+        (filter (reference) (reference))))
+    (statement
+      (function)
+      (args
+        (plain_string)
+        (reference)
+        (filter
+          (reference)
+          (array_variable
+            (reference)
+            (subscript (reference))))
+        (filter
+          (reference)
+          (quest_variable (reference) (reference)))))))

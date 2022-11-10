@@ -448,6 +448,16 @@
     "type": "filter",
     "named": true,
     "fields": {
+      "array_variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_variable",
+            "named": true
+          }
+        ]
+      },
       "field": {
         "multiple": false,
         "required": true,
@@ -474,6 +484,16 @@
         "types": [
           {
             "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "quest_variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "quest_variable",
             "named": true
           }
         ]
@@ -507,6 +527,10 @@
         "required": true,
         "types": [
           {
+            "type": "array_variable",
+            "named": true
+          },
+          {
             "type": "float",
             "named": true
           },
@@ -519,11 +543,25 @@
             "named": true
           },
           {
+            "type": "quest_variable",
+            "named": true
+          },
+          {
             "type": "reference",
             "named": true
           },
           {
             "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "reference",
             "named": true
           }
         ]

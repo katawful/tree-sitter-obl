@@ -354,7 +354,7 @@ module.exports = grammar({
     filter: $ => seq(
       field("field", $.reference),
       '::',
-      field("value", $._literal),
+      field("value", choice($._literal, $._variable)),
     ),
 
     return: $ => keyword("return"),
