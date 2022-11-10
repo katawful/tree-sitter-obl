@@ -46,3 +46,8 @@ Currently this warning is highlighting the entire statement with the hl-group `@
 
 If you happen upon functions that do not appear highlighted properly in any way, please report it
 in the pinned issue on GitHub or make a PR and submit to said pinned issue for bookkeeping.
+
+## Overloading
+There is nothing I can do about function/variable name overloading (such as using a variable name that is the same as a function from an OBSE
+plugin).
+Tree-sitter does not understand semantics
