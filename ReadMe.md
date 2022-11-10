@@ -24,8 +24,8 @@ TES 4: Oblivion scripting language (obl) grammar for [tree-sitter](https://githu
     - [x] Goto Statement
     - [x] Label Statement
     - [x] Expressions
-        - [ ] Built-in Functions
-             - [ ] OBSE Plugins
+        - [x] Built-in Functions
+            - [x] OBSE Plugins
         - [x] Binary Expressions
         - [x] Unary Expressions
         - [x] Parentheses
@@ -43,3 +43,6 @@ identical to that of a general variable/reference. Because of this, any function
 the parser itself will simply not be able to be parsed, and will present a warning to the user
 
 Currently this warning is highlighting the entire statement with the hl-group `@text.underline`.
+
+If you happen upon functions that do not appear highlighted properly in any way, please report it
+in the pinned issue on GitHub or make a PR and submit to said pinned issue for bookkeeping.
