@@ -81,11 +81,12 @@ module.exports = grammar({
     [$.plain_string, $.string],
     [$._parameter_list_opt_comma],
     [$.while],
+    [$.args, $._expression],
     // [$.parameter, $._expression],
   ],
 
   extras: $ => [
-    /\\\r?\n/,
+    // /\\\r?\n/,
     /\s/,
     /\t/,
     $.comment,
@@ -201,7 +202,7 @@ module.exports = grammar({
     // This is for any functions used as a statement that haven't been added to this parser
     // It is *not* meant to make things simpler, it is meant to not not error out entirely so
     // end users can still use this. Users should report these missing functions on GitHub
-    unimplemented: $ => prec.left(seq(
+    unimplemented: $ => prec.left(PREC.BOTTOM, seq(
       choice($._identifier, $.method),
       optional($.args),
     )),
@@ -342,12 +343,12 @@ module.exports = grammar({
       optional($.args),
     )),
 
-    args: $ => prec.right(1000, seq(
-      optional(","),
-      field('argument', $.expression),
-      repeat(
-        seq(optional(','), field('argument', prec.right($.expression))),
-      ),
+    args: $ => prec.right(
+      repeat1(
+        seq(
+          optional(','),
+          field('argument', prec.right($._expression))
+        ),
     )),
 
     filter: $ => seq(
@@ -376,7 +377,7 @@ module.exports = grammar({
       choice($.quest_variable, field('variable', $.reference)),
       choice(
         seq(
-          $._open_subscript,
+          // $._open_subscript,
           repeat1($.subscript)
         ),
         repeat1($.member_access),
@@ -401,18 +402,18 @@ module.exports = grammar({
       optional($._literal),
     )),
 
-    expression: $ => prec(1000, alias($._expression, "expression")),
+    // expression: $ => prec(1000, alias($._expression, "expression")),
 
     _expression: $ => choice(
-      $._literal,
       $._variable,
+      $.parenthesized_expression,
+      $._literal,
+      $._function,
       $._binary_expression,
       $._unary_expression,
-      $.parenthesized_expression,
       $.slice,
       $.call,
       $.filter,
-      $._function,
     ),
 
     parenthesized_expression: $ => seq(

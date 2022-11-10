@@ -82,7 +82,11 @@ struct Scanner {
      * We want to make sure we have the set of functions
      * as well as the current lookahead is an alphanumeric.
      */
-    if (valid_symbols[FUNCTION] && !valid_symbols[TERMINATOR]) {
+    if (valid_symbols[FUNCTION]
+      && !valid_symbols[TERMINATOR]
+      && !valid_symbols[OPEN_SUBSCRIPT]
+      && !valid_symbols[DOT]
+      && !valid_symbols[NO_WHITESPACE]) {
       /* Advance lexer until we have built a word
        */
       string func_word = "";
@@ -123,8 +127,11 @@ struct Scanner {
         if (function_set.find(func_word) != function_set.end()) {
           lexer->result_symbol = FUNCTION;
           return true;
-        } else {return false;}
+        } else {
+          return false;
+        }
       } else {
+          return false;
         return false;
       }
 
@@ -140,8 +147,6 @@ struct Scanner {
             || lexer->lookahead == 0)
       && valid_symbols[TERMINATOR])
     {
-      lexer->mark_end(lexer);
-      advance(lexer);
       lexer->result_symbol = TERMINATOR;
       return true;
       /* Spaces need to be handled specially */

@@ -40,21 +40,21 @@ end
         (assignment)
         (right
           (string (format_specifier)
-            (args (expression (reference)))))))
+            (args (reference))))))
     (statement
       (let_statement
         (left (reference))
         (assignment)
         (right
           (string (format_specifier)
-            (args (expression (reference)))))))
+            (args (reference))))))
     (statement
       (let_statement
         (left (reference))
         (assignment)
         (right
           (string (format_specifier)
-            (args (expression (reference)))))))))
+            (args (reference))))))))
 
 =====
 Float
@@ -78,35 +78,35 @@ end
         (assignment)
         (right
           (string (format_specifier)
-            (args (expression (reference)))))))
+            (args (reference))))))
     (statement
       (let_statement
         (left (reference))
         (assignment)
         (right
           (string (format_specifier)
-            (args (expression (reference)))))))
+            (args (reference))))))
     (statement
       (let_statement
         (left (reference))
         (assignment)
         (right
           (string (format_specifier)
-            (args (expression (reference)))))))
+            (args (reference))))))
     (statement
       (let_statement
         (left (reference))
         (assignment)
         (right
           (string (format_specifier)
-            (args (expression (reference)))))))
+            (args (reference))))))
     (statement
       (let_statement
         (left (reference))
         (assignment)
         (right
           (string (format_specifier)
-            (args (expression (reference)))))))))
+            (args (reference))))))))
 
 ===========
 Conditional
@@ -127,7 +127,7 @@ end
         (right
           (string
             (format_specifier (internal_string))
-            (args (expression (reference)))))))))
+            (args (reference))))))))
 
 ====
 Pipe
@@ -157,7 +157,7 @@ end
           (string
             (pipe)
             (format_specifier)
-            (args (expression (reference)))))))
+            (args (reference))))))
     (statement
       (let_statement
         (left (reference))
@@ -169,7 +169,7 @@ end
               (internal_string)
               (pipe)
               (internal_string))
-            (args (expression (reference)))))))))
+            (args (reference))))))))
 
 =====
 Plain
@@ -208,14 +208,14 @@ end
         (assignment)
         (right
           (string (format_specifier)
-          (args (expression (reference)))))))
+          (args (reference))))))
     (statement
       (let_statement
         (left (reference))
         (assignment)
         (right
           (string (format_specifier)
-          (args (expression (reference)))))))))
+          (args (reference))))))))
 
 ===============
 Multi-Parameter
@@ -239,8 +239,8 @@ end
             (format_specifier)
             (format_specifier)
             (args
-              (expression (reference))
-              (expression (integer)))))))
+              (reference)
+              (integer))))))
     (statement
       (let_statement
         (left (reference))
@@ -250,5 +250,5 @@ end
             (format_specifier)
             (format_specifier)
                 (args
-                  (expression (reference))
-                  (expression (integer)))))))))
+                  (reference)
+                  (integer))))))))

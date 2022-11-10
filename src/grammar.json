@@ -506,7 +506,7 @@
     },
     "unimplemented": {
       "type": "PREC_LEFT",
-      "value": 0,
+      "value": -30,
       "content": {
         "type": "SEQ",
         "members": [
@@ -1141,63 +1141,38 @@
     },
     "args": {
       "type": "PREC_RIGHT",
-      "value": 1000,
+      "value": 0,
       "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": ","
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "FIELD",
-            "name": "argument",
-            "content": {
-              "type": "SYMBOL",
-              "name": "expression"
-            }
-          },
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "SEQ",
+        "type": "REPEAT1",
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ","
-                    },
-                    {
-                      "type": "BLANK"
-                    }
-                  ]
+                  "type": "STRING",
+                  "value": ","
                 },
                 {
-                  "type": "FIELD",
-                  "name": "argument",
-                  "content": {
-                    "type": "PREC_RIGHT",
-                    "value": 0,
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "expression"
-                    }
-                  }
+                  "type": "BLANK"
                 }
               ]
+            },
+            {
+              "type": "FIELD",
+              "name": "argument",
+              "content": {
+                "type": "PREC_RIGHT",
+                "value": 0,
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_expression"
+                }
+              }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "filter": {
@@ -1330,10 +1305,6 @@
                 "type": "SEQ",
                 "members": [
                   {
-                    "type": "SYMBOL",
-                    "name": "_open_subscript"
-                  },
-                  {
                     "type": "REPEAT1",
                     "content": {
                       "type": "SYMBOL",
@@ -1429,29 +1400,24 @@
         ]
       }
     },
-    "expression": {
-      "type": "PREC",
-      "value": 1000,
-      "content": {
-        "type": "ALIAS",
-        "content": {
-          "type": "SYMBOL",
-          "name": "_expression"
-        },
-        "named": false,
-        "value": "expression"
-      }
-    },
     "_expression": {
       "type": "CHOICE",
       "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_variable"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "parenthesized_expression"
+        },
         {
           "type": "SYMBOL",
           "name": "_literal"
         },
         {
           "type": "SYMBOL",
-          "name": "_variable"
+          "name": "_function"
         },
         {
           "type": "SYMBOL",
@@ -1460,10 +1426,6 @@
         {
           "type": "SYMBOL",
           "name": "_unary_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "parenthesized_expression"
         },
         {
           "type": "SYMBOL",
@@ -1476,10 +1438,6 @@
         {
           "type": "SYMBOL",
           "name": "filter"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_function"
         }
       ]
     },
@@ -2016,10 +1974,6 @@
   "extras": [
     {
       "type": "PATTERN",
-      "value": "\\\\\\r?\\n"
-    },
-    {
-      "type": "PATTERN",
       "value": "\\s"
     },
     {
@@ -2048,6 +2002,10 @@
     ],
     [
       "while"
+    ],
+    [
+      "args",
+      "_expression"
     ]
   ],
   "precedences": [],

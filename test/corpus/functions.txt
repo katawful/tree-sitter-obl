@@ -37,20 +37,18 @@ end
     (game_feature)
     (statement
       (function)
-      (args (expression (plain_string))))
+      (args (plain_string)))
     (statement
       (set_statement
         (left (reference))
         (right
           (function)
-          (args (expression (reference))))))
+          (args (reference)))))
         (statement
           (function)
           (args
-            (expression
-              (reference))
-            (expression
-              (plain_string))))
+            (reference)
+            (plain_string)))
         (statement
           (let_statement
             (left
@@ -59,7 +57,7 @@ end
             (right
               (function)
               (args
-                (expression (reference))))))))
+                (reference)))))))
 
 ==============================
 Function w/ Function Arguments
@@ -77,9 +75,10 @@ end
     (statement
       (function)
       (args
-        (expression (string (format_specifier)))
-        (expression (function))
-        (expression (reference))))))
+        (string (format_specifier)
+        (args
+          (function)
+          (reference)))))))
 
 =====================
 Condition w/ Function

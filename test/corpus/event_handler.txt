@@ -14,8 +14,8 @@ end
     (statement
       (function)
       (args
-        (expression (plain_string))
-        (expression (reference))))))
+        (plain_string)
+        (reference)))))
 
 ==============
 Filtered Event
@@ -34,16 +34,13 @@ end
     (statement
       (function)
       (args
-        (expression (plain_string))
-        (expression (reference))
-        (expression
-          (filter (reference) (reference)))))
+        (plain_string)
+        (reference)
+        (filter (reference) (reference))))
     (statement
       (function)
       (args
-        (expression (plain_string))
-        (expression (reference))
-        (expression
-          (filter (reference) (plain_string)))
-        (expression
-          (filter (reference) (reference)))))))
+        (plain_string)
+        (reference)
+        (filter (reference) (plain_string))
+        (filter (reference) (reference))))))

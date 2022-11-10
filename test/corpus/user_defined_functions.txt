@@ -77,29 +77,26 @@ end
     (statement
       (call (reference)
         (args
-          (expression (reference)))))
+          (reference))))
     (statement
       (call (reference)
         (args
-          (expression
+          (reference)
+          (binary_operator)
+          (integer))))
+    (statement
+      (call (reference)
+        (args
+          (array_variable
+            (reference)
+            (subscript (integer))))))
+    (statement
+      (call (reference)
+        (args
+          (parenthesized_expression
             (reference)
             (binary_operator)
-            (integer)))))
-    (statement
-      (call (reference)
-        (args
-          (expression
-            (array_variable
-              (reference)
-              (subscript (integer)))))))
-    (statement
-      (call (reference)
-        (args
-          (expression
-            (parenthesized_expression
-              (reference)
-              (binary_operator)
-              (integer))))))))
+            (integer)))))))
 
 ============================================
 Statement Call w/ Multi Expression Parameter
@@ -121,30 +118,24 @@ end
       (call
         (reference)
         (args
-          (expression
-            (reference))
-          (expression
-            (reference)))))
+          (reference)
+          (reference))))
     (statement
       (call
         (reference)
         (args
-          (expression
-            (reference))
-          (expression
-            (reference)))))
+          (reference)
+          (reference))))
     (statement
       (call
         (reference)
         (args
-          (expression
-            (reference)
-            (binary_operator)
-            (integer))
-          (expression
-            (reference)
-            (binary_operator)
-            (integer)))))))
+          (reference)
+          (binary_operator)
+          (integer)
+          (reference)
+          (binary_operator)
+          (integer))))))
 
 =================================
 Statement Call w/ Expression Call
@@ -163,12 +154,9 @@ end
     (statement
       (call (reference)
         (args
-          (expression
-            (call (reference))))))
+          (call (reference)))))
     (statement
       (call (reference)
         (args
-          (expression
-            (call (reference)))
-          (expression
-            (call (reference))))))))
+          (call (reference))
+          (call (reference)))))))
