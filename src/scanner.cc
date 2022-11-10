@@ -508,6 +508,13 @@ struct Scanner {
     "updatespellpurchasemenu", "vampirefeed", "vecmag", "vecnorm", "vectorcross", "vectordot", "vectormagnitude", "vectornormalize", "wait",
     "wakeuppc", "whichservicemenu", "yield", "zeromat",
     //-------------------------------
+    //
+    // Oblivion Reloaded
+
+    "isthirdperson", "getversion", "getlocationname", "setextraeffectenabled", "setcustomconstant", "getweathername", "getsetting",
+    "setsetting", "cameratranslate", "camerarotate", "cameratranslatetoposition", "camerarotatetoposition", "cameralookat",
+    "cameralookatposition", "camerareset", 
+    //----------------------------
 
     // Pluggy
 
