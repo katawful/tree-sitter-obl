@@ -3,13 +3,15 @@
   (variable_declaration)
   (block)
   "end"
-] @zero_indent
-(statement) @indent
+] @indent.ignore
+(statement) @indent.begin
 [
   "loop"
   "else"
   "elseif"
   "endif"
-] @branch
+] @indent.branch
 
-(block (statement)) @indent
+(comment) @indent.ignore
+
+(block (statement)) @indent.begin

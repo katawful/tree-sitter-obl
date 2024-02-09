@@ -617,6 +617,11 @@
     }
   },
   {
+    "type": "function",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "game_feature",
     "named": true,
     "fields": {
@@ -1384,29 +1389,6 @@
     }
   },
   {
-    "type": "source_file",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "script_declaration",
-          "named": true
-        },
-        {
-          "type": "variable_declaration",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "statement",
     "named": true,
     "fields": {},
@@ -1476,10 +1458,6 @@
         },
         {
           "type": "statement",
-          "named": true
-        },
-        {
-          "type": "unimplemented",
           "named": true
         },
         {
@@ -1643,25 +1621,6 @@
     "type": "unary_operator",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "unimplemented",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "args",
-          "named": true
-        },
-        {
-          "type": "method",
-          "named": true
-        }
-      ]
-    }
   },
   {
     "type": "user_defined_function",
@@ -1877,7 +1836,259 @@
     "named": false
   },
   {
+    "type": "abs",
+    "named": false
+  },
+  {
+    "type": "acos",
+    "named": false
+  },
+  {
+    "type": "activate",
+    "named": false
+  },
+  {
+    "type": "activate2",
+    "named": false
+  },
+  {
+    "type": "actorvaluetocode",
+    "named": false
+  },
+  {
+    "type": "actorvaluetostring",
+    "named": false
+  },
+  {
+    "type": "actorvaluetostringc",
+    "named": false
+  },
+  {
+    "type": "addachievement",
+    "named": false
+  },
+  {
+    "type": "addeffectitem",
+    "named": false
+  },
+  {
+    "type": "addeffectitemc",
+    "named": false
+  },
+  {
+    "type": "addflames",
+    "named": false
+  },
+  {
+    "type": "addfulleffectitem",
+    "named": false
+  },
+  {
+    "type": "addfulleffectitemc",
+    "named": false
+  },
+  {
+    "type": "additem",
+    "named": false
+  },
+  {
+    "type": "additemns",
+    "named": false
+  },
+  {
+    "type": "addmagiceffectcounter",
+    "named": false
+  },
+  {
+    "type": "addmagiceffectcounterc",
+    "named": false
+  },
+  {
+    "type": "addmecounter",
+    "named": false
+  },
+  {
+    "type": "addmecounterc",
+    "named": false
+  },
+  {
+    "type": "addscriptpackage",
+    "named": false
+  },
+  {
+    "type": "addspell",
+    "named": false
+  },
+  {
+    "type": "addspellns",
+    "named": false
+  },
+  {
+    "type": "addtoleveledlist",
+    "named": false
+  },
+  {
+    "type": "addtopic",
+    "named": false
+  },
+  {
+    "type": "advancepclevel",
+    "named": false
+  },
+  {
+    "type": "advancepcskill",
+    "named": false
+  },
+  {
+    "type": "advskill",
+    "named": false
+  },
+  {
+    "type": "ahammerkey",
+    "named": false
+  },
+  {
+    "type": "animpathincludes",
+    "named": false
+  },
+  {
+    "type": "appendtoname",
+    "named": false
+  },
+  {
+    "type": "ar_append",
+    "named": false
+  },
+  {
+    "type": "ar_badnumericindex",
+    "named": false
+  },
+  {
+    "type": "ar_badstringindex",
+    "named": false
+  },
+  {
+    "type": "ar_construct",
+    "named": false
+  },
+  {
+    "type": "ar_copy",
+    "named": false
+  },
+  {
+    "type": "ar_customsort",
+    "named": false
+  },
+  {
+    "type": "ar_deepcopy",
+    "named": false
+  },
+  {
+    "type": "ar_dump",
+    "named": false
+  },
+  {
+    "type": "ar_dumpid",
+    "named": false
+  },
+  {
+    "type": "ar_erase",
+    "named": false
+  },
+  {
+    "type": "ar_find",
+    "named": false
+  },
+  {
+    "type": "ar_first",
+    "named": false
+  },
+  {
+    "type": "ar_haskey",
+    "named": false
+  },
+  {
+    "type": "ar_insert",
+    "named": false
+  },
+  {
+    "type": "ar_insertrange",
+    "named": false
+  },
+  {
+    "type": "ar_keys",
+    "named": false
+  },
+  {
+    "type": "ar_last",
+    "named": false
+  },
+  {
+    "type": "ar_list",
+    "named": false
+  },
+  {
+    "type": "ar_map",
+    "named": false
+  },
+  {
+    "type": "ar_next",
+    "named": false
+  },
+  {
+    "type": "ar_null",
+    "named": false
+  },
+  {
+    "type": "ar_prev",
+    "named": false
+  },
+  {
+    "type": "ar_range",
+    "named": false
+  },
+  {
+    "type": "ar_resize",
+    "named": false
+  },
+  {
+    "type": "ar_size",
+    "named": false
+  },
+  {
+    "type": "ar_sort",
+    "named": false
+  },
+  {
+    "type": "ar_sortalpha",
+    "named": false
+  },
+  {
     "type": "array_var",
+    "named": false
+  },
+  {
+    "type": "asciitochar",
+    "named": false
+  },
+  {
+    "type": "asin",
+    "named": false
+  },
+  {
+    "type": "atan",
+    "named": false
+  },
+  {
+    "type": "atan2",
+    "named": false
+  },
+  {
+    "type": "autosave",
+    "named": false
+  },
+  {
+    "type": "avstring",
     "named": false
   },
   {
@@ -1889,7 +2100,107 @@
     "named": false
   },
   {
+    "type": "calcleveleditem",
+    "named": false
+  },
+  {
+    "type": "calclevitemnr",
+    "named": false
+  },
+  {
+    "type": "calclevitems",
+    "named": false
+  },
+  {
     "type": "call",
+    "named": false
+  },
+  {
+    "type": "cancastpower",
+    "named": false
+  },
+  {
+    "type": "cancorpsecheck",
+    "named": false
+  },
+  {
+    "type": "canfasttravelfromworld",
+    "named": false
+  },
+  {
+    "type": "canhaveflames",
+    "named": false
+  },
+  {
+    "type": "canpaycrimegold",
+    "named": false
+  },
+  {
+    "type": "cantraveltomapmarker",
+    "named": false
+  },
+  {
+    "type": "cast",
+    "named": false
+  },
+  {
+    "type": "ceil",
+    "named": false
+  },
+  {
+    "type": "chartoascii",
+    "named": false
+  },
+  {
+    "type": "clearactivequest",
+    "named": false
+  },
+  {
+    "type": "clearhotkey",
+    "named": false
+  },
+  {
+    "type": "clearleveledlist",
+    "named": false
+  },
+  {
+    "type": "clearownership",
+    "named": false
+  },
+  {
+    "type": "clearownershipt",
+    "named": false
+  },
+  {
+    "type": "clearplayerslastriddenhorse",
+    "named": false
+  },
+  {
+    "type": "clickmenubutton",
+    "named": false
+  },
+  {
+    "type": "cloneform",
+    "named": false
+  },
+  {
+    "type": "closeallmenus",
+    "named": false
+  },
+  {
+    "type": "closecurrentobliviongate",
+    "named": false
+  },
+  {
+    "type": "closeobliviongate",
+    "named": false
+  },
+  {
+    "type": "closetextinput",
+    "named": false
+  },
+  {
+    "type": "colvec",
     "named": false
   },
   {
@@ -1897,7 +2208,407 @@
     "named": true
   },
   {
+    "type": "comparefemalebipedpath",
+    "named": false
+  },
+  {
+    "type": "comparefemalegroundpath",
+    "named": false
+  },
+  {
+    "type": "comparefemaleiconpath",
+    "named": false
+  },
+  {
+    "type": "compareiconpath",
+    "named": false
+  },
+  {
+    "type": "comparemalebipedpath",
+    "named": false
+  },
+  {
+    "type": "comparemalegroundpath",
+    "named": false
+  },
+  {
+    "type": "comparemaleiconpath",
+    "named": false
+  },
+  {
+    "type": "comparemodelpath",
+    "named": false
+  },
+  {
+    "type": "comparename",
+    "named": false
+  },
+  {
+    "type": "comparenames",
+    "named": false
+  },
+  {
+    "type": "comparescripts",
+    "named": false
+  },
+  {
+    "type": "completequest",
+    "named": false
+  },
+  {
+    "type": "con_cal",
+    "named": false
+  },
+  {
+    "type": "con_getinisetting",
+    "named": false
+  },
+  {
+    "type": "con_hairtint",
+    "named": false
+  },
+  {
+    "type": "con_loadgame",
+    "named": false
+  },
+  {
+    "type": "con_modwatershader",
+    "named": false
+  },
+  {
+    "type": "con_playerspellbook",
+    "named": false
+  },
+  {
+    "type": "con_quitgame",
+    "named": false
+  },
+  {
+    "type": "con_refreshini",
+    "named": false
+  },
+  {
+    "type": "con_runmemorypass",
+    "named": false
+  },
+  {
+    "type": "con_save",
+    "named": false
+  },
+  {
+    "type": "con_saveini",
+    "named": false
+  },
+  {
+    "type": "con_setcamerafov",
+    "named": false
+  },
+  {
+    "type": "con_setclipdist",
+    "named": false
+  },
+  {
+    "type": "con_setfog",
+    "named": false
+  },
+  {
+    "type": "con_setgamesetting",
+    "named": false
+  },
+  {
+    "type": "con_setgamma",
+    "named": false
+  },
+  {
+    "type": "con_sethdrparam",
+    "named": false
+  },
+  {
+    "type": "con_setimagespaceglow",
+    "named": false
+  },
+  {
+    "type": "con_setinisetting",
+    "named": false
+  },
+  {
+    "type": "con_setskyparam",
+    "named": false
+  },
+  {
+    "type": "con_settargetrefraction",
+    "named": false
+  },
+  {
+    "type": "con_settargetrefractionfire",
+    "named": false
+  },
+  {
+    "type": "con_sexchange",
+    "named": false
+  },
+  {
+    "type": "con_tcl",
+    "named": false
+  },
+  {
+    "type": "con_tfc",
+    "named": false
+  },
+  {
+    "type": "con_tgm",
+    "named": false
+  },
+  {
+    "type": "con_toggleai",
+    "named": false
+  },
+  {
+    "type": "con_togglecombatai",
+    "named": false
+  },
+  {
+    "type": "con_toggledetection",
+    "named": false
+  },
+  {
+    "type": "con_togglemapmarkers",
+    "named": false
+  },
+  {
+    "type": "con_togglemenus",
+    "named": false
+  },
+  {
+    "type": "con_waterdeepcolor",
+    "named": false
+  },
+  {
+    "type": "con_waterreflectioncolor",
+    "named": false
+  },
+  {
+    "type": "con_watershallowcolor",
+    "named": false
+  },
+  {
     "type": "continue",
+    "named": false
+  },
+  {
+    "type": "copyalleffectitems",
+    "named": false
+  },
+  {
+    "type": "copyeyes",
+    "named": false
+  },
+  {
+    "type": "copyfemalebipedpath",
+    "named": false
+  },
+  {
+    "type": "copyfemalegroundpath",
+    "named": false
+  },
+  {
+    "type": "copyfemaleiconpath",
+    "named": false
+  },
+  {
+    "type": "copyhair",
+    "named": false
+  },
+  {
+    "type": "copyiconpath",
+    "named": false
+  },
+  {
+    "type": "copyir",
+    "named": false
+  },
+  {
+    "type": "copymalebipedpath",
+    "named": false
+  },
+  {
+    "type": "copymalegroundpath",
+    "named": false
+  },
+  {
+    "type": "copymaleiconpath",
+    "named": false
+  },
+  {
+    "type": "copymodelpath",
+    "named": false
+  },
+  {
+    "type": "copyname",
+    "named": false
+  },
+  {
+    "type": "copyntheffectitem",
+    "named": false
+  },
+  {
+    "type": "copyrace",
+    "named": false
+  },
+  {
+    "type": "cos",
+    "named": false
+  },
+  {
+    "type": "cosh",
+    "named": false
+  },
+  {
+    "type": "createfullactorcopy",
+    "named": false
+  },
+  {
+    "type": "createtempref",
+    "named": false
+  },
+  {
+    "type": "creaturehasnohead",
+    "named": false
+  },
+  {
+    "type": "creaturehasnoleftarm",
+    "named": false
+  },
+  {
+    "type": "creaturehasnomovement",
+    "named": false
+  },
+  {
+    "type": "creaturehasnorightarm",
+    "named": false
+  },
+  {
+    "type": "creaturenocombatinwater",
+    "named": false
+  },
+  {
+    "type": "creatureusesweaponandshield",
+    "named": false
+  },
+  {
+    "type": "dacos",
+    "named": false
+  },
+  {
+    "type": "dasin",
+    "named": false
+  },
+  {
+    "type": "datan",
+    "named": false
+  },
+  {
+    "type": "datan2",
+    "named": false
+  },
+  {
+    "type": "dcos",
+    "named": false
+  },
+  {
+    "type": "dcosh",
+    "named": false
+  },
+  {
+    "type": "debugprint",
+    "named": false
+  },
+  {
+    "type": "deletefrominputtext",
+    "named": false
+  },
+  {
+    "type": "deletefullactorcopy",
+    "named": false
+  },
+  {
+    "type": "deletereference",
+    "named": false
+  },
+  {
+    "type": "disable",
+    "named": false
+  },
+  {
+    "type": "disablecontrol",
+    "named": false
+  },
+  {
+    "type": "disablekey",
+    "named": false
+  },
+  {
+    "type": "disablelinkedpathpoints",
+    "named": false
+  },
+  {
+    "type": "disablemouse",
+    "named": false
+  },
+  {
+    "type": "disableplayercontrols",
+    "named": false
+  },
+  {
+    "type": "dispatchevent",
+    "named": false
+  },
+  {
+    "type": "dispel",
+    "named": false
+  },
+  {
+    "type": "dispelallspells",
+    "named": false
+  },
+  {
+    "type": "dispelnthactiveeffect",
+    "named": false
+  },
+  {
+    "type": "dispelnthae",
+    "named": false
+  },
+  {
+    "type": "drop",
+    "named": false
+  },
+  {
+    "type": "dropme",
+    "named": false
+  },
+  {
+    "type": "dsin",
+    "named": false
+  },
+  {
+    "type": "dsinh",
+    "named": false
+  },
+  {
+    "type": "dtan",
+    "named": false
+  },
+  {
+    "type": "dtanh",
+    "named": false
+  },
+  {
+    "type": "duplicateallitems",
+    "named": false
+  },
+  {
+    "type": "duplicatenpcstats",
     "named": false
   },
   {
@@ -1909,6 +2620,34 @@
     "named": false
   },
   {
+    "type": "enable",
+    "named": false
+  },
+  {
+    "type": "enablecontrol",
+    "named": false
+  },
+  {
+    "type": "enablefasttravel",
+    "named": false
+  },
+  {
+    "type": "enablekey",
+    "named": false
+  },
+  {
+    "type": "enablelinkedpathpoints",
+    "named": false
+  },
+  {
+    "type": "enablemouse",
+    "named": false
+  },
+  {
+    "type": "enableplayercontrols",
+    "named": false
+  },
+  {
     "type": "end",
     "named": false
   },
@@ -1917,7 +2656,103 @@
     "named": false
   },
   {
+    "type": "equipitem",
+    "named": false
+  },
+  {
+    "type": "equipitem2",
+    "named": false
+  },
+  {
+    "type": "equipitem2ns",
+    "named": false
+  },
+  {
+    "type": "equipitemns",
+    "named": false
+  },
+  {
+    "type": "equipitemsilent",
+    "named": false
+  },
+  {
+    "type": "equipme",
+    "named": false
+  },
+  {
+    "type": "essentialdeathreload",
+    "named": false
+  },
+  {
+    "type": "eval",
+    "named": false
+  },
+  {
+    "type": "evaluatepackage",
+    "named": false
+  },
+  {
+    "type": "eventhandlerexist",
+    "named": false
+  },
+  {
+    "type": "evp",
+    "named": false
+  },
+  {
+    "type": "exp",
+    "named": false
+  },
+  {
+    "type": "factionhasspecialcombat",
+    "named": false
+  },
+  {
+    "type": "fileexists",
+    "named": false
+  },
+  {
     "type": "float",
+    "named": false
+  },
+  {
+    "type": "floor",
+    "named": false
+  },
+  {
+    "type": "fmod",
+    "named": false
+  },
+  {
+    "type": "forceactorvalue",
+    "named": false
+  },
+  {
+    "type": "forceav",
+    "named": false
+  },
+  {
+    "type": "forcecloseobliviongate",
+    "named": false
+  },
+  {
+    "type": "forcecolumnvector",
+    "named": false
+  },
+  {
+    "type": "forceflee",
+    "named": false
+  },
+  {
+    "type": "forcerowvector",
+    "named": false
+  },
+  {
+    "type": "forcetakecover",
+    "named": false
+  },
+  {
+    "type": "forceweather",
     "named": false
   },
   {
@@ -1929,15 +2764,3343 @@
     "named": false
   },
   {
-    "type": "function",
-    "named": true
+    "type": "generateidentitymatrix",
+    "named": false
+  },
+  {
+    "type": "generaterotationmatrix",
+    "named": false
+  },
+  {
+    "type": "generatezeromatrix",
+    "named": false
+  },
+  {
+    "type": "getactionref",
+    "named": false
+  },
+  {
+    "type": "getactiveeffectcasters",
+    "named": false
+  },
+  {
+    "type": "getactiveeffectcodes",
+    "named": false
+  },
+  {
+    "type": "getactiveeffectcount",
+    "named": false
+  },
+  {
+    "type": "getactivemenucomponentid",
+    "named": false
+  },
+  {
+    "type": "getactivemenufilter",
+    "named": false
+  },
+  {
+    "type": "getactivemenumode",
+    "named": false
+  },
+  {
+    "type": "getactivemenuobject",
+    "named": false
+  },
+  {
+    "type": "getactivemenuref",
+    "named": false
+  },
+  {
+    "type": "getactivemenuselection",
+    "named": false
+  },
+  {
+    "type": "getactivequest",
+    "named": false
+  },
+  {
+    "type": "getactiveuicomponentfullname",
+    "named": false
+  },
+  {
+    "type": "getactiveuicomponentid",
+    "named": false
+  },
+  {
+    "type": "getactiveuicomponentname",
+    "named": false
+  },
+  {
+    "type": "getactoralpha",
+    "named": false
+  },
+  {
+    "type": "getactorbaselevel",
+    "named": false
+  },
+  {
+    "type": "getactorlightamount",
+    "named": false
+  },
+  {
+    "type": "getactormaxlevel",
+    "named": false
+  },
+  {
+    "type": "getactormaxswimbreath",
+    "named": false
+  },
+  {
+    "type": "getactorminlevel",
+    "named": false
+  },
+  {
+    "type": "getactorpackages",
+    "named": false
+  },
+  {
+    "type": "getactorsoullevel",
+    "named": false
+  },
+  {
+    "type": "getactorvalue",
+    "named": false
+  },
+  {
+    "type": "getactorvaluec",
+    "named": false
+  },
+  {
+    "type": "getalarmed",
+    "named": false
+  },
+  {
+    "type": "getalchmenuapparatus",
+    "named": false
+  },
+  {
+    "type": "getalchmenuingredient",
+    "named": false
+  },
+  {
+    "type": "getalchmenuingredientcount",
+    "named": false
+  },
+  {
+    "type": "getallies",
+    "named": false
+  },
+  {
+    "type": "getallmodlocaldata",
+    "named": false
+  },
+  {
+    "type": "getaltcontrol2",
+    "named": false
+  },
+  {
+    "type": "getamountsoldstolen",
+    "named": false
+  },
+  {
+    "type": "getangle",
+    "named": false
+  },
+  {
+    "type": "getapbowench",
+    "named": false
+  },
+  {
+    "type": "getapench",
+    "named": false
+  },
+  {
+    "type": "getapparatustype",
+    "named": false
+  },
+  {
+    "type": "getappoison",
+    "named": false
+  },
+  {
+    "type": "getarmorar",
+    "named": false
+  },
+  {
+    "type": "getarmorrating",
+    "named": false
+  },
+  {
+    "type": "getarmorratingupperbody",
+    "named": false
+  },
+  {
+    "type": "getarmortype",
+    "named": false
+  },
+  {
+    "type": "getarrayvariable",
+    "named": false
+  },
+  {
+    "type": "getarrowprojectilebowenchantment",
+    "named": false
+  },
+  {
+    "type": "getarrowprojectileenchantment",
+    "named": false
+  },
+  {
+    "type": "getarrowprojectilepoison",
+    "named": false
+  },
+  {
+    "type": "getattackdamage",
+    "named": false
+  },
+  {
+    "type": "getattacked",
+    "named": false
+  },
+  {
+    "type": "getav",
+    "named": false
+  },
+  {
+    "type": "getavc",
+    "named": false
+  },
+  {
+    "type": "getavforbaseactor",
+    "named": false
+  },
+  {
+    "type": "getavforbaseactorc",
+    "named": false
+  },
+  {
+    "type": "getavmod",
+    "named": false
+  },
+  {
+    "type": "getavmodc",
+    "named": false
+  },
+  {
+    "type": "getavskillmastery",
+    "named": false
+  },
+  {
+    "type": "getavskillmasteryc",
+    "named": false
+  },
+  {
+    "type": "getbartergold",
+    "named": false
+  },
+  {
+    "type": "getbarteritem",
+    "named": false
+  },
+  {
+    "type": "getbarteritemquantity",
+    "named": false
+  },
+  {
+    "type": "getbaseactorvalue",
+    "named": false
+  },
+  {
+    "type": "getbaseactorvaluec",
+    "named": false
+  },
+  {
+    "type": "getbaseav",
+    "named": false
+  },
+  {
+    "type": "getbaseav2",
+    "named": false
+  },
+  {
+    "type": "getbaseav2c",
+    "named": false
+  },
+  {
+    "type": "getbaseav3",
+    "named": false
+  },
+  {
+    "type": "getbaseav3c",
+    "named": false
+  },
+  {
+    "type": "getbaseitems",
+    "named": false
+  },
+  {
+    "type": "getbaseobject",
+    "named": false
+  },
+  {
+    "type": "getbipediconpath",
+    "named": false
+  },
+  {
+    "type": "getbipedmodelpath",
+    "named": false
+  },
+  {
+    "type": "getbipedslotmask",
+    "named": false
+  },
+  {
+    "type": "getbirthsignspells",
+    "named": false
+  },
+  {
+    "type": "getbookcantbetaken",
+    "named": false
+  },
+  {
+    "type": "getbookisscroll",
+    "named": false
+  },
+  {
+    "type": "getbooklength",
+    "named": false
+  },
+  {
+    "type": "getbookskilltaught",
+    "named": false
+  },
+  {
+    "type": "getbooktext",
+    "named": false
+  },
+  {
+    "type": "getboundingbox",
+    "named": false
+  },
+  {
+    "type": "getboundingradius",
+    "named": false
+  },
+  {
+    "type": "getbuttonpressed",
+    "named": false
+  },
+  {
+    "type": "getcalcalllevels",
+    "named": false
+  },
+  {
+    "type": "getcalceachincount",
+    "named": false
+  },
+  {
+    "type": "getcallingscript",
+    "named": false
+  },
+  {
+    "type": "getcellbehavesasexterior",
+    "named": false
+  },
+  {
+    "type": "getcellchanged",
+    "named": false
+  },
+  {
+    "type": "getcellclimate",
+    "named": false
+  },
+  {
+    "type": "getcelldetachtime",
+    "named": false
+  },
+  {
+    "type": "getcellfactionrank",
+    "named": false
+  },
+  {
+    "type": "getcelllighting",
+    "named": false
+  },
+  {
+    "type": "getcellmusictype",
+    "named": false
+  },
+  {
+    "type": "getcellnorthrotation",
+    "named": false
+  },
+  {
+    "type": "getcellresethours",
+    "named": false
+  },
+  {
+    "type": "getcellwatertype",
+    "named": false
+  },
+  {
+    "type": "getchancenone",
+    "named": false
+  },
+  {
+    "type": "getclass",
+    "named": false
+  },
+  {
+    "type": "getclassattribute",
+    "named": false
+  },
+  {
+    "type": "getclassdefaultmatch",
+    "named": false
+  },
+  {
+    "type": "getclassmenuhighlightedclass",
+    "named": false
+  },
+  {
+    "type": "getclassmenuselectedclass",
+    "named": false
+  },
+  {
+    "type": "getclassskill",
+    "named": false
+  },
+  {
+    "type": "getclassskills",
+    "named": false
+  },
+  {
+    "type": "getclassspecialization",
+    "named": false
+  },
+  {
+    "type": "getclimatehasmasser",
+    "named": false
+  },
+  {
+    "type": "getclimatehassecunda",
+    "named": false
+  },
+  {
+    "type": "getclimatemoonphaselength",
+    "named": false
+  },
+  {
+    "type": "getclimatesunrisebegin",
+    "named": false
+  },
+  {
+    "type": "getclimatesunriseend",
+    "named": false
+  },
+  {
+    "type": "getclimatesunsetbegin",
+    "named": false
+  },
+  {
+    "type": "getclimatesunsetend",
+    "named": false
+  },
+  {
+    "type": "getclimatevolatility",
+    "named": false
+  },
+  {
+    "type": "getclosesound",
+    "named": false
+  },
+  {
+    "type": "getclothingvalue",
+    "named": false
+  },
+  {
+    "type": "getcloudspeedlower",
+    "named": false
+  },
+  {
+    "type": "getcloudspeedupper",
+    "named": false
+  },
+  {
+    "type": "getcombatspells",
+    "named": false
+  },
+  {
+    "type": "getcombatstyle",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleacrobaticsdodgechance",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleattackchance",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleattackduringblockmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleattacknotunderattackmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleattackskillmodbase",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleattackskillmodmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleattackunderattackmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleblockchance",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleblocknotunderattackmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleblockskillmodbase",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleblockskillmodmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleblockunderattackmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstylebuffstandoffdist",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgebacknotunderattackmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgebacktimermax",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgebacktimermin",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgebackunderattackmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgechance",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgefatiguemodbase",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgefatiguemodmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgefwattackingmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgefwnotattackingmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgefwtimermax",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgefwtimermin",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgelrchance",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgelrtimermax",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgelrtimermin",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgenotunderattackmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyledodgeunderattackmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleencumberedspeedmodbase",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleencumberedspeedmodmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstylefleeingdisabled",
+    "named": false
+  },
+  {
+    "type": "getcombatstylegroupstandoffdist",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleh2hbonustoattack",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleholdtimermax",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleholdtimermin",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleidletimermax",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleidletimermin",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleignorealliesinarea",
+    "named": false
+  },
+  {
+    "type": "getcombatstylekobonustoattack",
+    "named": false
+  },
+  {
+    "type": "getcombatstylekobonustopowerattack",
+    "named": false
+  },
+  {
+    "type": "getcombatstylemeleealertok",
+    "named": false
+  },
+  {
+    "type": "getcombatstylepowerattackchance",
+    "named": false
+  },
+  {
+    "type": "getcombatstylepowerattackfatiguemodbase",
+    "named": false
+  },
+  {
+    "type": "getcombatstylepowerattackfatiguemodmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleprefersranged",
+    "named": false
+  },
+  {
+    "type": "getcombatstylerangedstandoffdist",
+    "named": false
+  },
+  {
+    "type": "getcombatstylerangemaxmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstylerangeoptimalmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstylerejectsyields",
+    "named": false
+  },
+  {
+    "type": "getcombatstylerushattackchance",
+    "named": false
+  },
+  {
+    "type": "getcombatstylerushattackdistmult",
+    "named": false
+  },
+  {
+    "type": "getcombatstylestaggerbonustoattack",
+    "named": false
+  },
+  {
+    "type": "getcombatstylestaggerbonustopowerattack",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleswitchdistmelee",
+    "named": false
+  },
+  {
+    "type": "getcombatstyleswitchdistranged",
+    "named": false
+  },
+  {
+    "type": "getcombatstylewillyield",
+    "named": false
+  },
+  {
+    "type": "getcombattarget",
+    "named": false
+  },
+  {
+    "type": "getcompletedquests",
+    "named": false
+  },
+  {
+    "type": "getcontainer",
+    "named": false
+  },
+  {
+    "type": "getcontainermenuview",
+    "named": false
+  },
+  {
+    "type": "getcontainerrespawns",
+    "named": false
+  },
+  {
+    "type": "getcontrol",
+    "named": false
+  },
+  {
+    "type": "getcreaturebasescale",
+    "named": false
+  },
+  {
+    "type": "getcreaturecombatskill",
+    "named": false
+  },
+  {
+    "type": "getcreatureflies",
+    "named": false
+  },
+  {
+    "type": "getcreaturemagicskill",
+    "named": false
+  },
+  {
+    "type": "getcreaturemodelpaths",
+    "named": false
+  },
+  {
+    "type": "getcreaturereach",
+    "named": false
+  },
+  {
+    "type": "getcreaturesoullevel",
+    "named": false
+  },
+  {
+    "type": "getcreaturesound",
+    "named": false
+  },
+  {
+    "type": "getcreaturesoundbase",
+    "named": false
+  },
+  {
+    "type": "getcreaturestealthskill",
+    "named": false
+  },
+  {
+    "type": "getcreatureswims",
+    "named": false
+  },
+  {
+    "type": "getcreaturetype",
+    "named": false
+  },
+  {
+    "type": "getcreaturewalks",
+    "named": false
+  },
+  {
+    "type": "getcrime",
+    "named": false
+  },
+  {
+    "type": "getcrimegold",
+    "named": false
+  },
+  {
+    "type": "getcrimeknown",
+    "named": false
+  },
+  {
+    "type": "getcrosshairref",
+    "named": false
+  },
+  {
+    "type": "getcurrentaipackage",
+    "named": false
+  },
+  {
+    "type": "getcurrentaiprocedure",
+    "named": false
+  },
+  {
+    "type": "getcurrentcharge",
+    "named": false
+  },
+  {
+    "type": "getcurrentclimateid",
+    "named": false
+  },
+  {
+    "type": "getcurrenteditorpackage",
+    "named": false
+  },
+  {
+    "type": "getcurrenteventname",
+    "named": false
+  },
+  {
+    "type": "getcurrenthealth",
+    "named": false
+  },
+  {
+    "type": "getcurrentpackage",
+    "named": false
+  },
+  {
+    "type": "getcurrentpackageprocedure",
+    "named": false
+  },
+  {
+    "type": "getcurrentquests",
+    "named": false
+  },
+  {
+    "type": "getcurrentregion",
+    "named": false
+  },
+  {
+    "type": "getcurrentregions",
+    "named": false
+  },
+  {
+    "type": "getcurrentscript",
+    "named": false
+  },
+  {
+    "type": "getcurrentsoullevel",
+    "named": false
+  },
+  {
+    "type": "getcurrenttime",
+    "named": false
+  },
+  {
+    "type": "getcurrentweatherid",
+    "named": false
+  },
+  {
+    "type": "getcurrentweatherpercent",
+    "named": false
+  },
+  {
+    "type": "getcursorpos",
+    "named": false
+  },
+  {
+    "type": "getdayofweek",
+    "named": false
+  },
+  {
+    "type": "getdead",
+    "named": false
+  },
+  {
+    "type": "getdeadcount",
+    "named": false
+  },
+  {
+    "type": "getdebugselection",
+    "named": false
+  },
+  {
+    "type": "getdescription",
+    "named": false
+  },
+  {
+    "type": "getdestroyed",
+    "named": false
+  },
+  {
+    "type": "getdetected",
+    "named": false
+  },
+  {
+    "type": "getdetectionlevel",
+    "named": false
+  },
+  {
+    "type": "getdisabled",
+    "named": false
+  },
+  {
+    "type": "getdisposition",
+    "named": false
+  },
+  {
+    "type": "getdistance",
+    "named": false
+  },
+  {
+    "type": "getdoordefaultopen",
+    "named": false
+  },
+  {
+    "type": "getdoorteleportrot",
+    "named": false
+  },
+  {
+    "type": "getdoorteleportx",
+    "named": false
+  },
+  {
+    "type": "getdoorteleporty",
+    "named": false
+  },
+  {
+    "type": "getdoorteleportz",
+    "named": false
+  },
+  {
+    "type": "geteditorid",
+    "named": false
+  },
+  {
+    "type": "geteditorsize",
+    "named": false
+  },
+  {
+    "type": "getenchantment",
+    "named": false
+  },
+  {
+    "type": "getenchantmentcharge",
+    "named": false
+  },
+  {
+    "type": "getenchantmentcost",
+    "named": false
+  },
+  {
+    "type": "getenchantmenttype",
+    "named": false
+  },
+  {
+    "type": "getenchmenubaseitem",
+    "named": false
+  },
+  {
+    "type": "getenchmenuenchitem",
+    "named": false
+  },
+  {
+    "type": "getenchmenusoulgem",
+    "named": false
+  },
+  {
+    "type": "getequipmentslot",
+    "named": false
+  },
+  {
+    "type": "getequipmentslotmask",
+    "named": false
+  },
+  {
+    "type": "getequipped",
+    "named": false
+  },
+  {
+    "type": "getequippedcurrentcharge",
+    "named": false
+  },
+  {
+    "type": "getequippedcurrenthealth",
+    "named": false
+  },
+  {
+    "type": "getequippeditems",
+    "named": false
+  },
+  {
+    "type": "getequippedobject",
+    "named": false
+  },
+  {
+    "type": "getequippedtorchtimeleft",
+    "named": false
+  },
+  {
+    "type": "getequippedweaponpoison",
+    "named": false
+  },
+  {
+    "type": "geteyes",
+    "named": false
+  },
+  {
+    "type": "getfactionrank",
+    "named": false
+  },
+  {
+    "type": "getfactionrankdifference",
+    "named": false
+  },
+  {
+    "type": "getfactionreaction",
+    "named": false
+  },
+  {
+    "type": "getfactions",
+    "named": false
+  },
+  {
+    "type": "getfalltimer",
+    "named": false
+  },
+  {
+    "type": "getfatiguepercentage",
+    "named": false
+  },
+  {
+    "type": "getfirstref",
+    "named": false
+  },
+  {
+    "type": "getfirstrefincell",
+    "named": false
+  },
+  {
+    "type": "getfogdayfar",
+    "named": false
+  },
+  {
+    "type": "getfogdaynear",
+    "named": false
+  },
+  {
+    "type": "getfognightfar",
+    "named": false
+  },
+  {
+    "type": "getfognightnear",
+    "named": false
+  },
+  {
+    "type": "getfollowers",
+    "named": false
+  },
+  {
+    "type": "getforcerun",
+    "named": false
+  },
+  {
+    "type": "getforcesneak",
+    "named": false
+  },
+  {
+    "type": "getformfrommod",
+    "named": false
+  },
+  {
+    "type": "getformidstring",
+    "named": false
+  },
+  {
+    "type": "getfps",
+    "named": false
+  },
+  {
+    "type": "getfriendhit",
+    "named": false
+  },
+  {
+    "type": "getfullgoldvalue",
+    "named": false
+  },
+  {
+    "type": "getfurnituremarkerid",
+    "named": false
+  },
+  {
+    "type": "getgamedifficulty",
+    "named": false
+  },
+  {
+    "type": "getgameloaded",
+    "named": false
+  },
+  {
+    "type": "getgamerestarted",
+    "named": false
+  },
+  {
+    "type": "getgamesetting",
+    "named": false
+  },
+  {
+    "type": "getglobalvalue",
+    "named": false
+  },
+  {
+    "type": "getgodmode",
+    "named": false
+  },
+  {
+    "type": "getgold",
+    "named": false
+  },
+  {
+    "type": "getgoldvalue",
+    "named": false
+  },
+  {
+    "type": "getgridstoload",
+    "named": false
+  },
+  {
+    "type": "getgroundsurfacematerial",
+    "named": false
+  },
+  {
+    "type": "getgs",
+    "named": false
+  },
+  {
+    "type": "gethair",
+    "named": false
+  },
+  {
+    "type": "gethaircolor",
+    "named": false
+  },
+  {
+    "type": "gethdrvalue",
+    "named": false
+  },
+  {
+    "type": "getheadingangle",
+    "named": false
+  },
+  {
+    "type": "gethidesamulet",
+    "named": false
+  },
+  {
+    "type": "gethidesrings",
+    "named": false
+  },
+  {
+    "type": "gethighactors",
+    "named": false
+  },
+  {
+    "type": "gethorse",
+    "named": false
+  },
+  {
+    "type": "gethotkeyitem",
+    "named": false
+  },
+  {
+    "type": "geticonpath",
+    "named": false
+  },
+  {
+    "type": "getidledoneonce",
+    "named": false
+  },
+  {
+    "type": "getignorefriendlyhits",
+    "named": false
+  },
+  {
+    "type": "getignoresresistance",
+    "named": false
+  },
+  {
+    "type": "getincell",
+    "named": false
+  },
+  {
+    "type": "getincellparam",
+    "named": false
+  },
+  {
+    "type": "getinfaction",
+    "named": false
+  },
+  {
+    "type": "getingredient",
+    "named": false
+  },
+  {
+    "type": "getingredientchance",
+    "named": false
+  },
+  {
+    "type": "getinputtext",
+    "named": false
+  },
+  {
+    "type": "getinsamecell",
+    "named": false
+  },
+  {
+    "type": "getinventoryobject",
+    "named": false
+  },
+  {
+    "type": "getinvestmentgold",
+    "named": false
+  },
+  {
+    "type": "getinvrefsforitem",
+    "named": false
+  },
+  {
+    "type": "getinworldspace",
+    "named": false
+  },
+  {
+    "type": "getisalerted",
+    "named": false
+  },
+  {
+    "type": "getisclass",
+    "named": false
+  },
+  {
+    "type": "getisclassdefault",
+    "named": false
+  },
+  {
+    "type": "getiscreature",
+    "named": false
+  },
+  {
+    "type": "getiscurrentpackage",
+    "named": false
+  },
+  {
+    "type": "getiscurrentweather",
+    "named": false
+  },
+  {
+    "type": "getisghost",
+    "named": false
+  },
+  {
+    "type": "getisid",
+    "named": false
+  },
+  {
+    "type": "getisplayablerace",
+    "named": false
+  },
+  {
+    "type": "getisplayerbirthsign",
+    "named": false
+  },
+  {
+    "type": "getisrace",
+    "named": false
+  },
+  {
+    "type": "getisreference",
+    "named": false
+  },
+  {
+    "type": "getissex",
+    "named": false
+  },
+  {
+    "type": "getisuseditem",
+    "named": false
+  },
+  {
+    "type": "getisuseditemtype",
+    "named": false
+  },
+  {
+    "type": "getitemcount",
+    "named": false
+  },
+  {
+    "type": "getitems",
+    "named": false
+  },
+  {
+    "type": "getkeyname",
+    "named": false
+  },
+  {
+    "type": "getkeypress",
+    "named": false
+  },
+  {
+    "type": "getknockedstate",
+    "named": false
+  },
+  {
+    "type": "getlastcreatedpotion",
+    "named": false
+  },
+  {
+    "type": "getlastcreatedspell",
+    "named": false
+  },
+  {
+    "type": "getlastenchanteditem",
+    "named": false
+  },
+  {
+    "type": "getlastsigilstonecreateditem",
+    "named": false
+  },
+  {
+    "type": "getlastsigilstoneenchanteditem",
+    "named": false
+  },
+  {
+    "type": "getlastss",
+    "named": false
+  },
+  {
+    "type": "getlastsscreated",
+    "named": false
+  },
+  {
+    "type": "getlastssitem",
+    "named": false
+  },
+  {
+    "type": "getlasttransactionitem",
+    "named": false
+  },
+  {
+    "type": "getlasttransactionquantity",
+    "named": false
+  },
+  {
+    "type": "getlastuniquecreatedpotion",
+    "named": false
+  },
+  {
+    "type": "getlastusedsigilstone",
+    "named": false
+  },
+  {
+    "type": "getlevcreaturetemplate",
+    "named": false
+  },
+  {
+    "type": "getlevel",
+    "named": false
+  },
+  {
+    "type": "getleveledspells",
+    "named": false
+  },
+  {
+    "type": "getlevitembylevel",
+    "named": false
+  },
+  {
+    "type": "getlevitemindexbyform",
+    "named": false
+  },
+  {
+    "type": "getlevitemindexbylevel",
+    "named": false
+  },
+  {
+    "type": "getlightduration",
+    "named": false
+  },
+  {
+    "type": "getlightningfrequency",
+    "named": false
+  },
+  {
+    "type": "getlightradius",
+    "named": false
+  },
+  {
+    "type": "getlightrgb",
+    "named": false
+  },
+  {
+    "type": "getlinkeddoor",
+    "named": false
+  },
+  {
+    "type": "getloadedtypearray",
+    "named": false
+  },
+  {
+    "type": "getlocalgravity",
+    "named": false
+  },
+  {
+    "type": "getlocked",
+    "named": false
+  },
+  {
+    "type": "getlocklevel",
+    "named": false
+  },
+  {
+    "type": "getloopsound",
+    "named": false
+  },
+  {
+    "type": "getlos",
+    "named": false
+  },
+  {
+    "type": "getlowactors",
+    "named": false
+  },
+  {
+    "type": "getluckmodifiedskill",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectareasound",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectareasoundc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectbarterfactor",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectbarterfactorc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectbasecost",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectbasecostc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectboltsound",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectboltsoundc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectcastingsound",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectcastingsoundc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectchars",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectcharsc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectcode",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectcounters",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectcountersc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectenchantfactor",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectenchantfactorc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectenchantshader",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectenchantshaderc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffecthitshader",
+    "named": false
+  },
+  {
+    "type": "getmagiceffecthitshaderc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffecthitsound",
+    "named": false
+  },
+  {
+    "type": "getmagiceffecthitsoundc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffecticon",
+    "named": false
+  },
+  {
+    "type": "getmagiceffecticonc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectlight",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectlightc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectmodel",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectmodelc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectname",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectnamec",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectnumcounters",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectnumcountersc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectotheractorvalue",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectotheractorvaluec",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectprojectilespeed",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectprojectilespeedc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectresistvalue",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectresistvaluec",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectschool",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectschoolc",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectusedobject",
+    "named": false
+  },
+  {
+    "type": "getmagiceffectusedobjectc",
+    "named": false
+  },
+  {
+    "type": "getmagicitemeffectcount",
+    "named": false
+  },
+  {
+    "type": "getmagicitemtype",
+    "named": false
+  },
+  {
+    "type": "getmagicprojectilespell",
+    "named": false
+  },
+  {
+    "type": "getmapmarkers",
+    "named": false
+  },
+  {
+    "type": "getmapmarkertype",
+    "named": false
+  },
+  {
+    "type": "getmapmenumarkername",
+    "named": false
+  },
+  {
+    "type": "getmapmenumarkerref",
+    "named": false
+  },
+  {
+    "type": "getmaxav",
+    "named": false
+  },
+  {
+    "type": "getmaxavc",
+    "named": false
+  },
+  {
+    "type": "getmaxlevel",
+    "named": false
+  },
+  {
+    "type": "getmeareasound",
+    "named": false
+  },
+  {
+    "type": "getmeareasoundc",
+    "named": false
+  },
+  {
+    "type": "getmebarterc",
+    "named": false
+  },
+  {
+    "type": "getmebasecost",
+    "named": false
+  },
+  {
+    "type": "getmebasecostc",
+    "named": false
+  },
+  {
+    "type": "getmeboltsound",
+    "named": false
+  },
+  {
+    "type": "getmeboltsoundc",
+    "named": false
+  },
+  {
+    "type": "getmecastingsound",
+    "named": false
+  },
+  {
+    "type": "getmecastingsoundc",
+    "named": false
+  },
+  {
+    "type": "getmecounters",
+    "named": false
+  },
+  {
+    "type": "getmecountersc",
+    "named": false
+  },
+  {
+    "type": "getmeebarter",
+    "named": false
+  },
+  {
+    "type": "getmeebarterc",
+    "named": false
+  },
+  {
+    "type": "getmeenchant",
+    "named": false
+  },
+  {
+    "type": "getmeenchantc",
+    "named": false
+  },
+  {
+    "type": "getmeenchantshader",
+    "named": false
+  },
+  {
+    "type": "getmeenchantshaderc",
+    "named": false
+  },
+  {
+    "type": "getmehitshader",
+    "named": false
+  },
+  {
+    "type": "getmehitshaderc",
+    "named": false
+  },
+  {
+    "type": "getmehitsound",
+    "named": false
+  },
+  {
+    "type": "getmehitsoundc",
+    "named": false
+  },
+  {
+    "type": "getmeicon",
+    "named": false
+  },
+  {
+    "type": "getmeiconc",
+    "named": false
+  },
+  {
+    "type": "getmelight",
+    "named": false
+  },
+  {
+    "type": "getmelightc",
+    "named": false
+  },
+  {
+    "type": "getmemodel",
+    "named": false
+  },
+  {
+    "type": "getmemodelc",
+    "named": false
+  },
+  {
+    "type": "getmename",
+    "named": false
+  },
+  {
+    "type": "getmenamec",
+    "named": false
+  },
+  {
+    "type": "getmenufloatvalue",
+    "named": false
+  },
+  {
+    "type": "getmenuhastrait",
+    "named": false
+  },
+  {
+    "type": "getmenumcounters",
+    "named": false
+  },
+  {
+    "type": "getmenumcountersc",
+    "named": false
+  },
+  {
+    "type": "getmenustringvalue",
+    "named": false
+  },
+  {
+    "type": "getmeotheractorvalue",
+    "named": false
+  },
+  {
+    "type": "getmeotheractorvaluec",
+    "named": false
+  },
+  {
+    "type": "getmeprojspeed",
+    "named": false
+  },
+  {
+    "type": "getmeprojspeedc",
+    "named": false
+  },
+  {
+    "type": "getmerchantcontainer",
+    "named": false
+  },
+  {
+    "type": "getmeresistvalue",
+    "named": false
+  },
+  {
+    "type": "getmeresistvaluec",
+    "named": false
+  },
+  {
+    "type": "getmeschool",
+    "named": false
+  },
+  {
+    "type": "getmeschoolc",
+    "named": false
+  },
+  {
+    "type": "getmessageboxtype",
+    "named": false
+  },
+  {
+    "type": "getmeusedobject",
+    "named": false
+  },
+  {
+    "type": "getmeusedobjectc",
+    "named": false
+  },
+  {
+    "type": "getmiddlehighactors",
+    "named": false
+  },
+  {
+    "type": "getmieffectcount",
+    "named": false
+  },
+  {
+    "type": "getminlevel",
+    "named": false
+  },
+  {
+    "type": "getmitype",
+    "named": false
+  },
+  {
+    "type": "getmodelpath",
+    "named": false
+  },
+  {
+    "type": "getmodindex",
+    "named": false
+  },
+  {
+    "type": "getmodlocaldata",
+    "named": false
+  },
+  {
+    "type": "getmousebuttonpress",
+    "named": false
+  },
+  {
+    "type": "getmousebuttonsswapped",
+    "named": false
+  },
+  {
+    "type": "getmpspell",
+    "named": false
+  },
+  {
+    "type": "getname",
+    "named": false
+  },
+  {
+    "type": "getnextref",
+    "named": false
+  },
+  {
+    "type": "getnorumors",
+    "named": false
+  },
+  {
+    "type": "getnthacitveeffectmagnitude",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectactorvalue",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectbounditem",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectcaster",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectcode",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectdata",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectduration",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectenchantobject",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectmagicenchantobject",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectmagicitem",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectmagicitemindex",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectmagnitude",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffectsummonref",
+    "named": false
+  },
+  {
+    "type": "getnthactiveeffecttimeelapsed",
+    "named": false
+  },
+  {
+    "type": "getnthaeav",
+    "named": false
+  },
+  {
+    "type": "getnthaebounditem",
+    "named": false
+  },
+  {
+    "type": "getnthaecaster",
+    "named": false
+  },
+  {
+    "type": "getnthaecode",
+    "named": false
+  },
+  {
+    "type": "getnthaedata",
+    "named": false
+  },
+  {
+    "type": "getnthaeduration",
+    "named": false
+  },
+  {
+    "type": "getnthaeindex",
+    "named": false
+  },
+  {
+    "type": "getnthaemagicenchantobject",
+    "named": false
+  },
+  {
+    "type": "getnthaemagicitem",
+    "named": false
+  },
+  {
+    "type": "getnthaemagnitude",
+    "named": false
+  },
+  {
+    "type": "getnthaesummonref",
+    "named": false
+  },
+  {
+    "type": "getnthaetime",
+    "named": false
+  },
+  {
+    "type": "getnthchildref",
+    "named": false
+  },
+  {
+    "type": "getnthdetectedactor",
+    "named": false
+  },
+  {
+    "type": "getntheffectitem",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemactorvalue",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemarea",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemcode",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemduration",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemmagnitude",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemname",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemrange",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemscript",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemscriptname",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemscriptschool",
+    "named": false
+  },
+  {
+    "type": "getntheffectitemscriptvisualeffect",
+    "named": false
+  },
+  {
+    "type": "getntheiarea",
+    "named": false
+  },
+  {
+    "type": "getntheiav",
+    "named": false
+  },
+  {
+    "type": "getntheicode",
+    "named": false
+  },
+  {
+    "type": "getntheiduration",
+    "named": false
+  },
+  {
+    "type": "getntheimagnitude",
+    "named": false
+  },
+  {
+    "type": "getntheiname",
+    "named": false
+  },
+  {
+    "type": "getntheirange",
+    "named": false
+  },
+  {
+    "type": "getntheiscript",
+    "named": false
+  },
+  {
+    "type": "getntheisschool",
+    "named": false
+  },
+  {
+    "type": "getntheisvisualeffect",
+    "named": false
+  },
+  {
+    "type": "getnthexplicitref",
+    "named": false
+  },
+  {
+    "type": "getnthfaction",
+    "named": false
+  },
+  {
+    "type": "getnthfactionrankname",
+    "named": false
+  },
+  {
+    "type": "getnthfollower",
+    "named": false
+  },
+  {
+    "type": "getnthlevitem",
+    "named": false
+  },
+  {
+    "type": "getnthlevitemcount",
+    "named": false
+  },
+  {
+    "type": "getnthlevitemlevel",
+    "named": false
+  },
+  {
+    "type": "getnthmagiceffectcounter",
+    "named": false
+  },
+  {
+    "type": "getnthmagiceffectcounterc",
+    "named": false
+  },
+  {
+    "type": "getnthmecounter",
+    "named": false
+  },
+  {
+    "type": "getnthmecounterc",
+    "named": false
+  },
+  {
+    "type": "getnthmodname",
+    "named": false
+  },
+  {
+    "type": "getnthpackage",
+    "named": false
+  },
+  {
+    "type": "getnthplayerspell",
+    "named": false
+  },
+  {
+    "type": "getnthracebonusskill",
+    "named": false
+  },
+  {
+    "type": "getnthracespell",
+    "named": false
+  },
+  {
+    "type": "getnthspell",
+    "named": false
+  },
+  {
+    "type": "getnumchildrefs",
+    "named": false
+  },
+  {
+    "type": "getnumdetectedactors",
+    "named": false
+  },
+  {
+    "type": "getnumericinisetting",
+    "named": false
+  },
+  {
+    "type": "getnumexplicitrefs",
+    "named": false
+  },
+  {
+    "type": "getnumfactions",
+    "named": false
+  },
+  {
+    "type": "getnumfollowers",
+    "named": false
+  },
+  {
+    "type": "getnumitems",
+    "named": false
+  },
+  {
+    "type": "getnumkeyspressed",
+    "named": false
+  },
+  {
+    "type": "getnumlevitems",
+    "named": false
+  },
+  {
+    "type": "getnumloadedmods",
+    "named": false
+  },
+  {
+    "type": "getnumloadedplugins",
+    "named": false
+  },
+  {
+    "type": "getnummousebuttonspressed",
+    "named": false
+  },
+  {
+    "type": "getnumpackages",
+    "named": false
+  },
+  {
+    "type": "getnumranks",
+    "named": false
+  },
+  {
+    "type": "getnumrefs",
+    "named": false
+  },
+  {
+    "type": "getnumrefsincell",
+    "named": false
+  },
+  {
+    "type": "getobjectcharge",
+    "named": false
+  },
+  {
+    "type": "getobjecthealth",
+    "named": false
+  },
+  {
+    "type": "getobjecttype",
+    "named": false
+  },
+  {
+    "type": "getobliviondirectory",
+    "named": false
+  },
+  {
+    "type": "getobserevision",
+    "named": false
+  },
+  {
+    "type": "getobseversion",
+    "named": false
+  },
+  {
+    "type": "getoffersservicesnow",
+    "named": false
+  },
+  {
+    "type": "getopenkey",
+    "named": false
+  },
+  {
+    "type": "getopensound",
+    "named": false
+  },
+  {
+    "type": "getopenstate",
+    "named": false
+  },
+  {
+    "type": "getowner",
+    "named": false
+  },
+  {
+    "type": "getowningfactionrank",
+    "named": false
+  },
+  {
+    "type": "getowningfactionrequiredrank",
+    "named": false
+  },
+  {
+    "type": "getpackageallowfalls",
+    "named": false
+  },
+  {
+    "type": "getpackageallowswimming",
+    "named": false
+  },
+  {
+    "type": "getpackagealwaysrun",
+    "named": false
+  },
+  {
+    "type": "getpackagealwayssneak",
+    "named": false
+  },
+  {
+    "type": "getpackagearmorunequipped",
+    "named": false
+  },
+  {
+    "type": "getpackagecontinueifpcnear",
+    "named": false
+  },
+  {
+    "type": "getpackagedata",
+    "named": false
+  },
+  {
+    "type": "getpackagedefensivecombat",
+    "named": false
+  },
+  {
+    "type": "getpackagelocationdata",
+    "named": false
+  },
+  {
+    "type": "getpackagelockdoorsatend",
+    "named": false
+  },
+  {
+    "type": "getpackagelockdoorsatlocation",
+    "named": false
+  },
+  {
+    "type": "getpackagelockdoorsatstart",
+    "named": false
+  },
+  {
+    "type": "getpackagemustcomplete",
+    "named": false
+  },
+  {
+    "type": "getpackagemustreachlocation",
+    "named": false
+  },
+  {
+    "type": "getpackagenoidleanims",
+    "named": false
+  },
+  {
+    "type": "getpackageoffersservices",
+    "named": false
+  },
+  {
+    "type": "getpackageonceperday",
+    "named": false
+  },
+  {
+    "type": "getpackagescheduledata",
+    "named": false
+  },
+  {
+    "type": "getpackageskipfalloutbehavior",
+    "named": false
+  },
+  {
+    "type": "getpackagetarget",
+    "named": false
+  },
+  {
+    "type": "getpackagetargetdata",
+    "named": false
+  },
+  {
+    "type": "getpackageunlockdoorsatend",
+    "named": false
+  },
+  {
+    "type": "getpackageunlockdoorsatlocation",
+    "named": false
+  },
+  {
+    "type": "getpackageunlockdoorsatstart",
+    "named": false
+  },
+  {
+    "type": "getpackageusehorse",
+    "named": false
+  },
+  {
+    "type": "getpackageweaponsunequipped",
+    "named": false
+  },
+  {
+    "type": "getparentcell",
+    "named": false
+  },
+  {
+    "type": "getparentcellowner",
+    "named": false
+  },
+  {
+    "type": "getparentcellowningfactionrank",
+    "named": false
+  },
+  {
+    "type": "getparentcellowningfactionrequiredrank",
+    "named": false
+  },
+  {
+    "type": "getparentcellwaterheight",
+    "named": false
+  },
+  {
+    "type": "getparentref",
+    "named": false
+  },
+  {
+    "type": "getparentworldspace",
+    "named": false
+  },
+  {
+    "type": "getpathnodelinkedref",
+    "named": false
+  },
+  {
+    "type": "getpathnodepos",
+    "named": false
+  },
+  {
+    "type": "getpathnodesinradius",
+    "named": false
+  },
+  {
+    "type": "getpathnodesinrect",
+    "named": false
+  },
+  {
+    "type": "getpcattributebonus",
+    "named": false
+  },
+  {
+    "type": "getpcattributebonusc",
+    "named": false
+  },
+  {
+    "type": "getpcexpelled",
+    "named": false
+  },
+  {
+    "type": "getpcfactionattack",
+    "named": false
+  },
+  {
+    "type": "getpcfactionmurder",
+    "named": false
+  },
+  {
+    "type": "getpcfactionsteal",
+    "named": false
+  },
+  {
+    "type": "getpcfactionsubmitauthority",
+    "named": false
+  },
+  {
+    "type": "getpcfame",
+    "named": false
+  },
+  {
+    "type": "getpcinfaction",
+    "named": false
+  },
+  {
+    "type": "getpcinfamy",
+    "named": false
+  },
+  {
+    "type": "getpcisclass",
+    "named": false
+  },
+  {
+    "type": "getpcisrace",
+    "named": false
+  },
+  {
+    "type": "getpcissex",
+    "named": false
+  },
+  {
+    "type": "getpclastdroppeditem",
+    "named": false
+  },
+  {
+    "type": "getpclastdroppeditemref",
+    "named": false
+  },
+  {
+    "type": "getpclasthorse",
+    "named": false
+  },
+  {
+    "type": "getpclastloaddoor",
+    "named": false
+  },
+  {
+    "type": "getpcmajorskillups",
+    "named": false
+  },
+  {
+    "type": "getpcmiscstat",
+    "named": false
+  },
+  {
+    "type": "getpcmovementspeedmodifier",
+    "named": false
+  },
+  {
+    "type": "getpcsleephours",
+    "named": false
+  },
+  {
+    "type": "getpcspelleffectivenessmodifier",
+    "named": false
+  },
+  {
+    "type": "getpctrainingsessionsused",
+    "named": false
+  },
+  {
+    "type": "getpersuasionnumber",
+    "named": false
+  },
+  {
+    "type": "getplayerbirthsign",
+    "named": false
+  },
+  {
+    "type": "getplayercontrolsdisabled",
+    "named": false
+  },
+  {
+    "type": "getplayerhaslastriddenhorse",
+    "named": false
+  },
+  {
+    "type": "getplayerinseworld",
+    "named": false
+  },
+  {
+    "type": "getplayerskilladvances",
+    "named": false
+  },
+  {
+    "type": "getplayerskilladvancesc",
+    "named": false
+  },
+  {
+    "type": "getplayerskilluse",
+    "named": false
+  },
+  {
+    "type": "getplayerskillusec",
+    "named": false
+  },
+  {
+    "type": "getplayerslastactivatedloaddoor",
+    "named": false
+  },
+  {
+    "type": "getplayerslastriddenhorse",
+    "named": false
+  },
+  {
+    "type": "getplayerspell",
+    "named": false
+  },
+  {
+    "type": "getplayerspellcount",
+    "named": false
+  },
+  {
+    "type": "getpluginversion",
+    "named": false
+  },
+  {
+    "type": "getplyerspellcount",
+    "named": false
+  },
+  {
+    "type": "getpos",
+    "named": false
+  },
+  {
+    "type": "getprocesslevel",
+    "named": false
+  },
+  {
+    "type": "getprojectile",
+    "named": false
+  },
+  {
+    "type": "getprojectiledistancetraveled",
+    "named": false
+  },
+  {
+    "type": "getprojectilelifetime",
+    "named": false
+  },
+  {
+    "type": "getprojectilesource",
+    "named": false
+  },
+  {
+    "type": "getprojectilespeed",
+    "named": false
+  },
+  {
+    "type": "getprojectiletype",
+    "named": false
+  },
+  {
+    "type": "getqmcurrent",
+    "named": false
+  },
+  {
+    "type": "getqmitem",
+    "named": false
+  },
+  {
+    "type": "getqmmaximum",
+    "named": false
+  },
+  {
+    "type": "getqr",
+    "named": false
+  },
+  {
+    "type": "getquality",
+    "named": false
+  },
+  {
+    "type": "getquantitymenucurrentquantity",
+    "named": false
+  },
+  {
+    "type": "getquantitymenuitem",
+    "named": false
+  },
+  {
+    "type": "getquantitymenumaximumquantity",
+    "named": false
+  },
+  {
+    "type": "getquestrunning",
+    "named": false
+  },
+  {
+    "type": "getquestvariable",
+    "named": false
+  },
+  {
+    "type": "getrace",
+    "named": false
+  },
+  {
+    "type": "getraceattribute",
+    "named": false
+  },
+  {
+    "type": "getraceattributec",
+    "named": false
+  },
+  {
+    "type": "getracedefaulthair",
+    "named": false
+  },
+  {
+    "type": "getraceeyes",
+    "named": false
+  },
+  {
+    "type": "getracehairs",
+    "named": false
+  },
+  {
+    "type": "getracereaction",
+    "named": false
+  },
+  {
+    "type": "getracescale",
+    "named": false
+  },
+  {
+    "type": "getraceskillbonus",
+    "named": false
+  },
+  {
+    "type": "getraceskillbonusc",
+    "named": false
+  },
+  {
+    "type": "getracespellcount",
+    "named": false
+  },
+  {
+    "type": "getracevoice",
+    "named": false
+  },
+  {
+    "type": "getraceweight",
+    "named": false
+  },
+  {
+    "type": "getrandompercent",
+    "named": false
+  },
+  {
+    "type": "getrawformidstring",
+    "named": false
+  },
+  {
+    "type": "getrefcount",
+    "named": false
+  },
+  {
+    "type": "getrefvariable",
+    "named": false
+  },
+  {
+    "type": "getrequiredskillexp",
+    "named": false
+  },
+  {
+    "type": "getrequiredskillexpc",
+    "named": false
+  },
+  {
+    "type": "getrestrained",
+    "named": false
+  },
+  {
+    "type": "getrider",
+    "named": false
+  },
+  {
+    "type": "getscale",
+    "named": false
+  },
+  {
+    "type": "getscript",
+    "named": false
+  },
+  {
+    "type": "getscriptactiveeffectindex",
+    "named": false
+  },
+  {
+    "type": "getscriptvariable",
+    "named": false
+  },
+  {
+    "type": "getsecondspassed",
+    "named": false
+  },
+  {
+    "type": "getselectedspells",
+    "named": false
+  },
+  {
+    "type": "getself",
+    "named": false
+  },
+  {
+    "type": "getservicesmask",
+    "named": false
+  },
+  {
+    "type": "getshouldattack",
+    "named": false
+  },
+  {
+    "type": "getsigilstoneuses",
+    "named": false
+  },
+  {
+    "type": "getsitting",
+    "named": false
+  },
+  {
+    "type": "getskillgoverningattribute",
+    "named": false
+  },
+  {
+    "type": "getskillgoverningattributec",
+    "named": false
+  },
+  {
+    "type": "getskillspecialization",
+    "named": false
+  },
+  {
+    "type": "getskillspecializationc",
+    "named": false
+  },
+  {
+    "type": "getskilluseincrement",
+    "named": false
+  },
+  {
+    "type": "getskilluseincrementc",
+    "named": false
+  },
+  {
+    "type": "getsleeping",
+    "named": false
+  },
+  {
+    "type": "getsoulgemcapacity",
+    "named": false
+  },
+  {
+    "type": "getsoullevel",
+    "named": false
+  },
+  {
+    "type": "getsoundattenuation",
+    "named": false
+  },
+  {
+    "type": "getsoundplaying",
+    "named": false
+  },
+  {
+    "type": "getsourcemodindex",
+    "named": false
+  },
+  {
+    "type": "getspecialanims",
+    "named": false
+  },
+  {
+    "type": "getspellareaeffectignoreslos",
+    "named": false
+  },
+  {
+    "type": "getspellcount",
+    "named": false
+  },
+  {
+    "type": "getspelldisallowabsorbreflect",
+    "named": false
+  },
+  {
+    "type": "getspelleffectiveness",
+    "named": false
+  },
+  {
+    "type": "getspellexplodeswithnotarget",
+    "named": false
+  },
+  {
+    "type": "getspellhostile",
+    "named": false
+  },
+  {
+    "type": "getspellimmunetosilence",
+    "named": false
+  },
+  {
+    "type": "getspellmagickacost",
+    "named": false
+  },
+  {
+    "type": "getspellmasterylevel",
+    "named": false
+  },
+  {
+    "type": "getspellpcstart",
+    "named": false
+  },
+  {
+    "type": "getspells",
+    "named": false
+  },
+  {
+    "type": "getspellschool",
+    "named": false
+  },
+  {
+    "type": "getspellscripteffectalwaysapplies",
+    "named": false
+  },
+  {
+    "type": "getspelltype",
+    "named": false
+  },
+  {
+    "type": "getstage",
+    "named": false
+  },
+  {
+    "type": "getstagedone",
+    "named": false
+  },
+  {
+    "type": "getstageentries",
+    "named": false
+  },
+  {
+    "type": "getstageids",
+    "named": false
+  },
+  {
+    "type": "getstartingangle",
+    "named": false
+  },
+  {
+    "type": "getstartingpos",
+    "named": false
+  },
+  {
+    "type": "getstringgamesetting",
+    "named": false
+  },
+  {
+    "type": "getstringinisetting",
+    "named": false
+  },
+  {
+    "type": "getsundamage",
+    "named": false
+  },
+  {
+    "type": "getsunglare",
+    "named": false
+  },
+  {
+    "type": "gettailmodelpath",
+    "named": false
+  },
+  {
+    "type": "gettalkedtopc",
+    "named": false
+  },
+  {
+    "type": "gettalkedtopcparam",
+    "named": false
+  },
+  {
+    "type": "gettargets",
+    "named": false
+  },
+  {
+    "type": "gettelekinesisref",
+    "named": false
+  },
+  {
+    "type": "getteleportcell",
+    "named": false
+  },
+  {
+    "type": "getteleportcellname",
+    "named": false
+  },
+  {
+    "type": "getterrainheight",
+    "named": false
+  },
+  {
+    "type": "gettextinputcontrolpressed",
+    "named": false
+  },
+  {
+    "type": "gettextinputcursorpos",
+    "named": false
+  },
+  {
+    "type": "gettexturepath",
+    "named": false
+  },
+  {
+    "type": "gettilechildren",
+    "named": false
+  },
+  {
+    "type": "gettiletraits",
+    "named": false
+  },
+  {
+    "type": "gettimedead",
+    "named": false
+  },
+  {
+    "type": "gettimeleft",
+    "named": false
+  },
+  {
+    "type": "gettotalactiveeffectmagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalactiveeffectmagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaeabilitymagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaeabilitymagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaealchemymagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaealchemymagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaeallspellsmagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaeallspellsmagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaediseasemagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaediseasemagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaeenchantmentmagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaeenchantmentmagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaelesserpowermagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaelesserpowermagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaemagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaemagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaenonabilitymagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaenonabilitymagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaepowermagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaepowermagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalaespellmagnitude",
+    "named": false
+  },
+  {
+    "type": "gettotalaespellmagnitudec",
+    "named": false
+  },
+  {
+    "type": "gettotalpcattributebonus",
+    "named": false
+  },
+  {
+    "type": "gettotalpersuasionnumber",
+    "named": false
+  },
+  {
+    "type": "gettrainerlevel",
+    "named": false
+  },
+  {
+    "type": "gettrainerskill",
+    "named": false
+  },
+  {
+    "type": "gettransactioninfo",
+    "named": false
+  },
+  {
+    "type": "gettransdelta",
+    "named": false
+  },
+  {
+    "type": "gettravelhorse",
+    "named": false
+  },
+  {
+    "type": "gettrespasswarninglevel",
+    "named": false
+  },
+  {
+    "type": "getunconscious",
+    "named": false
+  },
+  {
+    "type": "getuseditemactivate",
+    "named": false
+  },
+  {
+    "type": "getuseditemlevel",
+    "named": false
+  },
+  {
+    "type": "getusedpowers",
+    "named": false
+  },
+  {
+    "type": "getusertime",
+    "named": false
+  },
+  {
+    "type": "getvampire",
+    "named": false
+  },
+  {
+    "type": "getvariable",
+    "named": false
+  },
+  {
+    "type": "getvelocity",
+    "named": false
+  },
+  {
+    "type": "getverticalvelocity",
+    "named": false
+  },
+  {
+    "type": "getwalkspeed",
+    "named": false
+  },
+  {
+    "type": "getwaterheight",
+    "named": false
+  },
+  {
+    "type": "getwatershader",
+    "named": false
+  },
+  {
+    "type": "getweahtercloudspeedupper",
+    "named": false
+  },
+  {
+    "type": "getweaponanimtype",
+    "named": false
+  },
+  {
+    "type": "getweaponreach",
+    "named": false
+  },
+  {
+    "type": "getweaponskilltype",
+    "named": false
+  },
+  {
+    "type": "getweaponspeed",
+    "named": false
+  },
+  {
+    "type": "getweapontype",
+    "named": false
+  },
+  {
+    "type": "getweatherclassification",
+    "named": false
+  },
+  {
+    "type": "getweathercloudspeedlower",
+    "named": false
+  },
+  {
+    "type": "getweathercloudspeedupper",
+    "named": false
+  },
+  {
+    "type": "getweathercolor",
+    "named": false
+  },
+  {
+    "type": "getweatherfogdayfar",
+    "named": false
+  },
+  {
+    "type": "getweatherfogdaynear",
+    "named": false
+  },
+  {
+    "type": "getweatherfognightfar",
+    "named": false
+  },
+  {
+    "type": "getweatherfognightnear",
+    "named": false
+  },
+  {
+    "type": "getweatherhdrvalue",
+    "named": false
+  },
+  {
+    "type": "getweatherlightningfrequency",
+    "named": false
+  },
+  {
+    "type": "getweatheroverride",
+    "named": false
+  },
+  {
+    "type": "getweathersundamage",
+    "named": false
+  },
+  {
+    "type": "getweathersunglare",
+    "named": false
+  },
+  {
+    "type": "getweathertransdelta",
+    "named": false
+  },
+  {
+    "type": "getweatherwindspeed",
+    "named": false
+  },
+  {
+    "type": "getweight",
+    "named": false
+  },
+  {
+    "type": "getwindspeed",
+    "named": false
+  },
+  {
+    "type": "getworldparentworld",
+    "named": false
+  },
+  {
+    "type": "getworldspaceparentworldspace",
+    "named": false
+  },
+  {
+    "type": "globalvariableexists",
+    "named": false
   },
   {
     "type": "goto",
     "named": false
   },
   {
+    "type": "gotojail",
+    "named": false
+  },
+  {
+    "type": "hammerkey",
+    "named": false
+  },
+  {
+    "type": "hasbeenpickedup",
+    "named": false
+  },
+  {
+    "type": "haseffectshader",
+    "named": false
+  },
+  {
+    "type": "hasflames",
+    "named": false
+  },
+  {
+    "type": "haslowlevelprocessing",
+    "named": false
+  },
+  {
+    "type": "hasmagiceffect",
+    "named": false
+  },
+  {
+    "type": "hasmodel",
+    "named": false
+  },
+  {
+    "type": "hasname",
+    "named": false
+  },
+  {
+    "type": "hasnopersuasion",
+    "named": false
+  },
+  {
+    "type": "hasspell",
+    "named": false
+  },
+  {
+    "type": "hastail",
+    "named": false
+  },
+  {
+    "type": "hasvampirefed",
+    "named": false
+  },
+  {
+    "type": "hasvariable",
+    "named": false
+  },
+  {
+    "type": "haswater",
+    "named": false
+  },
+  {
+    "type": "holdkey",
+    "named": false
+  },
+  {
+    "type": "iconpathincludes",
+    "named": false
+  },
+  {
+    "type": "identitymat",
+    "named": false
+  },
+  {
     "type": "if",
+    "named": false
+  },
+  {
+    "type": "incrementplayerskilluse",
+    "named": false
+  },
+  {
+    "type": "incrementplayerskillusec",
+    "named": false
+  },
+  {
+    "type": "ininvertfasttravel",
+    "named": false
+  },
+  {
+    "type": "insertininputtext",
     "named": false
   },
   {
@@ -1949,7 +6112,839 @@
     "named": true
   },
   {
+    "type": "isactionref",
+    "named": false
+  },
+  {
+    "type": "isactivatable",
+    "named": false
+  },
+  {
+    "type": "isactivator",
+    "named": false
+  },
+  {
+    "type": "isactor",
+    "named": false
+  },
+  {
+    "type": "isactoravictim",
+    "named": false
+  },
+  {
+    "type": "isactordetected",
+    "named": false
+  },
+  {
+    "type": "isactorevil",
+    "named": false
+  },
+  {
+    "type": "isactorrespawning",
+    "named": false
+  },
+  {
+    "type": "isactorsaioff",
+    "named": false
+  },
+  {
+    "type": "isactorusingatorch",
+    "named": false
+  },
+  {
+    "type": "isalchemyitem",
+    "named": false
+  },
+  {
+    "type": "isammo",
+    "named": false
+  },
+  {
+    "type": "isanimgroupplaying",
+    "named": false
+  },
+  {
+    "type": "isanimplayer",
+    "named": false
+  },
+  {
+    "type": "isanimplaying",
+    "named": false
+  },
+  {
+    "type": "isapparatus",
+    "named": false
+  },
+  {
+    "type": "isarmor",
+    "named": false
+  },
+  {
+    "type": "isattacking",
+    "named": false
+  },
+  {
+    "type": "isautomaticdoor",
+    "named": false
+  },
+  {
+    "type": "isbartermenuactive",
+    "named": false
+  },
+  {
+    "type": "isbipediconpathvalid",
+    "named": false
+  },
+  {
+    "type": "isbipedmodelpathvalid",
+    "named": false
+  },
+  {
+    "type": "isblocking",
+    "named": false
+  },
+  {
+    "type": "isbook",
+    "named": false
+  },
+  {
+    "type": "iscantwait",
+    "named": false
+  },
+  {
+    "type": "iscasting",
+    "named": false
+  },
+  {
+    "type": "iscellowner",
+    "named": false
+  },
+  {
+    "type": "iscellpublic",
+    "named": false
+  },
+  {
+    "type": "isclassattribute",
+    "named": false
+  },
+  {
+    "type": "isclassattributec",
+    "named": false
+  },
+  {
+    "type": "isclassskill",
+    "named": false
+  },
+  {
+    "type": "isclassskillc",
+    "named": false
+  },
+  {
+    "type": "isclonedform",
+    "named": false
+  },
+  {
+    "type": "isclothing",
+    "named": false
+  },
+  {
+    "type": "iscloudy",
+    "named": false
+  },
+  {
+    "type": "isconsoleopen",
+    "named": false
+  },
+  {
+    "type": "iscontainer",
+    "named": false
+  },
+  {
+    "type": "iscontinuingpackagepcnear",
+    "named": false
+  },
+  {
+    "type": "iscontrol",
+    "named": false
+  },
+  {
+    "type": "iscontroldisabled",
+    "named": false
+  },
+  {
+    "type": "iscontrolpressed",
+    "named": false
+  },
+  {
+    "type": "iscreature",
+    "named": false
+  },
+  {
+    "type": "iscreaturebiped",
+    "named": false
+  },
+  {
+    "type": "iscurrentfurnitureobj",
+    "named": false
+  },
+  {
+    "type": "iscurrentfurnitureref",
+    "named": false
+  },
+  {
+    "type": "isdigit",
+    "named": false
+  },
+  {
+    "type": "isdiseased",
+    "named": false
+  },
+  {
+    "type": "isdodging",
+    "named": false
+  },
+  {
+    "type": "isdoor",
+    "named": false
+  },
+  {
+    "type": "isequipped",
+    "named": false
+  },
+  {
+    "type": "isessential",
+    "named": false
+  },
+  {
+    "type": "isfacingup",
+    "named": false
+  },
+  {
+    "type": "isfactionevil",
+    "named": false
+  },
+  {
+    "type": "isfactionhidden",
+    "named": false
+  },
+  {
+    "type": "isfemale",
+    "named": false
+  },
+  {
+    "type": "isflora",
+    "named": false
+  },
+  {
+    "type": "isflying",
+    "named": false
+  },
+  {
+    "type": "isfood",
+    "named": false
+  },
+  {
+    "type": "isformvalid",
+    "named": false
+  },
+  {
+    "type": "isfurniture",
+    "named": false
+  },
+  {
+    "type": "isgamemessagebox",
+    "named": false
+  },
+  {
+    "type": "isglobalcollisiondisabled",
+    "named": false
+  },
+  {
+    "type": "isguard",
+    "named": false
+  },
+  {
+    "type": "isharvested",
+    "named": false
+  },
+  {
+    "type": "ishiddendoor",
+    "named": false
+  },
+  {
+    "type": "ishorsestolen",
+    "named": false
+  },
+  {
+    "type": "isiconpathvalid",
+    "named": false
+  },
+  {
+    "type": "isidleplaying",
+    "named": false
+  },
+  {
+    "type": "isinair",
+    "named": false
+  },
+  {
+    "type": "isincombat",
+    "named": false
+  },
+  {
+    "type": "isindangerouswater",
+    "named": false
+  },
+  {
+    "type": "isingredient",
+    "named": false
+  },
+  {
+    "type": "isininterior",
+    "named": false
+  },
+  {
+    "type": "isinmyownedcell",
+    "named": false
+  },
+  {
+    "type": "isinoblivion",
+    "named": false
+  },
+  {
+    "type": "isjumping",
+    "named": false
+  },
+  {
+    "type": "iskey",
+    "named": false
+  },
+  {
+    "type": "iskeydisabled",
+    "named": false
+  },
+  {
+    "type": "iskeypressed",
+    "named": false
+  },
+  {
+    "type": "iskeypressed2",
+    "named": false
+  },
+  {
+    "type": "iskeypressed3",
+    "named": false
+  },
+  {
+    "type": "isleftup",
+    "named": false
+  },
+  {
+    "type": "isletter",
+    "named": false
+  },
+  {
+    "type": "islight",
+    "named": false
+  },
+  {
+    "type": "islightcarriable",
+    "named": false
+  },
+  {
+    "type": "isloaddoor",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectcanrecover",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectcanrecoverc",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectdetrimental",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectdetrimentalc",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectforenchanting",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectforenchantingc",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectforspellmaking",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectforspellmakingc",
+    "named": false
+  },
+  {
+    "type": "ismagiceffecthostile",
+    "named": false
+  },
+  {
+    "type": "ismagiceffecthostilec",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectmagnitudepercent",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectmagnitudepercentc",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectonselfallowed",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectonselfallowedc",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectontargetallowed",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectontargetallowedc",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectontouchallowed",
+    "named": false
+  },
+  {
+    "type": "ismagiceffectontouchallowedc",
+    "named": false
+  },
+  {
+    "type": "ismagicitemautocalc",
+    "named": false
+  },
+  {
+    "type": "ismajor",
+    "named": false
+  },
+  {
+    "type": "ismajorc",
+    "named": false
+  },
+  {
+    "type": "ismajorref",
+    "named": false
+  },
+  {
+    "type": "ismapmarkervisible",
+    "named": false
+  },
+  {
+    "type": "ismecanrecover",
+    "named": false
+  },
+  {
+    "type": "ismecanrecoverc",
+    "named": false
+  },
+  {
+    "type": "ismedetrimental",
+    "named": false
+  },
+  {
+    "type": "ismedetrimentalc",
+    "named": false
+  },
+  {
+    "type": "ismeforenchanting",
+    "named": false
+  },
+  {
+    "type": "ismeforenchantingc",
+    "named": false
+  },
+  {
+    "type": "ismeforspellmaking",
+    "named": false
+  },
+  {
+    "type": "ismeforspellmakingc",
+    "named": false
+  },
+  {
+    "type": "ismehostile",
+    "named": false
+  },
+  {
+    "type": "ismehostilec",
+    "named": false
+  },
+  {
+    "type": "ismemagnitudepercent",
+    "named": false
+  },
+  {
+    "type": "ismemagnitudepercentc",
+    "named": false
+  },
+  {
+    "type": "ismeonselfallowed",
+    "named": false
+  },
+  {
+    "type": "ismeonselfallowedc",
+    "named": false
+  },
+  {
+    "type": "ismeontargetallowed",
+    "named": false
+  },
+  {
+    "type": "ismeontargetallowedc",
+    "named": false
+  },
+  {
+    "type": "ismeontouchallowed",
+    "named": false
+  },
+  {
+    "type": "ismeontouchallowedc",
+    "named": false
+  },
+  {
+    "type": "isminimalusedoor",
+    "named": false
+  },
+  {
+    "type": "ismiscitem",
+    "named": false
+  },
+  {
+    "type": "ismodelpathvalid",
+    "named": false
+  },
+  {
+    "type": "ismodloaded",
+    "named": false
+  },
+  {
+    "type": "ismovingbackward",
+    "named": false
+  },
+  {
+    "type": "ismovingforward",
+    "named": false
+  },
+  {
+    "type": "ismovingleft",
+    "named": false
+  },
+  {
+    "type": "ismovingright",
+    "named": false
+  },
+  {
+    "type": "isnaked",
+    "named": false
+  },
+  {
+    "type": "isnthactiveeffectapplied",
+    "named": false
+  },
+  {
+    "type": "isntheffectitemscripted",
+    "named": false
+  },
+  {
+    "type": "isntheffectitemscripthostile",
+    "named": false
+  },
+  {
+    "type": "isntheishostile",
+    "named": false
+  },
+  {
+    "type": "isobliviongate",
+    "named": false
+  },
+  {
+    "type": "isoblivioninterior",
+    "named": false
+  },
+  {
+    "type": "isoblivionworld",
+    "named": false
+  },
+  {
+    "type": "isofflimits",
+    "named": false
+  },
+  {
+    "type": "isonground",
+    "named": false
+  },
+  {
+    "type": "isowner",
+    "named": false
+  },
+  {
+    "type": "ispathnodedisabled",
+    "named": false
+  },
+  {
+    "type": "ispcamurderer",
+    "named": false
+  },
+  {
+    "type": "ispcleveloffset",
+    "named": false
+  },
+  {
+    "type": "ispcsleeping",
+    "named": false
+  },
+  {
+    "type": "ispersistent",
+    "named": false
+  },
+  {
+    "type": "isplayable",
+    "named": false
+  },
+  {
+    "type": "isplayable2",
+    "named": false
+  },
+  {
+    "type": "isplayerinjail",
+    "named": false
+  },
+  {
+    "type": "isplayermovingintonewspace",
+    "named": false
+  },
+  {
+    "type": "isplayerslastriddenhorse",
+    "named": false
+  },
+  {
+    "type": "ispleasant",
+    "named": false
+  },
+  {
+    "type": "isplugininstalled",
+    "named": false
+  },
+  {
+    "type": "ispoison",
+    "named": false
+  },
+  {
+    "type": "ispotion",
+    "named": false
+  },
+  {
+    "type": "ispowerattacking",
+    "named": false
+  },
+  {
+    "type": "isprintable",
+    "named": false
+  },
+  {
+    "type": "ispunctuation",
+    "named": false
+  },
+  {
+    "type": "isquestcomplete",
+    "named": false
+  },
+  {
+    "type": "isquestitem",
+    "named": false
+  },
+  {
+    "type": "isracebonusskill",
+    "named": false
+  },
+  {
+    "type": "isracebonusskillc",
+    "named": false
+  },
+  {
+    "type": "israceplayable",
+    "named": false
+  },
+  {
+    "type": "israining",
+    "named": false
+  },
+  {
+    "type": "isrecoiling",
+    "named": false
+  },
+  {
+    "type": "isrefdeleted",
+    "named": false
+  },
+  {
+    "type": "isreference",
+    "named": false
+  },
+  {
+    "type": "isrefessential",
+    "named": false
+  },
+  {
+    "type": "isridinghorse",
+    "named": false
+  },
+  {
+    "type": "isrunning",
+    "named": false
+  },
+  {
+    "type": "isscripted",
+    "named": false
+  },
+  {
+    "type": "isshieldout",
+    "named": false
+  },
+  {
+    "type": "issigilstone",
+    "named": false
+  },
+  {
+    "type": "issneaking",
+    "named": false
+  },
+  {
+    "type": "issnowing",
+    "named": false
+  },
+  {
+    "type": "issoulgem",
+    "named": false
+  },
+  {
+    "type": "isspellhostile",
+    "named": false
+  },
+  {
+    "type": "isspelltarget",
+    "named": false
+  },
+  {
+    "type": "isstaggered",
+    "named": false
+  },
+  {
+    "type": "issummonable",
+    "named": false
+  },
+  {
+    "type": "isswimming",
+    "named": false
+  },
+  {
+    "type": "istaken",
+    "named": false
+  },
+  {
+    "type": "istalking",
+    "named": false
+  },
+  {
+    "type": "istextinputinuse",
+    "named": false
+  },
+  {
+    "type": "isthirdperson",
+    "named": false
+  },
+  {
+    "type": "istimepassing",
+    "named": false
+  },
+  {
+    "type": "istorchout",
+    "named": false
+  },
+  {
+    "type": "istrespassing",
+    "named": false
+  },
+  {
+    "type": "isturnarrest",
+    "named": false
+  },
+  {
+    "type": "isturningleft",
+    "named": false
+  },
+  {
+    "type": "isturningright",
+    "named": false
+  },
+  {
+    "type": "isunderwater",
+    "named": false
+  },
+  {
+    "type": "isunsaferespawns",
+    "named": false
+  },
+  {
+    "type": "isuppercase",
+    "named": false
+  },
+  {
+    "type": "iswaiting",
+    "named": false
+  },
+  {
+    "type": "isweapon",
+    "named": false
+  },
+  {
+    "type": "isweaponout",
+    "named": false
+  },
+  {
+    "type": "isxbox",
+    "named": false
+  },
+  {
+    "type": "isyielding",
+    "named": false
+  },
+  {
+    "type": "kill",
+    "named": false
+  },
+  {
+    "type": "killactor",
+    "named": false
+  },
+  {
+    "type": "killallactors",
+    "named": false
+  },
+  {
     "type": "label",
+    "named": false
+  },
+  {
+    "type": "leftshift",
     "named": false
   },
   {
@@ -1957,7 +6952,47 @@
     "named": false
   },
   {
+    "type": "linktodoor",
+    "named": false
+  },
+  {
+    "type": "loadgameex",
+    "named": false
+  },
+  {
+    "type": "lock",
+    "named": false
+  },
+  {
+    "type": "log",
+    "named": false
+  },
+  {
+    "type": "log10",
+    "named": false
+  },
+  {
+    "type": "logicaland",
+    "named": false
+  },
+  {
+    "type": "logicalnot",
+    "named": false
+  },
+  {
+    "type": "logicalor",
+    "named": false
+  },
+  {
+    "type": "logicalxor",
+    "named": false
+  },
+  {
     "type": "long",
+    "named": false
+  },
+  {
+    "type": "look",
     "named": false
   },
   {
@@ -1965,7 +7000,983 @@
     "named": false
   },
   {
+    "type": "loopgroup",
+    "named": false
+  },
+  {
+    "type": "magiceffectcodefromchars",
+    "named": false
+  },
+  {
+    "type": "magiceffectfromchars",
+    "named": false
+  },
+  {
+    "type": "magiceffectfromcode",
+    "named": false
+  },
+  {
+    "type": "magiceffectfxpersists",
+    "named": false
+  },
+  {
+    "type": "magiceffectfxpersistsc",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnoarea",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnoareac",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnoduration",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnodurationc",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnohiteffect",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnohiteffectc",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnoingredient",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnoingredientc",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnomagnitude",
+    "named": false
+  },
+  {
+    "type": "magiceffecthasnomagnitudec",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesarmor",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesarmorc",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesattribute",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesattributec",
+    "named": false
+  },
+  {
+    "type": "magiceffectusescreature",
+    "named": false
+  },
+  {
+    "type": "magiceffectusescreaturec",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesotheractorvalue",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesotheractorvaluec",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesskill",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesskillc",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesweapon",
+    "named": false
+  },
+  {
+    "type": "magiceffectusesweaponc",
+    "named": false
+  },
+  {
+    "type": "magichaseffect",
+    "named": false
+  },
+  {
+    "type": "magichaseffectc",
+    "named": false
+  },
+  {
+    "type": "magicitemhaseffect",
+    "named": false
+  },
+  {
+    "type": "magicitemhaseffectcode",
+    "named": false
+  },
+  {
+    "type": "magicitemhaseffectcount",
+    "named": false
+  },
+  {
+    "type": "magicitemhaseffectcountc",
+    "named": false
+  },
+  {
+    "type": "magicitemhaseffectcountcode",
+    "named": false
+  },
+  {
+    "type": "magicitemhaseffectitemscript",
+    "named": false
+  },
+  {
+    "type": "matadd",
+    "named": false
+  },
+  {
+    "type": "matchpotion",
+    "named": false
+  },
+  {
+    "type": "matinv",
+    "named": false
+  },
+  {
+    "type": "matmult",
+    "named": false
+  },
+  {
+    "type": "matrixadd",
+    "named": false
+  },
+  {
+    "type": "matrixdeterminant",
+    "named": false
+  },
+  {
+    "type": "matrixinvert",
+    "named": false
+  },
+  {
+    "type": "matrixmultiply",
+    "named": false
+  },
+  {
+    "type": "matrixrref",
+    "named": false
+  },
+  {
+    "type": "matrixscale",
+    "named": false
+  },
+  {
+    "type": "matrixsubtract",
+    "named": false
+  },
+  {
+    "type": "matrixtrace",
+    "named": false
+  },
+  {
+    "type": "matrixtranspose",
+    "named": false
+  },
+  {
+    "type": "matscale",
+    "named": false
+  },
+  {
+    "type": "matsubtract",
+    "named": false
+  },
+  {
+    "type": "mecodefromchars",
+    "named": false
+  },
+  {
+    "type": "mefxpersists",
+    "named": false
+  },
+  {
+    "type": "mefxpersistsc",
+    "named": false
+  },
+  {
+    "type": "mehasnoarea",
+    "named": false
+  },
+  {
+    "type": "mehasnoareac",
+    "named": false
+  },
+  {
+    "type": "mehasnoduration",
+    "named": false
+  },
+  {
+    "type": "mehasnodurationc",
+    "named": false
+  },
+  {
+    "type": "mehasnohiteffect",
+    "named": false
+  },
+  {
+    "type": "mehasnohiteffectc",
+    "named": false
+  },
+  {
+    "type": "mehasnoingredient",
+    "named": false
+  },
+  {
+    "type": "mehasnoingredientc",
+    "named": false
+  },
+  {
+    "type": "mehasnomagnitude",
+    "named": false
+  },
+  {
+    "type": "mehasnomagnitudec",
+    "named": false
+  },
+  {
+    "type": "menuholdkey",
+    "named": false
+  },
+  {
+    "type": "menumode",
+    "named": false
+  },
+  {
+    "type": "menureleasekey",
+    "named": false
+  },
+  {
+    "type": "menutapkey",
+    "named": false
+  },
+  {
+    "type": "message",
+    "named": false
+  },
+  {
+    "type": "messagebox",
+    "named": false
+  },
+  {
+    "type": "messageboxex",
+    "named": false
+  },
+  {
+    "type": "messageex",
+    "named": false
+  },
+  {
+    "type": "meusesarmor",
+    "named": false
+  },
+  {
+    "type": "meusesarmorc",
+    "named": false
+  },
+  {
+    "type": "meusesattribute",
+    "named": false
+  },
+  {
+    "type": "meusesattributec",
+    "named": false
+  },
+  {
+    "type": "meusescreature",
+    "named": false
+  },
+  {
+    "type": "meusescreaturec",
+    "named": false
+  },
+  {
+    "type": "meusesotheractorvalue",
+    "named": false
+  },
+  {
+    "type": "meusesotheractorvaluec",
+    "named": false
+  },
+  {
+    "type": "meusesskill",
+    "named": false
+  },
+  {
+    "type": "meusesskillc",
+    "named": false
+  },
+  {
+    "type": "meusesweapon",
+    "named": false
+  },
+  {
+    "type": "meusesweaponc",
+    "named": false
+  },
+  {
+    "type": "modactorvalue",
+    "named": false
+  },
+  {
+    "type": "modactorvalue2",
+    "named": false
+  },
+  {
+    "type": "modactorvaluec",
+    "named": false
+  },
+  {
+    "type": "modamountsoldstolen",
+    "named": false
+  },
+  {
+    "type": "modarmorar",
+    "named": false
+  },
+  {
+    "type": "modattackdamage",
+    "named": false
+  },
+  {
+    "type": "modav",
+    "named": false
+  },
+  {
+    "type": "modav2",
+    "named": false
+  },
+  {
+    "type": "modavc",
+    "named": false
+  },
+  {
+    "type": "modavmod",
+    "named": false
+  },
+  {
+    "type": "modavmodc",
+    "named": false
+  },
+  {
+    "type": "modbartergold",
+    "named": false
+  },
+  {
+    "type": "modcrimegold",
+    "named": false
+  },
+  {
+    "type": "modcurrentcharge",
+    "named": false
+  },
+  {
+    "type": "moddisposition",
+    "named": false
+  },
+  {
+    "type": "modelpathincludes",
+    "named": false
+  },
+  {
+    "type": "modenchantmentcharge",
+    "named": false
+  },
+  {
+    "type": "modenchantmentcost",
+    "named": false
+  },
+  {
+    "type": "modequippedcurrentcharge",
+    "named": false
+  },
+  {
+    "type": "modequippedcurrenthealth",
+    "named": false
+  },
+  {
+    "type": "modfactionrank",
+    "named": false
+  },
+  {
+    "type": "modfactionreaction",
+    "named": false
+  },
+  {
+    "type": "modfemalebipedpath",
+    "named": false
+  },
+  {
+    "type": "modfemalegroundpath",
+    "named": false
+  },
+  {
+    "type": "modfemaleiconpath",
+    "named": false
+  },
+  {
+    "type": "modgoldvalue",
+    "named": false
+  },
+  {
+    "type": "modiconpath",
+    "named": false
+  },
+  {
+    "type": "modlocaldataexists",
+    "named": false
+  },
+  {
+    "type": "modmalebipedpath",
+    "named": false
+  },
+  {
+    "type": "modmalegroundpath",
+    "named": false
+  },
+  {
+    "type": "modmaleiconpath",
+    "named": false
+  },
+  {
+    "type": "modmodelpath",
+    "named": false
+  },
+  {
+    "type": "modname",
+    "named": false
+  },
+  {
+    "type": "modnthactiveeffectmagnitude",
+    "named": false
+  },
+  {
+    "type": "modnthaemagnitude",
+    "named": false
+  },
+  {
+    "type": "modntheffectitemarea",
+    "named": false
+  },
+  {
+    "type": "modntheffectitemduration",
+    "named": false
+  },
+  {
+    "type": "modntheffectitemmagnitude",
+    "named": false
+  },
+  {
+    "type": "modntheffectitemscriptname",
+    "named": false
+  },
+  {
+    "type": "modntheiarea",
+    "named": false
+  },
+  {
+    "type": "modntheiduration",
+    "named": false
+  },
+  {
+    "type": "modntheimagnitude",
+    "named": false
+  },
+  {
+    "type": "modntheisname",
+    "named": false
+  },
+  {
+    "type": "modobjectcharge",
+    "named": false
+  },
+  {
+    "type": "modobjecthealth",
+    "named": false
+  },
+  {
+    "type": "modpca",
+    "named": false
+  },
+  {
+    "type": "modpcattribute",
+    "named": false
+  },
+  {
+    "type": "modpcfame",
+    "named": false
+  },
+  {
+    "type": "modpcinfamy",
+    "named": false
+  },
+  {
+    "type": "modpcmiscstat",
+    "named": false
+  },
+  {
+    "type": "modpcmovementspeed",
+    "named": false
+  },
+  {
+    "type": "modpcs",
+    "named": false
+  },
+  {
+    "type": "modpcskill",
+    "named": false
+  },
+  {
+    "type": "modpcspelleffectiveness",
+    "named": false
+  },
+  {
+    "type": "modplayerskillexp",
+    "named": false
+  },
+  {
+    "type": "modplayerskillexpc",
+    "named": false
+  },
+  {
+    "type": "modquality",
+    "named": false
+  },
+  {
+    "type": "modscale",
+    "named": false
+  },
+  {
+    "type": "modsigilstoneuses",
+    "named": false
+  },
+  {
+    "type": "modspellmagickacost",
+    "named": false
+  },
+  {
+    "type": "modweaponreach",
+    "named": false
+  },
+  {
+    "type": "modweaponspeed",
+    "named": false
+  },
+  {
+    "type": "modweight",
+    "named": false
+  },
+  {
+    "type": "movemousex",
+    "named": false
+  },
+  {
+    "type": "movemousey",
+    "named": false
+  },
+  {
+    "type": "movetextinputcursor",
+    "named": false
+  },
+  {
+    "type": "moveto",
+    "named": false
+  },
+  {
+    "type": "movetomarker",
+    "named": false
+  },
+  {
+    "type": "nameincludes",
+    "named": false
+  },
+  {
+    "type": "numtohex",
+    "named": false
+  },
+  {
+    "type": "offersapparatus",
+    "named": false
+  },
+  {
+    "type": "offersarmor",
+    "named": false
+  },
+  {
+    "type": "offersbooks",
+    "named": false
+  },
+  {
+    "type": "offersclothing",
+    "named": false
+  },
+  {
+    "type": "offersingredients",
+    "named": false
+  },
+  {
+    "type": "offerslights",
+    "named": false
+  },
+  {
+    "type": "offersmagicitems",
+    "named": false
+  },
+  {
+    "type": "offersmiscitems",
+    "named": false
+  },
+  {
+    "type": "offerspotions",
+    "named": false
+  },
+  {
+    "type": "offersrecharging",
+    "named": false
+  },
+  {
+    "type": "offersrepair",
+    "named": false
+  },
+  {
+    "type": "offersservicesc",
+    "named": false
+  },
+  {
+    "type": "offersspells",
+    "named": false
+  },
+  {
+    "type": "offerstraining",
+    "named": false
+  },
+  {
+    "type": "offersweapons",
+    "named": false
+  },
+  {
+    "type": "oncontroldown",
+    "named": false
+  },
+  {
+    "type": "onkeydown",
+    "named": false
+  },
+  {
+    "type": "opentextinput",
+    "named": false
+  },
+  {
+    "type": "outputlocalmappicturesoverride",
+    "named": false
+  },
+  {
+    "type": "overrideactorswimbreath",
+    "named": false
+  },
+  {
+    "type": "parentcellhaswater",
+    "named": false
+  },
+  {
+    "type": "pathedgeexists",
+    "named": false
+  },
+  {
+    "type": "payfine",
+    "named": false
+  },
+  {
+    "type": "payfinethief",
+    "named": false
+  },
+  {
+    "type": "pcb",
+    "named": false
+  },
+  {
+    "type": "pickidle",
+    "named": false
+  },
+  {
+    "type": "placeatme",
+    "named": false
+  },
+  {
+    "type": "playbink",
+    "named": false
+  },
+  {
+    "type": "playgroup",
+    "named": false
+  },
+  {
+    "type": "playidle",
+    "named": false
+  },
+  {
+    "type": "playmagiceffectvisuals",
+    "named": false
+  },
+  {
+    "type": "playmagicshadervisuals",
+    "named": false
+  },
+  {
+    "type": "playsound",
+    "named": false
+  },
+  {
+    "type": "playsound3d",
+    "named": false
+  },
+  {
+    "type": "pms",
+    "named": false
+  },
+  {
+    "type": "positioncell",
+    "named": false
+  },
+  {
+    "type": "positionworld",
+    "named": false
+  },
+  {
+    "type": "pow",
+    "named": false
+  },
+  {
+    "type": "preloadmagiceffect",
+    "named": false
+  },
+  {
+    "type": "print",
+    "named": false
+  },
+  {
+    "type": "printactivetileinfo",
+    "named": false
+  },
+  {
+    "type": "printc",
+    "named": false
+  },
+  {
+    "type": "printd",
+    "named": false
+  },
+  {
+    "type": "printtileinfo",
+    "named": false
+  },
+  {
+    "type": "printtoconsole",
+    "named": false
+  },
+  {
+    "type": "purgecellbuffers",
+    "named": false
+  },
+  {
+    "type": "pushactoraway",
+    "named": false
+  },
+  {
+    "type": "questexists",
+    "named": false
+  },
+  {
+    "type": "racos",
+    "named": false
+  },
+  {
+    "type": "rand",
+    "named": false
+  },
+  {
+    "type": "rasin",
+    "named": false
+  },
+  {
+    "type": "ratan",
+    "named": false
+  },
+  {
+    "type": "ratan2",
+    "named": false
+  },
+  {
+    "type": "rcos",
+    "named": false
+  },
+  {
+    "type": "rcosh",
+    "named": false
+  },
+  {
     "type": "ref",
+    "named": false
+  },
+  {
+    "type": "refreshcurrentclimate",
+    "named": false
+  },
+  {
+    "type": "refreshtopiclist",
+    "named": false
+  },
+  {
+    "type": "releasekey",
+    "named": false
+  },
+  {
+    "type": "releaseweatheroverride",
+    "named": false
+  },
+  {
+    "type": "removealleffectitems",
+    "named": false
+  },
+  {
+    "type": "removeallitems",
+    "named": false
+  },
+  {
+    "type": "removebasespell",
+    "named": false
+  },
+  {
+    "type": "removeenchantment",
+    "named": false
+  },
+  {
+    "type": "removeequippedweaponpoison",
+    "named": false
+  },
+  {
+    "type": "removeeventhandler",
+    "named": false
+  },
+  {
+    "type": "removeflames",
+    "named": false
+  },
+  {
+    "type": "removefromleveledlist",
+    "named": false
+  },
+  {
+    "type": "removeitem",
+    "named": false
+  },
+  {
+    "type": "removeitemns",
+    "named": false
+  },
+  {
+    "type": "removelevitembylevel",
+    "named": false
+  },
+  {
+    "type": "removeme",
+    "named": false
+  },
+  {
+    "type": "removemeir",
+    "named": false
+  },
+  {
+    "type": "removemodlocaldata",
+    "named": false
+  },
+  {
+    "type": "removentheffect",
+    "named": false
+  },
+  {
+    "type": "removentheffectitem",
+    "named": false
+  },
+  {
+    "type": "removenthlevitem",
+    "named": false
+  },
+  {
+    "type": "removenthmagiceffectcounter",
+    "named": false
+  },
+  {
+    "type": "removenthmagiceffectcounterc",
+    "named": false
+  },
+  {
+    "type": "removenthmecounter",
+    "named": false
+  },
+  {
+    "type": "removenthmecounterc",
+    "named": false
+  },
+  {
+    "type": "removescript",
+    "named": false
+  },
+  {
+    "type": "removescriptpackage",
+    "named": false
+  },
+  {
+    "type": "removespell",
+    "named": false
+  },
+  {
+    "type": "removespellns",
+    "named": false
+  },
+  {
+    "type": "reset3dstate",
+    "named": false
+  },
+  {
+    "type": "resetallvariables",
+    "named": false
+  },
+  {
+    "type": "resetfalldamagetimer",
+    "named": false
+  },
+  {
+    "type": "resethealth",
+    "named": false
+  },
+  {
+    "type": "resetinterior",
+    "named": false
+  },
+  {
+    "type": "resolvemodindex",
     "named": false
   },
   {
@@ -1973,7 +7984,79 @@
     "named": false
   },
   {
+    "type": "resurrect",
+    "named": false
+  },
+  {
     "type": "return",
+    "named": false
+  },
+  {
+    "type": "rightshift",
+    "named": false
+  },
+  {
+    "type": "rotate",
+    "named": false
+  },
+  {
+    "type": "rotmat",
+    "named": false
+  },
+  {
+    "type": "rowvec",
+    "named": false
+  },
+  {
+    "type": "rsin",
+    "named": false
+  },
+  {
+    "type": "rsinh",
+    "named": false
+  },
+  {
+    "type": "rtan",
+    "named": false
+  },
+  {
+    "type": "rtanh",
+    "named": false
+  },
+  {
+    "type": "runbatchscript",
+    "named": false
+  },
+  {
+    "type": "runscriptline",
+    "named": false
+  },
+  {
+    "type": "saa",
+    "named": false
+  },
+  {
+    "type": "samefaction",
+    "named": false
+  },
+  {
+    "type": "samefactionaspc",
+    "named": false
+  },
+  {
+    "type": "samerace",
+    "named": false
+  },
+  {
+    "type": "sameraceaspc",
+    "named": false
+  },
+  {
+    "type": "samesex",
+    "named": false
+  },
+  {
+    "type": "samesexaspc",
     "named": false
   },
   {
@@ -1981,7 +8064,23 @@
     "named": false
   },
   {
+    "type": "say",
+    "named": false
+  },
+  {
+    "type": "sayto",
+    "named": false
+  },
+  {
+    "type": "scaonactor",
+    "named": false
+  },
+  {
     "type": "scn",
+    "named": false
+  },
+  {
+    "type": "scripteffectelapsedseconds",
     "named": false
   },
   {
@@ -1989,7 +8088,2359 @@
     "named": false
   },
   {
+    "type": "selectplayerspell",
+    "named": false
+  },
+  {
+    "type": "sendtrespassalarm",
+    "named": false
+  },
+  {
     "type": "set",
+    "named": false
+  },
+  {
+    "type": "setactivequest",
+    "named": false
+  },
+  {
+    "type": "setactoralpha",
+    "named": false
+  },
+  {
+    "type": "setactorfullname",
+    "named": false
+  },
+  {
+    "type": "setactormaxswimbreath",
+    "named": false
+  },
+  {
+    "type": "setactorrefraction",
+    "named": false
+  },
+  {
+    "type": "setactorrespawns",
+    "named": false
+  },
+  {
+    "type": "setactorsai",
+    "named": false
+  },
+  {
+    "type": "setactorswimbreath",
+    "named": false
+  },
+  {
+    "type": "setactorvalue",
+    "named": false
+  },
+  {
+    "type": "setactorvaluec",
+    "named": false
+  },
+  {
+    "type": "setalert",
+    "named": false
+  },
+  {
+    "type": "setallreachable",
+    "named": false
+  },
+  {
+    "type": "setallvisible",
+    "named": false
+  },
+  {
+    "type": "setaltcontrol2",
+    "named": false
+  },
+  {
+    "type": "setangle",
+    "named": false
+  },
+  {
+    "type": "setapparatustype",
+    "named": false
+  },
+  {
+    "type": "setarmorar",
+    "named": false
+  },
+  {
+    "type": "setarmortype",
+    "named": false
+  },
+  {
+    "type": "setarrowprojectilebowenchantment",
+    "named": false
+  },
+  {
+    "type": "setarrowprojectileenchantment",
+    "named": false
+  },
+  {
+    "type": "setarrowprojectilepoison",
+    "named": false
+  },
+  {
+    "type": "setatstart",
+    "named": false
+  },
+  {
+    "type": "setattackdamage",
+    "named": false
+  },
+  {
+    "type": "setav",
+    "named": false
+  },
+  {
+    "type": "setavc",
+    "named": false
+  },
+  {
+    "type": "setavmod",
+    "named": false
+  },
+  {
+    "type": "setavmodc",
+    "named": false
+  },
+  {
+    "type": "setbartergold",
+    "named": false
+  },
+  {
+    "type": "setbaseform",
+    "named": false
+  },
+  {
+    "type": "setbipediconpathex",
+    "named": false
+  },
+  {
+    "type": "setbipedmodelpathex",
+    "named": false
+  },
+  {
+    "type": "setbipedslotmask",
+    "named": false
+  },
+  {
+    "type": "setbookcantbetaken",
+    "named": false
+  },
+  {
+    "type": "setbookisscroll",
+    "named": false
+  },
+  {
+    "type": "setbookskilltaught",
+    "named": false
+  },
+  {
+    "type": "setbuttonpressed",
+    "named": false
+  },
+  {
+    "type": "setcalcalllevels",
+    "named": false
+  },
+  {
+    "type": "setcamerafov2",
+    "named": false
+  },
+  {
+    "type": "setcancastpower",
+    "named": false
+  },
+  {
+    "type": "setcancorpsecheck",
+    "named": false
+  },
+  {
+    "type": "setcanfasttravelfromworld",
+    "named": false
+  },
+  {
+    "type": "setcantraveltomapmarker",
+    "named": false
+  },
+  {
+    "type": "setcantwait",
+    "named": false
+  },
+  {
+    "type": "setcellbehavesasexterior",
+    "named": false
+  },
+  {
+    "type": "setcellclimate",
+    "named": false
+  },
+  {
+    "type": "setcellfullname",
+    "named": false
+  },
+  {
+    "type": "setcellhaswater",
+    "named": false
+  },
+  {
+    "type": "setcellispublic",
+    "named": false
+  },
+  {
+    "type": "setcelllighting",
+    "named": false
+  },
+  {
+    "type": "setcellmusictype",
+    "named": false
+  },
+  {
+    "type": "setcellownership",
+    "named": false
+  },
+  {
+    "type": "setcellpublicflag",
+    "named": false
+  },
+  {
+    "type": "setcellresethours",
+    "named": false
+  },
+  {
+    "type": "setcellwaterheight",
+    "named": false
+  },
+  {
+    "type": "setcellwatertype",
+    "named": false
+  },
+  {
+    "type": "setchancenone",
+    "named": false
+  },
+  {
+    "type": "setclass",
+    "named": false
+  },
+  {
+    "type": "setclassattribute",
+    "named": false
+  },
+  {
+    "type": "setclassattributec",
+    "named": false
+  },
+  {
+    "type": "setclassskills",
+    "named": false
+  },
+  {
+    "type": "setclassskills2",
+    "named": false
+  },
+  {
+    "type": "setclassspecialization",
+    "named": false
+  },
+  {
+    "type": "setclimatehasmasser",
+    "named": false
+  },
+  {
+    "type": "setclimatehasmassser",
+    "named": false
+  },
+  {
+    "type": "setclimatehassecunda",
+    "named": false
+  },
+  {
+    "type": "setclimatemoonphaselength",
+    "named": false
+  },
+  {
+    "type": "setclimatesunrisebegin",
+    "named": false
+  },
+  {
+    "type": "setclimatesunriseend",
+    "named": false
+  },
+  {
+    "type": "setclimatesunsetbegin",
+    "named": false
+  },
+  {
+    "type": "setclimatesunsetend",
+    "named": false
+  },
+  {
+    "type": "setclimatevolatility",
+    "named": false
+  },
+  {
+    "type": "setclosesound",
+    "named": false
+  },
+  {
+    "type": "setcloudspeedlower",
+    "named": false
+  },
+  {
+    "type": "setcloudspeedupper",
+    "named": false
+  },
+  {
+    "type": "setcombatstyle",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleacrobaticsdodgechance",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleattackchance",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleattackduringblockmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleattacknotunderattackmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleattackskillmodbase",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleattackskillmodmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleattackunderattackmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleblockchance",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleblocknotunderattackmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleblockskillmodbase",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleblockskillmodmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleblockunderattackmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstylebuffstandoffdist",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgebacknotunderattackmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgebacktimermax",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgebacktimermin",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgebackunderattackmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgechance",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgefatiguemodbase",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgefatiguemodmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgefwattackingmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgefwnotattackingmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgefwtimermax",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgefwtimermin",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgelrchance",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgelrtimermax",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgelrtimermin",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgenotunderattackmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyledodgeunderattackmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleencumberedspeedmodbase",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleencumberedspeedmodmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstylefleeingdisabled",
+    "named": false
+  },
+  {
+    "type": "setcombatstylegroupstandoffdist",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleh2hbonustoattack",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleholdtimermax",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleholdtimermin",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleidletimermax",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleidletimermin",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleignorealliesinarea",
+    "named": false
+  },
+  {
+    "type": "setcombatstylekobonustoattack",
+    "named": false
+  },
+  {
+    "type": "setcombatstylekobonustopowerattack",
+    "named": false
+  },
+  {
+    "type": "setcombatstylemeleealertok",
+    "named": false
+  },
+  {
+    "type": "setcombatstylepowerattackchance",
+    "named": false
+  },
+  {
+    "type": "setcombatstylepowerattackfatiguemodbase",
+    "named": false
+  },
+  {
+    "type": "setcombatstylepowerattackfatiguemodmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleprefersranged",
+    "named": false
+  },
+  {
+    "type": "setcombatstylerangedstandoffdist",
+    "named": false
+  },
+  {
+    "type": "setcombatstylerangemaxmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstylerangeoptimalmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstylerejectsyields",
+    "named": false
+  },
+  {
+    "type": "setcombatstylerushattackchance",
+    "named": false
+  },
+  {
+    "type": "setcombatstylerushattackdistmult",
+    "named": false
+  },
+  {
+    "type": "setcombatstylestaggerbonustoattack",
+    "named": false
+  },
+  {
+    "type": "setcombatstylestaggerbonustopowerattack",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleswitchdistmelee",
+    "named": false
+  },
+  {
+    "type": "setcombatstyleswitchdistranged",
+    "named": false
+  },
+  {
+    "type": "setcombatstylewillyield",
+    "named": false
+  },
+  {
+    "type": "setcontainerrespawns",
+    "named": false
+  },
+  {
+    "type": "setcontrol",
+    "named": false
+  },
+  {
+    "type": "setcreatureskill",
+    "named": false
+  },
+  {
+    "type": "setcreaturesoundbase",
+    "named": false
+  },
+  {
+    "type": "setcreaturetype",
+    "named": false
+  },
+  {
+    "type": "setcrimegold",
+    "named": false
+  },
+  {
+    "type": "setcurrentcharge",
+    "named": false
+  },
+  {
+    "type": "setcurrenthealth",
+    "named": false
+  },
+  {
+    "type": "setcurrentsoullevel",
+    "named": false
+  },
+  {
+    "type": "setdebugmode",
+    "named": false
+  },
+  {
+    "type": "setdescription",
+    "named": false
+  },
+  {
+    "type": "setdestroyed",
+    "named": false
+  },
+  {
+    "type": "setdetectionstate",
+    "named": false
+  },
+  {
+    "type": "setdisableglobalcollision",
+    "named": false
+  },
+  {
+    "type": "setdoordefaultopen",
+    "named": false
+  },
+  {
+    "type": "setdoorteleport",
+    "named": false
+  },
+  {
+    "type": "setenchantment",
+    "named": false
+  },
+  {
+    "type": "setenchantmentcharge",
+    "named": false
+  },
+  {
+    "type": "setenchantmentcost",
+    "named": false
+  },
+  {
+    "type": "setenchantmenttype",
+    "named": false
+  },
+  {
+    "type": "setequipmentslot",
+    "named": false
+  },
+  {
+    "type": "setequippedcurrentcharge",
+    "named": false
+  },
+  {
+    "type": "setequippedcurrenthealth",
+    "named": false
+  },
+  {
+    "type": "setequippedweaponpoison",
+    "named": false
+  },
+  {
+    "type": "setessential",
+    "named": false
+  },
+  {
+    "type": "seteventhandler",
+    "named": false
+  },
+  {
+    "type": "seteyes",
+    "named": false
+  },
+  {
+    "type": "setfactionevil",
+    "named": false
+  },
+  {
+    "type": "setfactionhasspecialcombat",
+    "named": false
+  },
+  {
+    "type": "setfactionhidden",
+    "named": false
+  },
+  {
+    "type": "setfactionrank",
+    "named": false
+  },
+  {
+    "type": "setfactionreaction",
+    "named": false
+  },
+  {
+    "type": "setfactionspecialcombat",
+    "named": false
+  },
+  {
+    "type": "setfemale",
+    "named": false
+  },
+  {
+    "type": "setfemalebipedpath",
+    "named": false
+  },
+  {
+    "type": "setfemalegroundpath",
+    "named": false
+  },
+  {
+    "type": "setfemaleiconpath",
+    "named": false
+  },
+  {
+    "type": "setflycameraspeedmult",
+    "named": false
+  },
+  {
+    "type": "setfogdayfar",
+    "named": false
+  },
+  {
+    "type": "setfogdaynear",
+    "named": false
+  },
+  {
+    "type": "setfognightfar",
+    "named": false
+  },
+  {
+    "type": "setfognightnear",
+    "named": false
+  },
+  {
+    "type": "setforcerun",
+    "named": false
+  },
+  {
+    "type": "setforcesneak",
+    "named": false
+  },
+  {
+    "type": "setfunctionvalue",
+    "named": false
+  },
+  {
+    "type": "setgamedifficulty",
+    "named": false
+  },
+  {
+    "type": "setghost",
+    "named": false
+  },
+  {
+    "type": "setgoldvalue",
+    "named": false
+  },
+  {
+    "type": "setgoldvalue_t",
+    "named": false
+  },
+  {
+    "type": "setgoldvaluet",
+    "named": false
+  },
+  {
+    "type": "sethair",
+    "named": false
+  },
+  {
+    "type": "setharvested",
+    "named": false
+  },
+  {
+    "type": "sethasbeenpickedup",
+    "named": false
+  },
+  {
+    "type": "sethdrvalue",
+    "named": false
+  },
+  {
+    "type": "sethidesamulet",
+    "named": false
+  },
+  {
+    "type": "sethidesrings",
+    "named": false
+  },
+  {
+    "type": "sethotkeyitem",
+    "named": false
+  },
+  {
+    "type": "seticonpath",
+    "named": false
+  },
+  {
+    "type": "setignorefriendlyhits",
+    "named": false
+  },
+  {
+    "type": "setignoresresistance",
+    "named": false
+  },
+  {
+    "type": "setinchargen",
+    "named": false
+  },
+  {
+    "type": "setingredient",
+    "named": false
+  },
+  {
+    "type": "setingredientchance",
+    "named": false
+  },
+  {
+    "type": "setinputtext",
+    "named": false
+  },
+  {
+    "type": "setinvertfasttravel",
+    "named": false
+  },
+  {
+    "type": "setinvestmentgold",
+    "named": false
+  },
+  {
+    "type": "setisautomaticdoor",
+    "named": false
+  },
+  {
+    "type": "setiscontrol",
+    "named": false
+  },
+  {
+    "type": "setisfood",
+    "named": false
+  },
+  {
+    "type": "setishiddendoor",
+    "named": false
+  },
+  {
+    "type": "setisminimalusedoor",
+    "named": false
+  },
+  {
+    "type": "setisobliviongate",
+    "named": false
+  },
+  {
+    "type": "setisplayable",
+    "named": false
+  },
+  {
+    "type": "setitemvalue",
+    "named": false
+  },
+  {
+    "type": "setlevcreaturetemplate",
+    "named": false
+  },
+  {
+    "type": "setlevel",
+    "named": false
+  },
+  {
+    "type": "setlightduration",
+    "named": false
+  },
+  {
+    "type": "setlightningfrequency",
+    "named": false
+  },
+  {
+    "type": "setlightradius",
+    "named": false
+  },
+  {
+    "type": "setlightrgb",
+    "named": false
+  },
+  {
+    "type": "setlocalgravity",
+    "named": false
+  },
+  {
+    "type": "setlocalgravityvector",
+    "named": false
+  },
+  {
+    "type": "setloopsound",
+    "named": false
+  },
+  {
+    "type": "setlowlevelprocessing",
+    "named": false
+  },
+  {
+    "type": "setmaagiceffectuseactorvalue",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectareasound",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectareasoundc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectbarterfactor",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectbarterfactorc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectbasecost",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectbasecostc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectboltsound",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectboltsoundc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectcanrecover",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectcanrecoverc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectcastingsound",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectcastingsoundc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectcounters",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectcountersc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectenchantfactor",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectenchantfactorc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectenchantshader",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectenchantshaderc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectforenchanting",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectforenchantingc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectforspellmaking",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectforspellmakingc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectfxpersists",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectfxpersistsc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffecthitshader",
+    "named": false
+  },
+  {
+    "type": "setmagiceffecthitshaderc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffecthitsound",
+    "named": false
+  },
+  {
+    "type": "setmagiceffecthitsoundc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffecticon",
+    "named": false
+  },
+  {
+    "type": "setmagiceffecticonc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectisdetrimental",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectisdetrimentalc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectishostile",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectishostilec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectlight",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectlightc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectmagnitudepercent",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectmagnitudepercentc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectmodel",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectmodelc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectname",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnamec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnoarea",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnoareac",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnoduration",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnodurationc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnohiteffect",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnohiteffectc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnoingredient",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnoingredientc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnomagnitude",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectnomagnitudec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectonselfallowed",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectonselfallowedc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectontargetallowed",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectontargetallowedc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectontouchallowed",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectontouchallowedc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectotheractorvalue",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectotheractorvaluec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectprojectilespeed",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectprojectilespeedc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectresistvalue",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectresistvaluec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectschool",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectschoolc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectuseactorvaluec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusedobject",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusedobjectc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesactorvalue",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesactorvaluec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesarmor",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesarmorc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesattribute",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesattributec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusescreature",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusescreaturec",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesskill",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesskillc",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesweapon",
+    "named": false
+  },
+  {
+    "type": "setmagiceffectusesweaponc",
+    "named": false
+  },
+  {
+    "type": "setmagicitemautocalc",
+    "named": false
+  },
+  {
+    "type": "setmagicprojectilespell",
+    "named": false
+  },
+  {
+    "type": "setmalebipedpath",
+    "named": false
+  },
+  {
+    "type": "setmalegroundpath",
+    "named": false
+  },
+  {
+    "type": "setmaleiconpath",
+    "named": false
+  },
+  {
+    "type": "setmapmarkertype",
+    "named": false
+  },
+  {
+    "type": "setmapmarkervisible",
+    "named": false
+  },
+  {
+    "type": "setmeareasound",
+    "named": false
+  },
+  {
+    "type": "setmeareasoundc",
+    "named": false
+  },
+  {
+    "type": "setmebarterfactor",
+    "named": false
+  },
+  {
+    "type": "setmebarterfactorc",
+    "named": false
+  },
+  {
+    "type": "setmebasecost",
+    "named": false
+  },
+  {
+    "type": "setmebasecostc",
+    "named": false
+  },
+  {
+    "type": "setmeboltsound",
+    "named": false
+  },
+  {
+    "type": "setmeboltsoundc",
+    "named": false
+  },
+  {
+    "type": "setmecanrecover",
+    "named": false
+  },
+  {
+    "type": "setmecanrecoverc",
+    "named": false
+  },
+  {
+    "type": "setmecastingsound",
+    "named": false
+  },
+  {
+    "type": "setmecastingsoundc",
+    "named": false
+  },
+  {
+    "type": "setmeenchantfactor",
+    "named": false
+  },
+  {
+    "type": "setmeenchantfactorc",
+    "named": false
+  },
+  {
+    "type": "setmeenchantshader",
+    "named": false
+  },
+  {
+    "type": "setmeenchantshaderc",
+    "named": false
+  },
+  {
+    "type": "setmeforenchanting",
+    "named": false
+  },
+  {
+    "type": "setmeforenchantingc",
+    "named": false
+  },
+  {
+    "type": "setmeforspellmaking",
+    "named": false
+  },
+  {
+    "type": "setmeforspellmakingc",
+    "named": false
+  },
+  {
+    "type": "setmefxpersists",
+    "named": false
+  },
+  {
+    "type": "setmefxpersistsc",
+    "named": false
+  },
+  {
+    "type": "setmehitshader",
+    "named": false
+  },
+  {
+    "type": "setmehitshaderc",
+    "named": false
+  },
+  {
+    "type": "setmehitsound",
+    "named": false
+  },
+  {
+    "type": "setmehitsoundc",
+    "named": false
+  },
+  {
+    "type": "setmeicon",
+    "named": false
+  },
+  {
+    "type": "setmeiconc",
+    "named": false
+  },
+  {
+    "type": "setmeisdetrimental",
+    "named": false
+  },
+  {
+    "type": "setmeisdetrimentalc",
+    "named": false
+  },
+  {
+    "type": "setmeishostile",
+    "named": false
+  },
+  {
+    "type": "setmeishostilec",
+    "named": false
+  },
+  {
+    "type": "setmelight",
+    "named": false
+  },
+  {
+    "type": "setmelightc",
+    "named": false
+  },
+  {
+    "type": "setmemagnitudepercent",
+    "named": false
+  },
+  {
+    "type": "setmemagnitudepercentc",
+    "named": false
+  },
+  {
+    "type": "setmemodel",
+    "named": false
+  },
+  {
+    "type": "setmemodelc",
+    "named": false
+  },
+  {
+    "type": "setmename",
+    "named": false
+  },
+  {
+    "type": "setmenamec",
+    "named": false
+  },
+  {
+    "type": "setmenoarea",
+    "named": false
+  },
+  {
+    "type": "setmenoareac",
+    "named": false
+  },
+  {
+    "type": "setmenoduration",
+    "named": false
+  },
+  {
+    "type": "setmenodurationc",
+    "named": false
+  },
+  {
+    "type": "setmenohiteffect",
+    "named": false
+  },
+  {
+    "type": "setmenohiteffectc",
+    "named": false
+  },
+  {
+    "type": "setmenoingredient",
+    "named": false
+  },
+  {
+    "type": "setmenoingredientc",
+    "named": false
+  },
+  {
+    "type": "setmenomagnitude",
+    "named": false
+  },
+  {
+    "type": "setmenomagnitudec",
+    "named": false
+  },
+  {
+    "type": "setmenufloatvalue",
+    "named": false
+  },
+  {
+    "type": "setmenustringvalue",
+    "named": false
+  },
+  {
+    "type": "setmeonselfallowed",
+    "named": false
+  },
+  {
+    "type": "setmeonselfallowedc",
+    "named": false
+  },
+  {
+    "type": "setmeontargetallowed",
+    "named": false
+  },
+  {
+    "type": "setmeontargetallowedc",
+    "named": false
+  },
+  {
+    "type": "setmeontouchallowed",
+    "named": false
+  },
+  {
+    "type": "setmeontouchallowedc",
+    "named": false
+  },
+  {
+    "type": "setmeotheractorvalue",
+    "named": false
+  },
+  {
+    "type": "setmeotheractorvaluec",
+    "named": false
+  },
+  {
+    "type": "setmeprojectilespeed",
+    "named": false
+  },
+  {
+    "type": "setmeprojectilespeedc",
+    "named": false
+  },
+  {
+    "type": "setmerchantcontainer",
+    "named": false
+  },
+  {
+    "type": "setmeresistvalue",
+    "named": false
+  },
+  {
+    "type": "setmeresistvaluec",
+    "named": false
+  },
+  {
+    "type": "setmeschool",
+    "named": false
+  },
+  {
+    "type": "setmeschoolc",
+    "named": false
+  },
+  {
+    "type": "setmessageicon",
+    "named": false
+  },
+  {
+    "type": "setmessagesound",
+    "named": false
+  },
+  {
+    "type": "setmeuseactorvalue",
+    "named": false
+  },
+  {
+    "type": "setmeuseactorvaluec",
+    "named": false
+  },
+  {
+    "type": "setmeusedobject",
+    "named": false
+  },
+  {
+    "type": "setmeusedobjectc",
+    "named": false
+  },
+  {
+    "type": "setmeusesarmor",
+    "named": false
+  },
+  {
+    "type": "setmeusesarmorc",
+    "named": false
+  },
+  {
+    "type": "setmeusesattribute",
+    "named": false
+  },
+  {
+    "type": "setmeusesattributec",
+    "named": false
+  },
+  {
+    "type": "setmeusescreature",
+    "named": false
+  },
+  {
+    "type": "setmeusescreaturec",
+    "named": false
+  },
+  {
+    "type": "setmeusesskill",
+    "named": false
+  },
+  {
+    "type": "setmeusesskillc",
+    "named": false
+  },
+  {
+    "type": "setmeusesweapon",
+    "named": false
+  },
+  {
+    "type": "setmeusesweaponc",
+    "named": false
+  },
+  {
+    "type": "setmodelpath",
+    "named": false
+  },
+  {
+    "type": "setmodlocaldata",
+    "named": false
+  },
+  {
+    "type": "setmousespeedx",
+    "named": false
+  },
+  {
+    "type": "setmousespeedy",
+    "named": false
+  },
+  {
+    "type": "setmpspell",
+    "named": false
+  },
+  {
+    "type": "setname",
+    "named": false
+  },
+  {
+    "type": "setnameex",
+    "named": false
+  },
+  {
+    "type": "setnoavoidance",
+    "named": false
+  },
+  {
+    "type": "setnopersuasion",
+    "named": false
+  },
+  {
+    "type": "setnorumors",
+    "named": false
+  },
+  {
+    "type": "setnthactiveeffectmagnitude",
+    "named": false
+  },
+  {
+    "type": "setnthaemagnitude",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemactorvalue",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemactorvaluec",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemarea",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemduration",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemmagnitude",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemrange",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemscript",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemscripthostile",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemscriptname",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemscriptnameex",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemscriptschool",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemscriptvisualeffect",
+    "named": false
+  },
+  {
+    "type": "setntheffectitemscriptvisualeffectc",
+    "named": false
+  },
+  {
+    "type": "setntheiarea",
+    "named": false
+  },
+  {
+    "type": "setntheiav",
+    "named": false
+  },
+  {
+    "type": "setntheiavc",
+    "named": false
+  },
+  {
+    "type": "setntheiduration",
+    "named": false
+  },
+  {
+    "type": "setntheimagnitude",
+    "named": false
+  },
+  {
+    "type": "setntheirange",
+    "named": false
+  },
+  {
+    "type": "setntheiscript",
+    "named": false
+  },
+  {
+    "type": "setntheishostile",
+    "named": false
+  },
+  {
+    "type": "setntheisname",
+    "named": false
+  },
+  {
+    "type": "setntheisschool",
+    "named": false
+  },
+  {
+    "type": "setntheisvisualeffect",
+    "named": false
+  },
+  {
+    "type": "setntheisvisualeffectc",
+    "named": false
+  },
+  {
+    "type": "setnthfactionranknameex",
+    "named": false
+  },
+  {
+    "type": "setnumericgamesetting",
+    "named": false
+  },
+  {
+    "type": "setnumericinisetting",
+    "named": false
+  },
+  {
+    "type": "setobjectcharge",
+    "named": false
+  },
+  {
+    "type": "setobjecthealth",
+    "named": false
+  },
+  {
+    "type": "setoffersapparatus",
+    "named": false
+  },
+  {
+    "type": "setoffersarmor",
+    "named": false
+  },
+  {
+    "type": "setoffersbooks",
+    "named": false
+  },
+  {
+    "type": "setoffersclothing",
+    "named": false
+  },
+  {
+    "type": "setoffersingredients",
+    "named": false
+  },
+  {
+    "type": "setofferslights",
+    "named": false
+  },
+  {
+    "type": "setoffersmagicitems",
+    "named": false
+  },
+  {
+    "type": "setoffersmiscitems",
+    "named": false
+  },
+  {
+    "type": "setofferspotions",
+    "named": false
+  },
+  {
+    "type": "setoffersrecharging",
+    "named": false
+  },
+  {
+    "type": "setoffersrepair",
+    "named": false
+  },
+  {
+    "type": "setoffersservicesc",
+    "named": false
+  },
+  {
+    "type": "setoffersspells",
+    "named": false
+  },
+  {
+    "type": "setofferstraining",
+    "named": false
+  },
+  {
+    "type": "setoffersweapons",
+    "named": false
+  },
+  {
+    "type": "setolmpgrids",
+    "named": false
+  },
+  {
+    "type": "setopenkey",
+    "named": false
+  },
+  {
+    "type": "setopensound",
+    "named": false
+  },
+  {
+    "type": "setopenstate",
+    "named": false
+  },
+  {
+    "type": "setownership",
+    "named": false
+  },
+  {
+    "type": "setownership_t",
+    "named": false
+  },
+  {
+    "type": "setowningrequiredrank",
+    "named": false
+  },
+  {
+    "type": "setpackageallowfalls",
+    "named": false
+  },
+  {
+    "type": "setpackageallowswimming",
+    "named": false
+  },
+  {
+    "type": "setpackagealwaysrun",
+    "named": false
+  },
+  {
+    "type": "setpackagealwayssneak",
+    "named": false
+  },
+  {
+    "type": "setpackagearmorunequipped",
+    "named": false
+  },
+  {
+    "type": "setpackagecontinueifpcnear",
+    "named": false
+  },
+  {
+    "type": "setpackagedata",
+    "named": false
+  },
+  {
+    "type": "setpackagedefensivecombat",
+    "named": false
+  },
+  {
+    "type": "setpackagelocationdata",
+    "named": false
+  },
+  {
+    "type": "setpackagelockdoorsatend",
+    "named": false
+  },
+  {
+    "type": "setpackagelockdoorsatlocation",
+    "named": false
+  },
+  {
+    "type": "setpackagelockdoorsatstart",
+    "named": false
+  },
+  {
+    "type": "setpackagemustcomplete",
+    "named": false
+  },
+  {
+    "type": "setpackagemustreachlocation",
+    "named": false
+  },
+  {
+    "type": "setpackagenoidleanims",
+    "named": false
+  },
+  {
+    "type": "setpackageoffersservices",
+    "named": false
+  },
+  {
+    "type": "setpackageonceperday",
+    "named": false
+  },
+  {
+    "type": "setpackagescheduledata",
+    "named": false
+  },
+  {
+    "type": "setpackageskipfalloutbehavior",
+    "named": false
+  },
+  {
+    "type": "setpackagetarget",
+    "named": false
+  },
+  {
+    "type": "setpackagetargetdata",
+    "named": false
+  },
+  {
+    "type": "setpackageunlockdoorsatend",
+    "named": false
+  },
+  {
+    "type": "setpackageunlockdoorsatlocation",
+    "named": false
+  },
+  {
+    "type": "setpackageunlockdoorsatstart",
+    "named": false
+  },
+  {
+    "type": "setpackageusehorse",
+    "named": false
+  },
+  {
+    "type": "setpackageweaponsunequipped",
+    "named": false
+  },
+  {
+    "type": "setpackduration",
+    "named": false
+  },
+  {
+    "type": "setparentcellowningfactionrequiredrank",
+    "named": false
+  },
+  {
+    "type": "setpathnodedisabled",
+    "named": false
+  },
+  {
+    "type": "setpcamurderer",
+    "named": false
+  },
+  {
+    "type": "setpcattributebonus",
+    "named": false
+  },
+  {
+    "type": "setpcattributebonusc",
+    "named": false
+  },
+  {
+    "type": "setpcexpelled",
+    "named": false
+  },
+  {
+    "type": "setpcfactionattack",
+    "named": false
+  },
+  {
+    "type": "setpcfactionmurder",
+    "named": false
+  },
+  {
+    "type": "setpcfactionsteal",
+    "named": false
+  },
+  {
+    "type": "setpcfactionsubmitauthority",
+    "named": false
+  },
+  {
+    "type": "setpcfame",
+    "named": false
+  },
+  {
+    "type": "setpcinfamy",
+    "named": false
+  },
+  {
+    "type": "setpcleveloffset",
+    "named": false
+  },
+  {
+    "type": "setpcmajorskillups",
+    "named": false
+  },
+  {
+    "type": "setpcsleephours",
+    "named": false
+  },
+  {
+    "type": "setpctrainingsessionsused",
+    "named": false
+  },
+  {
+    "type": "setplayerbirthsign",
+    "named": false
+  },
+  {
+    "type": "setplayerinseworld",
+    "named": false
+  },
+  {
+    "type": "setplayerprojectile",
+    "named": false
+  },
+  {
+    "type": "setplayerskeletonpath",
+    "named": false
+  },
+  {
+    "type": "setplayerskilladvances",
+    "named": false
+  },
+  {
+    "type": "setplayerskilladvancesc",
+    "named": false
+  },
+  {
+    "type": "setplayerslastriddenhorse",
+    "named": false
+  },
+  {
+    "type": "setpos",
+    "named": false
+  },
+  {
+    "type": "setpos_t",
+    "named": false
+  },
+  {
+    "type": "setpowertimer",
+    "named": false
+  },
+  {
+    "type": "setprojectilesource",
+    "named": false
+  },
+  {
+    "type": "setprojectilespeed",
+    "named": false
+  },
+  {
+    "type": "setquality",
+    "named": false
+  },
+  {
+    "type": "setquestitem",
+    "named": false
+  },
+  {
+    "type": "setquestobject",
+    "named": false
+  },
+  {
+    "type": "setracealias",
+    "named": false
+  },
+  {
+    "type": "setraceplayable",
+    "named": false
+  },
+  {
+    "type": "setracescale",
+    "named": false
+  },
+  {
+    "type": "setracevoice",
+    "named": false
+  },
+  {
+    "type": "setraceweight",
+    "named": false
+  },
+  {
+    "type": "setrefcount",
+    "named": false
+  },
+  {
+    "type": "setrefessential",
+    "named": false
+  },
+  {
+    "type": "setrestrained",
+    "named": false
+  },
+  {
+    "type": "setrigidbodymass",
+    "named": false
+  },
+  {
+    "type": "setscale",
+    "named": false
+  },
+  {
+    "type": "setscaleex",
+    "named": false
+  },
+  {
+    "type": "setsceneiscomplex",
+    "named": false
+  },
+  {
+    "type": "setscript",
+    "named": false
+  },
+  {
+    "type": "setshowquestitems",
+    "named": false
+  },
+  {
+    "type": "setsigilstoneuses",
+    "named": false
+  },
+  {
+    "type": "setsize",
+    "named": false
+  },
+  {
+    "type": "setskillgoverningattribute",
+    "named": false
+  },
+  {
+    "type": "setskillgoverningattributec",
+    "named": false
+  },
+  {
+    "type": "setskillspecialization",
+    "named": false
+  },
+  {
+    "type": "setskillspecializationc",
+    "named": false
+  },
+  {
+    "type": "setskilluseincrement",
+    "named": false
+  },
+  {
+    "type": "setskilluseincrementc",
+    "named": false
+  },
+  {
+    "type": "setsoulgemcapacity",
+    "named": false
+  },
+  {
+    "type": "setsoullevel",
+    "named": false
+  },
+  {
+    "type": "setsoundattenuation",
+    "named": false
+  },
+  {
+    "type": "setspellareaeffectignoreslos",
+    "named": false
+  },
+  {
+    "type": "setspelldisallowabsorbreflect",
+    "named": false
+  },
+  {
+    "type": "setspellexplodeswithnotarget",
+    "named": false
+  },
+  {
+    "type": "setspellhostile",
+    "named": false
+  },
+  {
+    "type": "setspellimmunetosilence",
+    "named": false
+  },
+  {
+    "type": "setspellmagickacost",
+    "named": false
+  },
+  {
+    "type": "setspellmasterylevel",
+    "named": false
+  },
+  {
+    "type": "setspellpcstart",
+    "named": false
+  },
+  {
+    "type": "setspellscripteffectalwaysapplies",
+    "named": false
+  },
+  {
+    "type": "setspelltype",
+    "named": false
+  },
+  {
+    "type": "setstage",
+    "named": false
+  },
+  {
+    "type": "setstagedate",
+    "named": false
+  },
+  {
+    "type": "setstagetext",
+    "named": false
+  },
+  {
+    "type": "setstringgamesettingex",
+    "named": false
+  },
+  {
+    "type": "setstringinisetting",
+    "named": false
+  },
+  {
+    "type": "setsummonable",
+    "named": false
+  },
+  {
+    "type": "setsundamage",
+    "named": false
+  },
+  {
+    "type": "setsunglare",
+    "named": false
+  },
+  {
+    "type": "settaken",
+    "named": false
+  },
+  {
+    "type": "settextinputcontrolhandler",
+    "named": false
+  },
+  {
+    "type": "settextinputdefaultcontrolsdisabled",
+    "named": false
+  },
+  {
+    "type": "settextinputhandler",
+    "named": false
+  },
+  {
+    "type": "settexturepath",
+    "named": false
+  },
+  {
+    "type": "settimeleft",
+    "named": false
+  },
+  {
+    "type": "settrainerlevel",
+    "named": false
+  },
+  {
+    "type": "settrainerskill",
+    "named": false
+  },
+  {
+    "type": "settransdelta",
+    "named": false
+  },
+  {
+    "type": "settravelhorse",
+    "named": false
+  },
+  {
+    "type": "setunconscious",
+    "named": false
+  },
+  {
+    "type": "setunsafecontainer",
+    "named": false
+  },
+  {
+    "type": "setvelocity",
+    "named": false
+  },
+  {
+    "type": "setverticalvelocity",
+    "named": false
+  },
+  {
+    "type": "setweaponreach",
+    "named": false
+  },
+  {
+    "type": "setweaponspeed",
+    "named": false
+  },
+  {
+    "type": "setweapontype",
+    "named": false
+  },
+  {
+    "type": "setweather",
+    "named": false
+  },
+  {
+    "type": "setweathercloudspeedlower",
+    "named": false
+  },
+  {
+    "type": "setweathercloudspeedupper",
+    "named": false
+  },
+  {
+    "type": "setweathercolor",
+    "named": false
+  },
+  {
+    "type": "setweatherfogdayfar",
+    "named": false
+  },
+  {
+    "type": "setweatherfogdaynear",
+    "named": false
+  },
+  {
+    "type": "setweatherfognightfar",
+    "named": false
+  },
+  {
+    "type": "setweatherfognightnear",
+    "named": false
+  },
+  {
+    "type": "setweatherhdrvalue",
+    "named": false
+  },
+  {
+    "type": "setweatherlightningfrequency",
+    "named": false
+  },
+  {
+    "type": "setweathersundamage",
+    "named": false
+  },
+  {
+    "type": "setweathersunglare",
+    "named": false
+  },
+  {
+    "type": "setweathertransdelta",
+    "named": false
+  },
+  {
+    "type": "setweatherwindspeed",
+    "named": false
+  },
+  {
+    "type": "setweight",
+    "named": false
+  },
+  {
+    "type": "setwindspeed",
     "named": false
   },
   {
@@ -1997,11 +10448,335 @@
     "named": false
   },
   {
+    "type": "showbirthsignmenu",
+    "named": false
+  },
+  {
+    "type": "showclassmenu",
+    "named": false
+  },
+  {
+    "type": "showdialogsubtitles",
+    "named": false
+  },
+  {
+    "type": "showenchantment",
+    "named": false
+  },
+  {
+    "type": "showmap",
+    "named": false
+  },
+  {
+    "type": "showracemenu",
+    "named": false
+  },
+  {
+    "type": "showspellmaking",
+    "named": false
+  },
+  {
+    "type": "sin",
+    "named": false
+  },
+  {
+    "type": "sinh",
+    "named": false
+  },
+  {
+    "type": "skipanim",
+    "named": false
+  },
+  {
+    "type": "sms",
+    "named": false
+  },
+  {
+    "type": "sqrt",
+    "named": false
+  },
+  {
+    "type": "squareroot",
+    "named": false
+  },
+  {
+    "type": "startcombat",
+    "named": false
+  },
+  {
+    "type": "startconversation",
+    "named": false
+  },
+  {
+    "type": "startquest",
+    "named": false
+  },
+  {
+    "type": "stopcombat",
+    "named": false
+  },
+  {
+    "type": "stopcombatalarmonactor",
+    "named": false
+  },
+  {
+    "type": "stoplook",
+    "named": false
+  },
+  {
+    "type": "stopmagiceffectvisuals",
+    "named": false
+  },
+  {
+    "type": "stopmagicshadervisuals",
+    "named": false
+  },
+  {
+    "type": "stopquest",
+    "named": false
+  },
+  {
+    "type": "stopwaiting",
+    "named": false
+  },
+  {
+    "type": "streammusic",
+    "named": false
+  },
+  {
     "type": "string_var",
     "named": false
   },
   {
+    "type": "stringtoactorvalue",
+    "named": false
+  },
+  {
+    "type": "sv_compare",
+    "named": false
+  },
+  {
+    "type": "sv_construct",
+    "named": false
+  },
+  {
+    "type": "sv_count",
+    "named": false
+  },
+  {
+    "type": "sv_destruct",
+    "named": false
+  },
+  {
+    "type": "sv_erase",
+    "named": false
+  },
+  {
+    "type": "sv_find",
+    "named": false
+  },
+  {
+    "type": "sv_insert",
+    "named": false
+  },
+  {
+    "type": "sv_length",
+    "named": false
+  },
+  {
+    "type": "sv_percentify",
+    "named": false
+  },
+  {
+    "type": "sv_replace",
+    "named": false
+  },
+  {
+    "type": "sv_split",
+    "named": false
+  },
+  {
+    "type": "sv_tolower",
+    "named": false
+  },
+  {
+    "type": "sv_tonumeric",
+    "named": false
+  },
+  {
+    "type": "sv_toupper",
+    "named": false
+  },
+  {
+    "type": "tan",
+    "named": false
+  },
+  {
+    "type": "tanh",
+    "named": false
+  },
+  {
+    "type": "tapcontrol",
+    "named": false
+  },
+  {
+    "type": "tapkey",
+    "named": false
+  },
+  {
+    "type": "testexpr",
+    "named": false
+  },
+  {
+    "type": "this",
+    "named": false
+  },
+  {
     "type": "to",
+    "named": false
+  },
+  {
+    "type": "toggleactorsai",
+    "named": false
+  },
+  {
+    "type": "togglecreaturemodel",
+    "named": false
+  },
+  {
+    "type": "togglefirstperson",
+    "named": false
+  },
+  {
+    "type": "toggleskillperk",
+    "named": false
+  },
+  {
+    "type": "togglespecialanim",
+    "named": false
+  },
+  {
+    "type": "tolower",
+    "named": false
+  },
+  {
+    "type": "tonumber",
+    "named": false
+  },
+  {
+    "type": "tostring",
+    "named": false
+  },
+  {
+    "type": "toupper",
+    "named": false
+  },
+  {
+    "type": "trapupdate",
+    "named": false
+  },
+  {
+    "type": "triggerhitshader",
+    "named": false
+  },
+  {
+    "type": "triggerplayerskilluse",
+    "named": false
+  },
+  {
+    "type": "triggerplayerskillusec",
+    "named": false
+  },
+  {
+    "type": "typeof",
+    "named": false
+  },
+  {
+    "type": "uncompletequest",
+    "named": false
+  },
+  {
+    "type": "unequipitem",
+    "named": false
+  },
+  {
+    "type": "unequipitemns",
+    "named": false
+  },
+  {
+    "type": "unequipitemsilent",
+    "named": false
+  },
+  {
+    "type": "unequipme",
+    "named": false
+  },
+  {
+    "type": "unhammerkey",
+    "named": false
+  },
+  {
+    "type": "unlock",
+    "named": false
+  },
+  {
+    "type": "unsetstagetext",
+    "named": false
+  },
+  {
+    "type": "update3d",
+    "named": false
+  },
+  {
+    "type": "updatecontainermenu",
+    "named": false
+  },
+  {
+    "type": "updatespellpurchasemenu",
+    "named": false
+  },
+  {
+    "type": "updatetextinput",
+    "named": false
+  },
+  {
+    "type": "vampirefeed",
+    "named": false
+  },
+  {
+    "type": "vecmag",
+    "named": false
+  },
+  {
+    "type": "vecnorm",
+    "named": false
+  },
+  {
+    "type": "vectorcross",
+    "named": false
+  },
+  {
+    "type": "vectordot",
+    "named": false
+  },
+  {
+    "type": "vectormagnitude",
+    "named": false
+  },
+  {
+    "type": "vectornormalize",
+    "named": false
+  },
+  {
+    "type": "wait",
+    "named": false
+  },
+  {
+    "type": "wakeuppc",
+    "named": false
+  },
+  {
+    "type": "whichservicemenu",
     "named": false
   },
   {
@@ -2010,6 +10785,14 @@
   },
   {
     "type": "word",
+    "named": false
+  },
+  {
+    "type": "yield",
+    "named": false
+  },
+  {
+    "type": "zeromat",
     "named": false
   },
   {
